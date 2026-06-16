@@ -1,0 +1,158 @@
+{
+  "hero": [
+    {
+      "tipo": "foto",
+      "src": "hero/foto-1.jpg",
+      "alt": "Lyft Brand — Coleção Elevate 2026"
+    },
+    {
+      "tipo": "video",
+      "src": "hero/video-1.mp4",
+      "poster": "hero/video-1-thumb.jpg"
+    },
+    {
+      "tipo": "foto",
+      "src": "hero/foto-2.jpg",
+      "alt": "Conjunto Aura Verde"
+    }
+  ],
+  "produtos": [
+    {
+      "id": "conjunto-aura",
+      "nome": "Conjunto Aura",
+      "categoria": "conjunto",
+      "descricao": "Top + shorts de alta compressão. Zero transparência, modelagem que valoriza o corpo e toque macio. Perfeito do treino ao pós.",
+      "detalhes": ["Tecido: Poliamida + Elastano","Zero transparência","Compressão na medida","Secagem rápida","Top com sustentação"],
+      "preco": 239.90,
+      "parcelas": 6,
+      "destaque": true,
+      "colecao": "Elevate 2026",
+      "cores": [
+        {"nome":"Verde","hex":"#7A9B8A","fotos":["fotos/aura-verde-1.jpg","fotos/aura-verde-2.jpg","fotos/aura-verde-3.jpg","fotos/aura-verde-4.jpg"]},
+        {"nome":"Cinza","hex":"#7A7A8A","fotos":["fotos/aura-cinza-1.jpg","fotos/aura-cinza-2.jpg","fotos/aura-cinza-3.jpg"]},
+        {"nome":"Marsala","hex":"#7B2D42","fotos":["fotos/aura-marsala-1.jpg","fotos/aura-marsala-2.jpg","fotos/aura-marsala-3.jpg"]},
+        {"nome":"Preto","hex":"#1A1614","fotos":["fotos/aura-preto-1.jpg","fotos/aura-preto-2.jpg","fotos/aura-preto-3.jpg"]}
+      ],
+      "tamanhos": ["P","M","G"],
+      "badge": "Mais vendido"
+    },
+    {
+      "id": "conjunto-pulse",
+      "nome": "Conjunto Pulse",
+      "categoria": "conjunto",
+      "descricao": "Top + shorts em suplex premium. Ideal para corrida, academia e treinos intensos. Caimento impecável em qualquer movimento.",
+      "detalhes": ["Tecido: Suplex premium","Zero transparência","Alta compressão","Secagem rápida","Cós largo modelador"],
+      "preco": 239.90,
+      "parcelas": 6,
+      "destaque": false,
+      "colecao": "Elevate 2026",
+      "cores": [
+        {"nome":"Marrom","hex":"#8B5E3C","fotos":["fotos/pulse-marrom-1.jpg","fotos/pulse-marrom-2.jpg","fotos/pulse-marrom-3.jpg"]},
+        {"nome":"Verde","hex":"#4A7A6A","fotos":["fotos/pulse-verde-1.jpg","fotos/pulse-verde-2.jpg","fotos/pulse-verde-3.jpg"]},
+        {"nome":"Off White","hex":"#EDE8E1","fotos":["fotos/pulse-offwhite-1.jpg","fotos/pulse-offwhite-2.jpg","fotos/pulse-offwhite-3.jpg"]}
+      ],
+      "tamanhos": ["P","M","G"],
+      "badge": ""
+    },
+    {
+      "id": "conjunto-glow",
+      "nome": "Conjunto Glow",
+      "categoria": "conjunto",
+      "descricao": "Top + legging canelada. Tecido canelado de alta qualidade com modelagem que abraça e valoriza cada curva.",
+      "detalhes": ["Tecido canelado premium","Zero transparência","Legging cintura alta","Top com alças largas","Modelagem que valoriza"],
+      "preco": 259.90,
+      "parcelas": 6,
+      "destaque": false,
+      "colecao": "Elevate 2026",
+      "cores": [
+        {"nome":"Off White","hex":"#F5F0E8","fotos":["fotos/glow-offwhite-1.jpg","fotos/glow-offwhite-2.jpg","fotos/glow-offwhite-3.jpg"]},
+        {"nome":"Preto","hex":"#1A1614","fotos":["fotos/glow-preto-1.jpg","fotos/glow-preto-2.jpg","fotos/glow-preto-3.jpg"]}
+      ],
+      "tamanhos": ["M"],
+      "badge": ""
+    },
+    {
+      "id": "conjunto-icon",
+      "nome": "Conjunto Icon",
+      "categoria": "conjunto",
+      "descricao": "Top + legging com detalhe de tule nas costas. Design sofisticado que une funcionalidade e elegância.",
+      "detalhes": ["Detalhe tule nas costas","Tecido: Poliamida + Elastano","Zero transparência","Alta compressão","Design exclusivo"],
+      "preco": 249.90,
+      "parcelas": 6,
+      "destaque": false,
+      "colecao": "Elevate 2026",
+      "cores": [
+        {"nome":"Cinza","hex":"#8A8AA0","fotos":["fotos/icon-cinza-1.jpg","fotos/icon-cinza-2.jpg","fotos/icon-cinza-3.jpg"]},
+        {"nome":"Marrom","hex":"#8B5E3C","fotos":["fotos/icon-marrom-1.jpg","fotos/icon-marrom-2.jpg","fotos/icon-marrom-3.jpg"]}
+      ],
+      "tamanhos": ["M","G"],
+      "badge": ""
+    },
+    {
+      "id": "conjunto-rise",
+      "nome": "Conjunto Rise",
+      "categoria": "conjunto",
+      "descricao": "Top + legging com sustentação e modelagem perfeita. Desenvolvido para mulheres que buscam conforto máximo sem abrir mão do estilo.",
+      "detalhes": ["Tecido: Poliamida + Elastano","Zero transparência","Top com sustentação","Legging cintura alta","Disponível em GG"],
+      "preco": 249.90,
+      "parcelas": 6,
+      "destaque": false,
+      "colecao": "Elevate 2026",
+      "cores": [
+        {"nome":"Off White","hex":"#EDE8E1","fotos":["fotos/rise-offwhite-1.jpg","fotos/rise-offwhite-2.jpg","fotos/rise-offwhite-3.jpg"]},
+        {"nome":"Cinza","hex":"#9A9AA8","fotos":["fotos/rise-cinza-1.jpg","fotos/rise-cinza-2.jpg","fotos/rise-cinza-3.jpg"]}
+      ],
+      "tamanhos": ["M","G","GG"],
+      "badge": ""
+    },
+    {
+      "id": "macaquinho-muse",
+      "nome": "Macaquinho Muse",
+      "categoria": "macaquinho",
+      "descricao": "Macacão fitness com zíper frontal. Peça única que define e valoriza a silhueta. Modelagem pequeña para caimento perfeito.",
+      "detalhes": ["Tecido canelado premium","Zíper frontal","Modelagem pequeña","Zero transparência","Peça exclusiva"],
+      "preco": 169.90,
+      "parcelas": 6,
+      "destaque": false,
+      "colecao": "Elevate 2026",
+      "cores": [
+        {"nome":"Chumbo","hex":"#4A4A5A","fotos":["fotos/muse-chumbo-1.jpg","fotos/muse-chumbo-2.jpg","fotos/muse-chumbo-3.jpg","fotos/muse-chumbo-4.jpg"]}
+      ],
+      "tamanhos": ["M"],
+      "badge": "Exclusivo"
+    },
+    {
+      "id": "jaqueta-bliss",
+      "nome": "Jaqueta Bliss",
+      "categoria": "jaqueta",
+      "descricao": "Corta-vento leve com capuz. Para usar no treino, na rua ou no pós-treino. Leveza e estilo em qualquer momento.",
+      "detalhes": ["Corta-vento leve","Com capuz","Bolsos laterais com zíper","Punhos elásticos","Fácil de dobrar"],
+      "preco": 259.90,
+      "parcelas": 6,
+      "destaque": false,
+      "colecao": "Elevate 2026",
+      "cores": [
+        {"nome":"Branca","hex":"#FAF8F5","fotos":["fotos/bliss-branca-1.jpg","fotos/bliss-branca-2.jpg","fotos/bliss-branca-3.jpg"]},
+        {"nome":"Preta","hex":"#1A1614","fotos":["fotos/bliss-preta-1.jpg","fotos/bliss-preta-2.jpg","fotos/bliss-preta-3.jpg"]}
+      ],
+      "tamanhos": ["M","G"],
+      "badge": ""
+    },
+    {
+      "id": "shorts-bella-duplo",
+      "nome": "Shorts Bella Duplo",
+      "categoria": "shorts",
+      "descricao": "Shorts duplo com tactel externo e suplex interno. O melhor dos dois mundos: leveza por fora, compressão por dentro.",
+      "detalhes": ["Camada externa: Tactel","Camada interna: Suplex","Zero transparência","Cós elástico confortável","Bolso lateral"],
+      "preco": 159.90,
+      "parcelas": 6,
+      "destaque": false,
+      "colecao": "Elevate 2026",
+      "cores": [
+        {"nome":"Preto","hex":"#1A1614","fotos":["fotos/bella-preto-1.jpg","fotos/bella-preto-2.jpg","fotos/bella-preto-3.jpg"]}
+      ],
+      "tamanhos": ["M"],
+      "badge": ""
+    }
+  ]
+}
