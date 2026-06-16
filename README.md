@@ -312,4 +312,4 @@ Para mudanças maiores no design ou estrutura do site, entre em contato com Dár
 
 ---
 
-*Site desenvolvido com ❤️ por MKT&Play*
+*Site desenvolvido com ❤️ por Lemos83 | Digital Marketing Solutions*
