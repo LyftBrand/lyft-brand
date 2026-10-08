@@ -53,6 +53,7 @@ export interface Config {
 }
 
 export interface Depoimento {
+  nome?: string;
   texto: string;
   origem: string;
 }

@@ -3,12 +3,17 @@ import { config } from './content';
 import { lerPreferencias } from './consent';
 import { cupomAtivo, track } from './utils';
 
-const CAMPOS_ORIGEM = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'ttclid'] as const;
+const CAMPOS_ORIGEM = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'gbraid', 'wbraid', 'ttclid'] as const;
+/** Identificadores de clique em anúncio. Ficam guardados por 90 dias (validade no Google Ads e no Meta). */
+const CLIQUES = ['gclid', 'gbraid', 'wbraid', 'fbclid', 'ttclid'] as const;
+type Clique = (typeof CLIQUES)[number];
+const NOVENTA_DIAS = 90 * 24 * 60 * 60 * 1000;
 type Origem = Partial<Record<(typeof CAMPOS_ORIGEM)[number] | 'referrer' | 'pagina_entrada' | 'data_entrada', string>>;
 
 const CHAVE_PRIMEIRA = 'lyft_origem_primeira';
 const CHAVE_ULTIMA = 'lyft_origem_ultima';
 const CHAVE_CONTATO = 'lyft_contato';
+const CHAVE_CLIQUES = 'lyft_cliques_anuncio';
 
 const ler = (store: Storage, k: string) => { try { return JSON.parse(store.getItem(k) || 'null'); } catch { return null; } };
 const gravar = (store: Storage, k: string, v: unknown) => { try { store.setItem(k, JSON.stringify(v)); } catch { /* sem storage */ } };
@@ -27,7 +32,28 @@ export function registrarOrigem() {
 
   if (!ler(localStorage, CHAVE_PRIMEIRA)) gravar(localStorage, CHAVE_PRIMEIRA, registro);
   if (temOrigem || !ler(sessionStorage, CHAVE_ULTIMA)) gravar(sessionStorage, CHAVE_ULTIMA, registro);
+
+  // Cada clique de anúncio novo substitui o anterior da mesma plataforma.
+  const cliques: Partial<Record<Clique, { v: string; t: number }>> = ler(localStorage, CHAVE_CLIQUES) ?? {};
+  let mudou = false;
+  CLIQUES.forEach((c) => { if (atual[c]) { cliques[c] = { v: atual[c]!, t: Date.now() }; mudou = true; } });
+  if (mudou) gravar(localStorage, CHAVE_CLIQUES, cliques);
 }
+
+/** Cliques de anúncio ainda válidos (até 90 dias). */
+function cliquesValidos() {
+  const cliques: Partial<Record<Clique, { v: string; t: number }>> = ler(localStorage, CHAVE_CLIQUES) ?? {};
+  const out: Partial<Record<Clique | 'gclid_data' | 'fbclid_data', string>> = {};
+  CLIQUES.forEach((c) => {
+    const x = cliques[c];
+    if (x && Date.now() - x.t < NOVENTA_DIAS) out[c] = x.v;
+  });
+  if (cliques.gclid && out.gclid) out.gclid_data = new Date(cliques.gclid.t).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+  if (cliques.fbclid && out.fbclid) out.fbclid_data = new Date(cliques.fbclid.t).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+  return { out, fbcTempo: cliques.fbclid?.t };
+}
+
+const lerCookie = (nome: string) => document.cookie.split('; ').find((c) => c.startsWith(nome + '='))?.split('=')[1] ?? '';
 
 export interface Contato { nome: string; email: string; whatsapp: string }
 
@@ -57,6 +83,9 @@ export function enviarLead(contato: Contato, pedido: Pedido) {
   const ultima: Origem = ler(sessionStorage, CHAVE_ULTIMA) ?? {};
   const cookies = lerPreferencias();
   const agora = new Date();
+  const { out: cliques, fbcTempo } = cliquesValidos();
+  // fbc no formato que a API de Conversões do Meta pede: fb.1.<quando clicou>.<fbclid>
+  const fbc = lerCookie('_fbc') || (cliques.fbclid && fbcTempo ? `fb.1.${fbcTempo}.${cliques.fbclid}` : '');
 
   const dados = {
     data_hora: agora.toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
@@ -77,9 +106,16 @@ export function enviarLead(contato: Contato, pedido: Pedido) {
     utm_campaign: ultima.utm_campaign ?? '',
     utm_content: ultima.utm_content ?? '',
     utm_term: ultima.utm_term ?? '',
-    fbclid: ultima.fbclid ?? '',
-    gclid: ultima.gclid ?? '',
-    ttclid: ultima.ttclid ?? '',
+    gclid: cliques.gclid ?? '',
+    gbraid: cliques.gbraid ?? '',
+    wbraid: cliques.wbraid ?? '',
+    gclid_data: cliques.gclid_data ?? '',
+    fbclid: cliques.fbclid ?? '',
+    fbc,
+    fbp: lerCookie('_fbp'),
+    fbclid_data: cliques.fbclid_data ?? '',
+    ttclid: cliques.ttclid ?? '',
+    plataforma_anuncio: cliques.gclid || cliques.gbraid || cliques.wbraid ? (cliques.fbclid ? 'Google e Meta' : 'Google') : cliques.fbclid ? 'Meta' : cliques.ttclid ? 'TikTok' : '',
     referrer: ultima.referrer ?? '',
     primeira_origem: [primeira.utm_source, primeira.utm_medium, primeira.utm_campaign].filter(Boolean).join(' / ') || primeira.referrer || 'direto',
     primeira_visita: primeira.data_entrada ?? '',

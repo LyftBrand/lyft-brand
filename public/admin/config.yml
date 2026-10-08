@@ -158,7 +158,8 @@ collections:
             label: Depoimentos
             label_singular: Depoimento
             widget: list
-            summary: "{{fields.texto}}"
+            summary: "{{fields.nome}} · {{fields.texto}}"
             fields:
+              - { name: nome, label: "Nome da cliente", widget: string, required: false, hint: "Só o primeiro nome. Ex.: Marina" }
               - { name: texto, label: "O que a cliente disse", widget: text }
               - { name: origem, label: "Origem", widget: string, default: "Cliente Lyft · WhatsApp" }

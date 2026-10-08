@@ -33,9 +33,16 @@ var COLUNAS = [
   ['utm_campaign', 'UTM Campaign'],
   ['utm_content', 'UTM Content'],
   ['utm_term', 'UTM Term'],
-  ['fbclid', 'fbclid (Meta)'],
-  ['gclid', 'gclid (Google)'],
-  ['ttclid', 'ttclid (TikTok)'],
+  ['plataforma_anuncio', 'Veio de anúncio'],
+  ['gclid', 'GCLID (Google Ads)'],
+  ['gbraid', 'GBRAID (Google Ads, iPhone)'],
+  ['wbraid', 'WBRAID (Google Ads, iPhone)'],
+  ['gclid_data', 'Data do clique Google'],
+  ['fbclid', 'FBCLID (Meta)'],
+  ['fbc', 'FBC (Meta)'],
+  ['fbp', 'FBP (Meta)'],
+  ['fbclid_data', 'Data do clique Meta'],
+  ['ttclid', 'TTCLID (TikTok)'],
   ['referrer', 'Veio de (site)'],
   ['primeira_origem', 'Primeira origem'],
   ['primeira_visita', 'Primeira visita'],
@@ -67,7 +74,8 @@ function doPost(e) {
     lock.waitLock(10000);
     var aba = obterAba(d.origem_botao === 'reposicao' ? ABA_REPOSICAO : ABA_PEDIDOS);
     var linha = COLUNAS.map(function (c) {
-      var limite = c[0] === 'mensagem' || c[0] === 'pagina' || c[0] === 'url_produto' || c[0] === 'referrer' ? 500 : 150;
+      var longo = ['mensagem', 'pagina', 'url_produto', 'referrer', 'gclid', 'gbraid', 'wbraid', 'fbclid', 'fbc', 'fbp', 'ttclid'];
+      var limite = longo.indexOf(c[0]) >= 0 ? 500 : 150;
       return seguro(limpar(d[c[0]], limite));
     });
     aba.appendRow(linha);

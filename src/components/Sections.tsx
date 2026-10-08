@@ -58,7 +58,7 @@ export function Depoimentos() {
               <span aria-hidden className="block text-rose text-4xl leading-none mb-2">“</span>
               {d.texto}
             </blockquote>
-            <figcaption className="eyebrow text-muted !text-[10px]">{d.origem}</figcaption>
+            <figcaption className="eyebrow text-muted !text-[10px]">{d.nome && <span className="text-ink">{d.nome}</span>}{d.nome && ' · '}{d.origem}</figcaption>
           </figure>
         ))}
       </div>
