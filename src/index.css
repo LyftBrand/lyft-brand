@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* Paleta tirada do catálogo Elevate 2026: rosé-taupe, nude, off-white e o preto do logo. */
+@theme {
+  --color-paper: #F6F1EC;
+  --color-nude: #EDE5DE;
+  --color-sand: #E2D7CE;
+  --color-rose: #B4988F;
+  --color-rose-deep: #8C7067;
+  --color-ink: #1A1614;
+  --color-ink-soft: #4A403B;
+  --color-muted: #877B74;
+  --color-line: #DDD2C9;
+  --color-sold: #B7ADA6;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --ease-soft: cubic-bezier(.22, .61, .36, 1);
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--color-sand); color: var(--color-ink); }
+  img { -webkit-user-drag: none; }
+  :focus-visible { outline: 2px solid var(--color-ink); outline-offset: 3px; border-radius: 2px; }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+  }
+  .display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 400;
+    letter-spacing: -.02em;
+    line-height: 1.02;
+  }
+  .container-x {
+    width: 100%;
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+  @media (min-width: 768px) { .container-x { padding-inline: 32px; } }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+    min-height: 52px; padding: 0 1.75rem;
+    font-size: 13px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+    border-radius: 999px;
+    transition: background-color .25s var(--ease-soft), color .25s var(--ease-soft), transform .2s var(--ease-soft), border-color .25s;
+  }
+  .btn:active { transform: scale(.98); }
+  .btn-dark { background: var(--color-ink); color: var(--color-paper); }
+  .btn-dark:hover { background: #2E2724; }
+  .btn-light { background: var(--color-paper); color: var(--color-ink); }
+  .btn-light:hover { background: #fff; }
+  .btn-line { border: 1px solid currentColor; }
+  .btn-line:hover { background: var(--color-ink); color: var(--color-paper); border-color: var(--color-ink); }
+
+  .link-u { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .35s var(--ease-soft); }
+  .link-u:hover { background-size: 100% 1px; }
+
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

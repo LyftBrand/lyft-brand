@@ -1,0 +1,42 @@
+{
+  "nome": "Macaquinho Isabele",
+  "ativo": true,
+  "categoria": "Macaquinhos",
+  "preco": 189.9,
+  "resumo": "Um ombro só e bolsos",
+  "descricao": "Tecido suplex power e bolsos nas laterais.",
+  "detalhes": [],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": false,
+  "novidade": false,
+  "ordem": 18,
+  "cores": [
+    {
+      "nome": "Marsala",
+      "hex": "#7B2D42",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": [
+        "/uploads/produtos/macaquinho-isabele/marsala-1.jpg"
+      ]
+    },
+    {
+      "nome": "Azul marinho",
+      "hex": "#1E2A4A",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": [
+        "/uploads/produtos/macaquinho-isabele/azul-marinho-1.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

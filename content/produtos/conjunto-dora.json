@@ -1,0 +1,32 @@
+{
+  "nome": "Conjunto Dora",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 179.9,
+  "resumo": "",
+  "descricao": "",
+  "detalhes": [],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": false,
+  "novidade": false,
+  "ordem": 14,
+  "cores": [
+    {
+      "nome": "Rosa",
+      "hex": "#D6457F",
+      "disponiveis": [
+        "P"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-dora/rosa-1.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

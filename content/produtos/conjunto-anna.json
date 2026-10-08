@@ -1,0 +1,44 @@
+{
+  "nome": "Conjunto Anna",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 259.9,
+  "resumo": "Top + legging com bolso",
+  "descricao": "",
+  "detalhes": [
+    "Legging com bolso"
+  ],
+  "grade": [
+    "Único"
+  ],
+  "observacao": "Tamanho único — veste do 36 ao 40.",
+  "destaque": true,
+  "novidade": true,
+  "ordem": 10,
+  "cores": [
+    {
+      "nome": "Verde menta",
+      "hex": "#8FDCC0",
+      "disponiveis": [
+        "Único"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-anna/verde-menta-1.jpg",
+        "/uploads/produtos/conjunto-anna/verde-menta-2.jpg"
+      ]
+    },
+    {
+      "nome": "Rosa claro",
+      "hex": "#F1D2D8",
+      "disponiveis": [
+        "Único"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-anna/rosa-claro-1.jpg",
+        "/uploads/produtos/conjunto-anna/rosa-claro-2.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

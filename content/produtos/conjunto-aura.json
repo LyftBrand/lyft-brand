@@ -1,0 +1,64 @@
+{
+  "nome": "Conjunto Aura",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 239.9,
+  "resumo": "Top + shorts",
+  "descricao": "O conjunto Aura foi feito pra valorizar o corpo com conforto, sustentação e zero transparência. Perfeito do treino ao pós.",
+  "detalhes": [],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": true,
+  "novidade": false,
+  "ordem": 1,
+  "cores": [
+    {
+      "nome": "Verde",
+      "hex": "#7E9A8C",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-aura/verde-1.jpg",
+        "/uploads/produtos/conjunto-aura/verde-2.jpg"
+      ]
+    },
+    {
+      "nome": "Preto",
+      "hex": "#1C1A1A",
+      "disponiveis": [
+        "M",
+        "G"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-aura/preto-1.jpg",
+        "/uploads/produtos/conjunto-aura/preto-2.jpg"
+      ]
+    },
+    {
+      "nome": "Cinza",
+      "hex": "#8A8790",
+      "disponiveis": [],
+      "fotos": [
+        "/uploads/produtos/conjunto-aura/cinza-1.jpg",
+        "/uploads/produtos/conjunto-aura/cinza-2.jpg",
+        "/uploads/produtos/conjunto-aura/cinza-3.jpg",
+        "/uploads/produtos/conjunto-aura/cinza-4.jpg"
+      ]
+    },
+    {
+      "nome": "Marsala",
+      "hex": "#7B2D42",
+      "disponiveis": [],
+      "fotos": [
+        "/uploads/produtos/conjunto-aura/marsala-1.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

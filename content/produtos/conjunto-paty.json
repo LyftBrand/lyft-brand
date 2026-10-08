@@ -1,0 +1,35 @@
+{
+  "nome": "Conjunto Paty",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 189.9,
+  "resumo": "Top gola + legging",
+  "descricao": "",
+  "detalhes": [
+    "Suplex poliamida"
+  ],
+  "grade": [
+    "Único"
+  ],
+  "observacao": "Tamanho único — veste do 36 ao 40.",
+  "destaque": true,
+  "novidade": false,
+  "ordem": 19,
+  "cores": [
+    {
+      "nome": "Marrom",
+      "hex": "#5A3A2E",
+      "disponiveis": [
+        "Único"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-paty/marrom-1.jpg",
+        "/uploads/produtos/conjunto-paty/marrom-2.jpg",
+        "/uploads/produtos/conjunto-paty/marrom-3.jpg",
+        "/uploads/produtos/conjunto-paty/marrom-4.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

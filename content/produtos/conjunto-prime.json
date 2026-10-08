@@ -1,0 +1,41 @@
+{
+  "nome": "Conjunto Prime",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 189.9,
+  "resumo": "",
+  "descricao": "Da academia ao cafezinho com as amigas.",
+  "detalhes": [],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": false,
+  "novidade": true,
+  "ordem": 16,
+  "cores": [
+    {
+      "nome": "Marsala",
+      "hex": "#7B2D42",
+      "disponiveis": [
+        "G"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-prime/marsala-1.jpg",
+        "/uploads/produtos/conjunto-prime/marsala-2.jpg"
+      ]
+    },
+    {
+      "nome": "Verde militar",
+      "hex": "#3F4F3A",
+      "disponiveis": [
+        "G"
+      ],
+      "fotos": []
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

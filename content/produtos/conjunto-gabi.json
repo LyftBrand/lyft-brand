@@ -1,0 +1,33 @@
+{
+  "nome": "Conjunto Gabi",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 189.9,
+  "resumo": "Top + legging",
+  "descricao": "",
+  "detalhes": [
+    "Suplex poliamida"
+  ],
+  "grade": [
+    "Único"
+  ],
+  "observacao": "Tamanho único — veste do 36 ao 40.",
+  "destaque": false,
+  "novidade": false,
+  "ordem": 23,
+  "cores": [
+    {
+      "nome": "Verde aloe",
+      "hex": "#6FAF95",
+      "disponiveis": [
+        "Único"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-gabi/verde-aloe-1.jpg",
+        "/uploads/produtos/conjunto-gabi/verde-aloe-2.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

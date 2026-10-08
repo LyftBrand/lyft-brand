@@ -1,0 +1,35 @@
+{
+  "nome": "Conjunto Icon",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 249.9,
+  "resumo": "Top + legging",
+  "descricao": "",
+  "detalhes": [
+    "Tule nas costas"
+  ],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": false,
+  "novidade": false,
+  "ordem": 9,
+  "cores": [
+    {
+      "nome": "Cinza",
+      "hex": "#8A8790",
+      "disponiveis": [],
+      "fotos": [
+        "/uploads/produtos/conjunto-icon/cinza-1.jpg",
+        "/uploads/produtos/conjunto-icon/cinza-2.jpg",
+        "/uploads/produtos/conjunto-icon/cinza-3.jpg",
+        "/uploads/produtos/conjunto-icon/cinza-4.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

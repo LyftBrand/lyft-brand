@@ -1,0 +1,33 @@
+{
+  "name": "lyft-brand-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=3000",
+    "build": "vite build && node scripts/gerar-estaticos.mjs",
+    "preview": "vite preview --port=4173",
+    "lint": "tsc --noEmit",
+    "fotos": "node scripts/preparar-fotos.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^1.53.0",
+    "motion": "^14.0.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-helmet-async": "^3.0.0",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "potrace": "^2.1.8",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "5.8",
+    "vite": "^6.4.4"
+  }
+}

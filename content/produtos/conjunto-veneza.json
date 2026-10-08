@@ -1,0 +1,42 @@
+{
+  "nome": "Conjunto Veneza",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 259.9,
+  "resumo": "",
+  "descricao": "",
+  "detalhes": [],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": false,
+  "novidade": false,
+  "ordem": 21,
+  "cores": [
+    {
+      "nome": "Verde mastruz",
+      "hex": "#7CC2B4",
+      "disponiveis": [
+        "G"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-veneza/verde-mastruz-1.jpg"
+      ]
+    },
+    {
+      "nome": "Rosa chiclete",
+      "hex": "#E8679A",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-veneza/rosa-chiclete-1.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

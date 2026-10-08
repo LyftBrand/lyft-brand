@@ -1,0 +1,42 @@
+{
+  "nome": "Conjunto Maine",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 189.9,
+  "resumo": "",
+  "descricao": "",
+  "detalhes": [],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": false,
+  "novidade": false,
+  "ordem": 22,
+  "cores": [
+    {
+      "nome": "Azul marinho",
+      "hex": "#1E2A4A",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-maine/azul-marinho-1.jpg"
+      ]
+    },
+    {
+      "nome": "Marsala",
+      "hex": "#7B2D42",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-maine/marsala-1.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

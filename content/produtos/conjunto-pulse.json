@@ -1,0 +1,45 @@
+{
+  "nome": "Conjunto Pulse",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 239.9,
+  "resumo": "Top + shorts",
+  "descricao": "Sustentação, conforto e zero transparência. Tecido que modela o corpo e acompanha cada movimento com segurança e estilo.",
+  "detalhes": [],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": true,
+  "novidade": false,
+  "ordem": 2,
+  "cores": [
+    {
+      "nome": "Off white",
+      "hex": "#EFEAE0",
+      "disponiveis": [
+        "M",
+        "G"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-pulse/off-white-1.jpg",
+        "/uploads/produtos/conjunto-pulse/off-white-2.jpg",
+        "/uploads/produtos/conjunto-pulse/off-white-3.jpg",
+        "/uploads/produtos/conjunto-pulse/off-white-4.jpg"
+      ]
+    },
+    {
+      "nome": "Verde",
+      "hex": "#2F6E6C",
+      "disponiveis": [],
+      "fotos": [
+        "/uploads/produtos/conjunto-pulse/verde-1.jpg",
+        "/uploads/produtos/conjunto-pulse/verde-2.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

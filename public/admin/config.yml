@@ -1,0 +1,161 @@
+# Painel de edição da Lyft (Decap CMS). Acesso: /admin
+# Cada "Publicar" salva no GitHub e a Netlify atualiza o site em cerca de 1 minuto.
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "Painel: novo produto {{slug}}"
+    update: "Painel: atualiza {{slug}}"
+    delete: "Painel: remove {{slug}}"
+    uploadMedia: "Painel: envia foto {{path}}"
+    deleteMedia: "Painel: apaga foto {{path}}"
+
+locale: pt
+site_url: /
+display_url: /
+logo_url: /logo.svg
+
+media_folder: public/uploads/painel
+public_folder: /uploads/painel
+
+collections:
+  - name: produtos
+    label: Produtos
+    label_singular: Produto
+    description: >
+      Para marcar uma cor como esgotada, abra o produto, vá na cor e tire os tamanhos de "Tamanhos disponíveis".
+      Para esconder um produto do site sem apagar, desligue "Mostrar no site".
+    folder: content/produtos
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: nome
+    slug: "{{slug}}"
+    summary: "{{nome}} · {{categoria}} · R$ {{preco}}"
+    sortable_fields: ["ordem", "nome", "preco"]
+    view_groups:
+      - { label: Categoria, field: categoria }
+    fields:
+      - { name: ativo, label: "Mostrar no site", widget: boolean, default: true }
+      - { name: nome, label: "Nome do produto", widget: string, hint: "Ex.: Conjunto Aura" }
+      - name: categoria
+        label: Categoria
+        widget: select
+        options: ["Conjuntos", "Macaquinhos", "Macacões", "Jaquetas", "Shorts", "Tops", "Leggings"]
+      - { name: preco, label: "Preço (R$)", widget: number, value_type: float, step: 0.01, hint: "Use ponto nos centavos. Ex.: 239.90" }
+      - { name: preco_promocional, label: "Preço promocional (R$)", widget: number, value_type: float, step: 0.01, required: false, hint: "Deixe vazio se não estiver em promoção." }
+      - { name: resumo, label: "Resumo curto", widget: string, required: false, hint: "Aparece embaixo do nome. Ex.: Top + legging" }
+      - name: grade
+        label: "Tamanhos que o modelo tem"
+        widget: select
+        multiple: true
+        options: ["P", "M", "G", "GG", "Único"]
+        hint: "Todos os tamanhos do modelo, mesmo os esgotados. Tamanho único: escolha só Único."
+      - name: cores
+        label: Cores
+        label_singular: Cor
+        widget: list
+        summary: "{{fields.nome}}"
+        hint: "A primeira cor disponível é a que aparece primeiro no site."
+        fields:
+          - { name: nome, label: "Nome da cor", widget: string, hint: "Ex.: Verde mastruz" }
+          - { name: hex, label: "Cor da bolinha", widget: color, default: "#B4988F" }
+          - name: disponiveis
+            label: "Tamanhos disponíveis"
+            widget: select
+            multiple: true
+            required: false
+            options: ["P", "M", "G", "GG", "Único"]
+            hint: "Deixe vazio quando a cor esgotar. O site mostra o botão Avisar quando repor."
+          - name: fotos
+            label: Fotos desta cor
+            widget: list
+            required: false
+            field: { name: foto, label: Foto, widget: image, choose_url: false }
+            hint: "Arraste para mudar a ordem. A primeira foto é a capa."
+      - { name: descricao, label: "Descrição", widget: text, required: false }
+      - name: detalhes
+        label: "Detalhes"
+        widget: list
+        required: false
+        field: { name: detalhe, label: Detalhe, widget: string }
+        hint: "Um item por linha. Ex.: Suplex poliamida"
+      - { name: observacao, label: "Observação de tamanho", widget: string, required: false, hint: "Ex.: Tamanho único — veste do 36 ao 40." }
+      - { name: destaque, label: "Aparece na página inicial", widget: boolean, default: false }
+      - { name: novidade, label: "Selo de novidade", widget: boolean, default: false }
+      - { name: ordem, label: "Ordem no catálogo", widget: number, value_type: int, default: 99, hint: "Números menores aparecem primeiro." }
+      - name: fotos_extras
+        label: "Fotos gerais (opcional)"
+        widget: list
+        required: false
+        collapsed: true
+        field: { name: foto, label: Foto, widget: image, choose_url: false }
+        hint: "Aparecem em todas as cores, depois das fotos da cor."
+      - { name: nota_foto, label: "Aviso sobre a foto (opcional)", widget: string, required: false, hint: "Ex.: Foto ilustrativa em outra cor." }
+
+  - name: site
+    label: "Textos e contatos"
+    editor: { preview: false }
+    files:
+      - name: config
+        label: "Configurações do site"
+        file: content/config.json
+        fields:
+          - { name: whatsapp, label: "WhatsApp (só números, com 55 e DDD)", widget: string, hint: "Ex.: 5519991370204" }
+          - { name: mensagem_padrao, label: "Mensagem inicial do WhatsApp", widget: text }
+          - { name: instagram, label: "Instagram (sem @)", widget: string }
+          - { name: email, label: "E-mail", widget: string }
+          - { name: aviso_topo, label: "Faixa no topo do site", widget: string, required: false, hint: "Deixe vazio para esconder." }
+          - { name: parcelamento, label: "Parcelamento", widget: string, hint: "Ex.: Até 6x no cartão de crédito" }
+          - { name: colecao, label: "Nome da coleção", widget: string }
+          - { name: slogan, label: "Slogan", widget: string }
+          - name: hero
+            label: "Topo da página inicial"
+            widget: object
+            fields:
+              - { name: titulo, label: "Título", widget: string, hint: "O que vem depois da vírgula fica em itálico." }
+              - { name: texto, label: "Texto", widget: text }
+              - { name: imagem, label: "Foto principal", widget: image, choose_url: false }
+              - { name: imagem_2, label: "Foto do bloco Do treino ao café", widget: image, choose_url: false }
+          - name: beneficios
+            label: "Diferenciais (faixa rosé)"
+            widget: list
+            field: { name: item, label: Item, widget: string }
+          - name: sobre
+            label: "A fundadora"
+            widget: object
+            fields:
+              - { name: titulo, label: "Frase de destaque", widget: string }
+              - { name: texto, label: "Texto", widget: text }
+              - { name: assinatura, label: "Assinatura", widget: string }
+              - { name: imagem, label: "Foto", widget: image, choose_url: false }
+          - name: embalagem
+            label: "Bloco da embalagem"
+            widget: object
+            fields:
+              - { name: titulo, label: "Título", widget: string }
+              - { name: imagem, label: "Foto", widget: image, choose_url: false }
+          - name: medidas
+            label: "Tabela de medidas"
+            widget: list
+            summary: "{{fields.tamanho}} · {{fields.numeracao}}"
+            fields:
+              - { name: tamanho, label: Tamanho, widget: string }
+              - { name: numeracao, label: "Veste", widget: string }
+          - name: instagram_fotos
+            label: "Fotos da faixa do Instagram (6)"
+            widget: list
+            field: { name: foto, label: Foto, widget: image, choose_url: false }
+      - name: depoimentos
+        label: "Depoimentos de clientes"
+        file: content/depoimentos.json
+        fields:
+          - name: itens
+            label: Depoimentos
+            label_singular: Depoimento
+            widget: list
+            summary: "{{fields.texto}}"
+            fields:
+              - { name: texto, label: "O que a cliente disse", widget: text }
+              - { name: origem, label: "Origem", widget: string, default: "Cliente Lyft · WhatsApp" }

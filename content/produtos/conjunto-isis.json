@@ -1,0 +1,67 @@
+{
+  "nome": "Conjunto Isis",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 179.9,
+  "resumo": "Top + legging",
+  "descricao": "",
+  "detalhes": [
+    "Suplex light"
+  ],
+  "grade": [
+    "Único"
+  ],
+  "observacao": "Tamanho único — veste do 36 ao 40.",
+  "destaque": true,
+  "novidade": true,
+  "ordem": 8,
+  "cores": [
+    {
+      "nome": "Rosa vintage",
+      "hex": "#B8456E",
+      "disponiveis": [
+        "Único"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-isis/rosa-vintage-1.jpg",
+        "/uploads/produtos/conjunto-isis/rosa-vintage-2.jpg",
+        "/uploads/produtos/conjunto-isis/rosa-vintage-3.jpg"
+      ]
+    },
+    {
+      "nome": "Verde botânico",
+      "hex": "#1F5B5E",
+      "disponiveis": [
+        "Único"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-isis/verde-botanico-1.jpg",
+        "/uploads/produtos/conjunto-isis/verde-botanico-2.jpg",
+        "/uploads/produtos/conjunto-isis/verde-botanico-3.jpg"
+      ]
+    },
+    {
+      "nome": "Preto",
+      "hex": "#1C1A1A",
+      "disponiveis": [
+        "Único"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-isis/preto-1.jpg",
+        "/uploads/produtos/conjunto-isis/preto-2.jpg"
+      ]
+    },
+    {
+      "nome": "Azul bic",
+      "hex": "#1D3C78",
+      "disponiveis": [
+        "Único"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-isis/azul-bic-1.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

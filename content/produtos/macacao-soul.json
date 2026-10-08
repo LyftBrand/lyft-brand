@@ -1,0 +1,34 @@
+{
+  "nome": "Macacão Soul",
+  "ativo": true,
+  "categoria": "Macacões",
+  "preco": 189.9,
+  "resumo": "",
+  "descricao": "",
+  "detalhes": [],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": false,
+  "novidade": false,
+  "ordem": 15,
+  "cores": [
+    {
+      "nome": "Marrom",
+      "hex": "#5A3A2E",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": [
+        "/uploads/produtos/macacao-soul/marrom-1.jpg",
+        "/uploads/produtos/macacao-soul/marrom-2.jpg",
+        "/uploads/produtos/macacao-soul/marrom-3.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

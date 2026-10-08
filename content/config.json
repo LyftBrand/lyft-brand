@@ -1,0 +1,46 @@
+{
+  "whatsapp": "5519991370204",
+  "mensagem_padrao": "Olá! Vim pelo site da Lyft e quero ajuda para escolher meu look.",
+  "instagram": "lyft.brand",
+  "email": "lyftbrandwear@gmail.com",
+  "aviso_topo": "10% OFF na primeira compra · Enviamos para todo o Brasil",
+  "parcelamento": "Até 6x no cartão de crédito",
+  "colecao": "Coleção Elevate 2026",
+  "slogan": "Movimente seu corpo, eleve sua confiança.",
+  "hero": {
+    "titulo": "Movimente seu corpo, eleve sua confiança.",
+    "texto": "Nossas peças unem design sofisticado, caimento impecável e tecidos tecnológicos que proporcionam conforto e durabilidade.",
+    "imagem": "/uploads/marca/hero.jpg",
+    "imagem_2": "/uploads/marca/hero-2.jpg"
+  },
+  "beneficios": [
+    "Compressão na medida",
+    "Zero transparência",
+    "Tecido poliamida e elastano",
+    "Até 6x no cartão"
+  ],
+  "sobre": {
+    "titulo": "Eu pensei em cada peça como se fosse pra mim, porque é.",
+    "texto": "Depois de muito tempo planejando, pesquisando fornecedores, escolhendo cada detalhe de qualidade, conforto e beleza, nasceu a minha marca fitness.\n\nA Lyft não é só roupa de treino. É para mulheres lindas e confiantes em qualquer momento.\n\nAs peças são exclusivas e limitadas.",
+    "assinatura": "Juliana Coletti, fundadora da Lyft",
+    "imagem": "/uploads/marca/fundadora.jpg"
+  },
+  "embalagem": {
+    "titulo": "Seu pedido chega com carinho, cuidado e propósito.",
+    "imagem": "/uploads/marca/embalagem.jpg"
+  },
+  "medidas": [
+    { "tamanho": "P", "numeracao": "36 / 38" },
+    { "tamanho": "M", "numeracao": "38 / 40" },
+    { "tamanho": "G", "numeracao": "40 / 42" },
+    { "tamanho": "Único", "numeracao": "Veste do 36 ao 40" }
+  ],
+  "instagram_fotos": [
+    "/uploads/marca/ig-1.jpg",
+    "/uploads/marca/ig-2.jpg",
+    "/uploads/marca/ig-3.jpg",
+    "/uploads/marca/ig-4.jpg",
+    "/uploads/marca/ig-5.jpg",
+    "/uploads/marca/ig-6.jpg"
+  ]
+}

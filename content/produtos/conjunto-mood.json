@@ -1,0 +1,44 @@
+{
+  "nome": "Conjunto Mood",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 259.9,
+  "resumo": "Top + legging",
+  "descricao": "",
+  "detalhes": [
+    "Suplex poliamida"
+  ],
+  "grade": [
+    "Único"
+  ],
+  "observacao": "Tamanho único — veste do 36 ao 40.",
+  "destaque": true,
+  "novidade": false,
+  "ordem": 6,
+  "cores": [
+    {
+      "nome": "Marrom",
+      "hex": "#5A3A2E",
+      "disponiveis": [
+        "Único"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-mood/marrom-1.jpg",
+        "/uploads/produtos/conjunto-mood/marrom-2.jpg"
+      ]
+    },
+    {
+      "nome": "Verde militar",
+      "hex": "#3F4F3A",
+      "disponiveis": [
+        "Único"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-mood/verde-militar-1.jpg",
+        "/uploads/produtos/conjunto-mood/verde-militar-2.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

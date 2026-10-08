@@ -1,0 +1,36 @@
+{
+  "nome": "Jaqueta Bliss",
+  "ativo": true,
+  "categoria": "Jaquetas",
+  "preco": 259.9,
+  "resumo": "Corta vento",
+  "descricao": "A corta vento preta da Lyft é aquela peça curinga que transforma qualquer look.",
+  "detalhes": [],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": true,
+  "novidade": false,
+  "ordem": 12,
+  "cores": [
+    {
+      "nome": "Preta",
+      "hex": "#1C1A1A",
+      "disponiveis": [
+        "M",
+        "G"
+      ],
+      "fotos": [
+        "/uploads/produtos/jaqueta-bliss/preta-1.jpg",
+        "/uploads/produtos/jaqueta-bliss/preta-2.jpg",
+        "/uploads/produtos/jaqueta-bliss/preta-3.jpg",
+        "/uploads/produtos/jaqueta-bliss/preta-4.jpg"
+      ]
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

@@ -1,0 +1,49 @@
+{
+  "nome": "Conjunto Camila",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 259.9,
+  "resumo": "",
+  "descricao": "",
+  "detalhes": [],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": false,
+  "novidade": false,
+  "ordem": 3,
+  "cores": [
+    {
+      "nome": "Verde mastruz",
+      "hex": "#7CC2B4",
+      "disponiveis": [
+        "P"
+      ],
+      "fotos": [
+        "/uploads/produtos/conjunto-camila/verde-mastruz-1.jpg",
+        "/uploads/produtos/conjunto-camila/verde-mastruz-2.jpg"
+      ]
+    },
+    {
+      "nome": "Rosa chiclete",
+      "hex": "#E8679A",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": []
+    },
+    {
+      "nome": "Satim (lilás)",
+      "hex": "#B9A3C9",
+      "disponiveis": [
+        "G"
+      ],
+      "fotos": []
+    }
+  ],
+  "fotos_extras": [],
+  "nota_foto": ""
+}

@@ -1,0 +1,32 @@
+{
+  "nome": "Conjunto Valentina",
+  "ativo": true,
+  "categoria": "Conjuntos",
+  "preco": 189.9,
+  "resumo": "",
+  "descricao": "",
+  "detalhes": [],
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "observacao": "",
+  "destaque": false,
+  "novidade": false,
+  "ordem": 17,
+  "cores": [
+    {
+      "nome": "Pink",
+      "hex": "#E2408A",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": []
+    }
+  ],
+  "fotos_extras": [
+    "/uploads/produtos/conjunto-valentina/_geral-1.jpg"
+  ],
+  "nota_foto": "Foto ilustrativa em outra cor. Disponível na cor pink."
+}
