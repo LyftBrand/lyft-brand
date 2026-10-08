@@ -50,6 +50,9 @@ export interface Pedido {
  * sendBeacon continua mesmo que a página troque para o WhatsApp logo em seguida.
  */
 export function enviarLead(contato: Contato, pedido: Pedido) {
+  // O contato vem guardado; a origem não. Ela é relida a cada clique, para cada pedido
+  // ficar com a UTM da visita atual (e não com a da primeira vez que a cliente preencheu).
+  registrarOrigem();
   const primeira: Origem = ler(localStorage, CHAVE_PRIMEIRA) ?? {};
   const ultima: Origem = ler(sessionStorage, CHAVE_ULTIMA) ?? {};
   const cookies = lerPreferencias();
@@ -95,6 +98,7 @@ export function enviarLead(contato: Contato, pedido: Pedido) {
     tt_event_name: 'SubmitForm',
   });
 
+  if (import.meta.env.DEV) (window as unknown as { __ultimoLead: unknown }).__ultimoLead = dados;
   const url = config.planilha_url?.trim();
   if (!url) {
     if (import.meta.env.DEV) console.info('[lead] planilha_url vazia: contato não enviado', dados);
