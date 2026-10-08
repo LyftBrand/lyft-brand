@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { categorias, config } from '../lib/content';
-import { linkInstagram, linkWhatsapp, track } from '../lib/utils';
+import { linkInstagram } from '../lib/utils';
+import { abrirCentralCookies } from '../lib/consent';
+import { BotaoWhatsapp } from './Lead';
 import { Logo } from './Header';
 import { InstagramIcon, WhatsappIcon } from './Icons';
 
@@ -32,14 +34,15 @@ export default function Footer() {
           <Link to="/catalogo#medidas" className="link-u w-fit">Tabela de medidas</Link>
           <span>{config.parcelamento}</span>
           <span>Enviamos para todo o Brasil</span>
+          <Link to="/politica-de-privacidade" className="link-u w-fit">Política de Privacidade</Link>
+          <button onClick={abrirCentralCookies} className="link-u w-fit text-left">Preferências de cookies</button>
         </div>
 
         <div className="flex flex-col gap-3">
           <span className="eyebrow text-paper/50">Atendimento</span>
-          <a href={linkWhatsapp()} target="_blank" rel="noopener" className="link-u w-fit inline-flex items-center gap-2"
-            onClick={() => track('whatsapp_click', { local: 'rodape' })}>
+          <BotaoWhatsapp pedido={{ origem: 'rodape', mensagem: config.mensagem_padrao }} className="link-u w-fit inline-flex items-center gap-2">
             <WhatsappIcon className="w-4 h-4" /> {telefone(config.whatsapp)}
-          </a>
+          </BotaoWhatsapp>
           <a href={linkInstagram()} target="_blank" rel="noopener" className="link-u w-fit inline-flex items-center gap-2">
             <InstagramIcon className="w-4 h-4" /> @{config.instagram}
           </a>
@@ -49,7 +52,7 @@ export default function Footer() {
       <div className="border-t border-paper/10">
         <div className="container-x py-6 flex flex-col sm:flex-row gap-2 justify-between text-xs text-paper/45">
           <span>© {new Date().getFullYear()} Lyft · {config.colecao}</span>
-          <span>Site por Lemos83</span>
+          <span>Feito com <span aria-label="amor">🤎</span> por Lemos83 | Digital Marketing Solutions</span>
         </div>
       </div>
     </footer>

@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { config, depoimentos } from '../lib/content';
-import { linkInstagram, linkWhatsapp, track } from '../lib/utils';
+import { linkInstagram, track } from '../lib/utils';
+import { BotaoWhatsapp } from './Lead';
 import { InstagramIcon, WhatsappIcon } from './Icons';
 import SmartImage from './SmartImage';
 
@@ -98,10 +99,9 @@ export function ChamadaWhatsapp({ titulo = 'Ficou com dúvida no tamanho ou na c
           <h2 className="display text-[34px] md:text-[48px]">{titulo}</h2>
           <p className="mt-4 text-paper/70 text-lg">{texto}</p>
         </div>
-        <a href={linkWhatsapp()} target="_blank" rel="noopener" className="btn btn-light shrink-0"
-          onClick={() => track('whatsapp_click', { local: 'chamada' })}>
+        <BotaoWhatsapp pedido={{ origem: 'chamada', mensagem: config.mensagem_padrao }} className="btn btn-light shrink-0">
           <WhatsappIcon className="w-4 h-4 text-[#1DA851]" /> Chamar no WhatsApp
-        </a>
+        </BotaoWhatsapp>
       </div>
     </section>
   );

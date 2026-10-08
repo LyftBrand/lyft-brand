@@ -104,6 +104,9 @@ collections:
         fields:
           - { name: whatsapp, label: "WhatsApp (só números, com 55 e DDD)", widget: string, hint: "Ex.: 5519991370204" }
           - { name: mensagem_padrao, label: "Mensagem inicial do WhatsApp", widget: text }
+          - { name: formulario_ativo, label: "Pedir nome e WhatsApp antes de abrir o WhatsApp", widget: boolean, default: true, hint: "Desligue se perceber que o formulário está fazendo clientes desistirem." }
+          - { name: email_obrigatorio, label: "E-mail obrigatório no formulário", widget: boolean, default: true }
+          - { name: planilha_url, label: "Endereço da planilha (Apps Script)", widget: string, required: false, hint: "URL do App da Web que termina em /exec. Veja apps-script/LEIA-ME.md." }
           - { name: instagram, label: "Instagram (sem @)", widget: string }
           - { name: email, label: "E-mail", widget: string }
           - { name: aviso_topo, label: "Faixa no topo do site", widget: string, required: false, hint: "Deixe vazio para esconder." }

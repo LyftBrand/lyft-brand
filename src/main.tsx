@@ -4,9 +4,14 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import { lerCupomDaUrl } from './lib/utils';
+import { iniciarConsentimento } from './lib/consent';
+import { registrarOrigem } from './lib/lead';
 import './index.css';
 
 lerCupomDaUrl();
+registrarOrigem();
+// Antes do GTM: cookies analíticos e de anúncio começam negados até a visitante escolher.
+iniciarConsentimento();
 
 // GTM só entra se o ID estiver configurado na Netlify (VITE_GTM_ID).
 const GTM = import.meta.env.VITE_GTM_ID;

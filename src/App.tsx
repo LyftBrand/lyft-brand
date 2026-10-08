@@ -8,6 +8,9 @@ import Catalogo from './pages/Catalogo';
 import Produto from './pages/Produto';
 import Marca from './pages/Marca';
 import NaoEncontrada from './pages/NaoEncontrada';
+import Privacidade from './pages/Privacidade';
+import CookieConsent from './components/CookieConsent';
+import { LeadProvider } from './components/Lead';
 import { track } from './lib/utils';
 
 /** Volta ao topo ao trocar de página (mas não ao trocar de cor/filtro). */
@@ -23,7 +26,7 @@ function Rolagem() {
 
 export default function App() {
   return (
-    <>
+    <LeadProvider>
       <Rolagem />
       <Header />
       <main>
@@ -32,11 +35,13 @@ export default function App() {
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/produto/:slug" element={<Produto />} />
           <Route path="/a-marca" element={<Marca />} />
+          <Route path="/politica-de-privacidade" element={<Privacidade />} />
           <Route path="*" element={<NaoEncontrada />} />
         </Routes>
       </main>
       <Footer />
       <FloatingWhatsapp />
-    </>
+      <CookieConsent />
+    </LeadProvider>
   );
 }

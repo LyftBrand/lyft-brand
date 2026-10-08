@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { categorias, config, corInicial, fotosDaCor, produtos } from '../lib/content';
-import { linkWhatsapp, track } from '../lib/utils';
+import { BotaoWhatsapp } from '../components/Lead';
 import ProductCard from '../components/ProductCard';
 import SmartImage from '../components/SmartImage';
 import Seo from '../components/Seo';
@@ -40,10 +40,9 @@ export default function Home() {
           <p className="mt-6 text-[17px] leading-relaxed text-ink-soft max-w-md">{config.hero.texto}</p>
           <div className="mt-9 flex flex-col sm:flex-row gap-3">
             <Link to="/catalogo" className="btn btn-dark">Ver catálogo <ArrowRight className="w-4 h-4" strokeWidth={1.5} /></Link>
-            <a href={linkWhatsapp()} target="_blank" rel="noopener" className="btn btn-line"
-              onClick={() => track('whatsapp_click', { local: 'hero' })}>
+            <BotaoWhatsapp pedido={{ origem: 'inicio', mensagem: config.mensagem_padrao }} className="btn btn-line">
               <WhatsappIcon className="w-4 h-4" /> Pedir pelo WhatsApp
-            </a>
+            </BotaoWhatsapp>
           </div>
           <p className="mt-8 text-sm text-muted">{config.parcelamento} · {produtos.length} modelos no catálogo</p>
         </div>

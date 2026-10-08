@@ -8,7 +8,7 @@ const produtos = fs.readdirSync(dir).filter((f) => f.endsWith('.json'))
   .map((f) => ({ slug: f.replace(/\.json$/, ''), ...JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')) }))
   .filter((p) => p.ativo !== false);
 
-const urls = ['/', '/catalogo', '/a-marca', ...produtos.map((p) => `/produto/${p.slug}`)];
+const urls = ['/', '/catalogo', '/a-marca', '/politica-de-privacidade', ...produtos.map((p) => `/produto/${p.slug}`)];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${SITE}${u}</loc></url>`).join('\n')}

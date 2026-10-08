@@ -3,6 +3,7 @@ import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { Check, ChevronLeft, ChevronRight, Link2, Ruler, X } from 'lucide-react';
 import { config, corDisponivel, corInicial, fotoEhDeOutraCor, fotosDaCor, precoFinal, produtos, type Cor } from '../lib/content';
 import { brl, img, linkWhatsapp, parcela, track } from '../lib/utils';
+import { usePedido } from '../components/Lead';
 import SmartImage from '../components/SmartImage';
 import ProductCard, { Swatch } from '../components/ProductCard';
 import Seo from '../components/Seo';
@@ -109,6 +110,7 @@ export default function Produto() {
   const [aviso, setAviso] = useState(false);
   const [copiado, setCopiado] = useState(false);
   const [medidas, setMedidas] = useState(false);
+  const pedirLead = usePedido();
 
   // Ao trocar de cor: se só há um tamanho disponível, ele já vem marcado.
   useEffect(() => {
@@ -141,13 +143,19 @@ export default function Produto() {
     : `Olá, Ju! O *${p.nome}* na cor *${cor.nome}* está esgotado no site. Você me avisa quando repor?\n\n${url}`;
 
   const pedir = (e: React.MouseEvent) => {
+    e.preventDefault();
     if (disponivel && !tamanho && !unico) {
-      e.preventDefault();
       setAviso(true);
       document.getElementById('tamanhos')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
-    track(disponivel ? 'whatsapp_click' : 'whatsapp_reposicao', { local: 'produto', item_id: p.slug, cor: cor.nome, tamanho, value: preco, currency: 'BRL' });
+    if (!disponivel) track('whatsapp_reposicao', { item_id: p.slug, cor: cor.nome });
+    pedirLead({
+      origem: disponivel ? 'produto' : 'reposicao',
+      mensagem, produto: p.nome, cor: cor.nome,
+      tamanho: disponivel ? (tamanho || cor.disponiveis[0]) : '',
+      preco, url_produto: url,
+    });
   };
 
   const copiar = async () => {

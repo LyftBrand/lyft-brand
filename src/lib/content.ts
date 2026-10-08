@@ -33,6 +33,11 @@ export interface Produto {
 export interface Config {
   whatsapp: string;
   mensagem_padrao: string;
+  /** Pede nome/WhatsApp/e-mail antes de abrir o WhatsApp. */
+  formulario_ativo: boolean;
+  email_obrigatorio: boolean;
+  /** URL do App da Web do Google Apps Script que grava na planilha. */
+  planilha_url: string;
   instagram: string;
   email: string;
   aviso_topo: string;

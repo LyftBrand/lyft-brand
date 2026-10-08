@@ -1,6 +1,9 @@
 {
   "whatsapp": "5519991370204",
   "mensagem_padrao": "Olá! Vim pelo site da Lyft e quero ajuda para escolher meu look.",
+  "formulario_ativo": true,
+  "email_obrigatorio": true,
+  "planilha_url": "",
   "instagram": "lyft.brand",
   "email": "lyftbrandwear@gmail.com",
   "aviso_topo": "10% OFF na primeira compra · Enviamos para todo o Brasil",
@@ -30,10 +33,22 @@
     "imagem": "/uploads/marca/embalagem.jpg"
   },
   "medidas": [
-    { "tamanho": "P", "numeracao": "36 / 38" },
-    { "tamanho": "M", "numeracao": "38 / 40" },
-    { "tamanho": "G", "numeracao": "40 / 42" },
-    { "tamanho": "Único", "numeracao": "Veste do 36 ao 40" }
+    {
+      "tamanho": "P",
+      "numeracao": "36 / 38"
+    },
+    {
+      "tamanho": "M",
+      "numeracao": "38 / 40"
+    },
+    {
+      "tamanho": "G",
+      "numeracao": "40 / 42"
+    },
+    {
+      "tamanho": "Único",
+      "numeracao": "Veste do 36 ao 40"
+    }
   ],
   "instagram_fotos": [
     "/uploads/marca/ig-1.jpg",
