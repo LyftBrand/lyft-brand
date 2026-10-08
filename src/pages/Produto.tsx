@@ -33,8 +33,9 @@ function Galeria({ fotos, nome, nota }: { fotos: string[]; nome: string; nota?: 
     if (el) setI(Math.round(el.scrollLeft / el.clientWidth));
   };
 
+  // Tudo dentro de um único bloco: senão o aviso da foto vira um item solto da grade e empurra as informações para baixo.
   return (
-    <>
+    <div className="min-w-0">
       {/* Celular: carrossel com arrastar */}
       <div className="md:hidden relative -mx-4">
         <div ref={trilho} onScroll={onScroll} className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar">
@@ -78,7 +79,7 @@ function Galeria({ fotos, nome, nota }: { fotos: string[]; nome: string; nota?: 
           </>}
         </div>
       )}
-    </>
+    </div>
   );
 }
 
