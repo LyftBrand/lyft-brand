@@ -110,6 +110,7 @@ collections:
           - { name: instagram, label: "Instagram (sem @)", widget: string }
           - { name: email, label: "E-mail", widget: string }
           - { name: aviso_topo, label: "Faixa no topo do site", widget: string, required: false, hint: "Deixe vazio para esconder." }
+          - { name: cupom_topo, label: "Cupom da faixa do topo", widget: string, required: false, hint: "Aparece clicável na faixa. Ex.: PRIMEIRACOMPRA. Deixe vazio para não mostrar." }
           - { name: parcelamento, label: "Parcelamento", widget: string, hint: "Ex.: Até 6x no cartão de crédito" }
           - { name: colecao, label: "Nome da coleção", widget: string }
           - { name: slogan, label: "Slogan", widget: string }

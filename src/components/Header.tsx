@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Check, Menu, X } from 'lucide-react';
 import { categorias, config } from '../lib/content';
-import { linkInstagram, track } from '../lib/utils';
+import { cupomAtivo, linkInstagram, salvarCupom, track } from '../lib/utils';
 import { BotaoWhatsapp } from './Lead';
 import { InstagramIcon, WhatsappIcon } from './Icons';
 
@@ -14,6 +14,40 @@ const nav = [
 
 export function Logo({ className = 'h-7', claro = false }: { className?: string; claro?: boolean }) {
   return <img src={claro ? '/logo-claro.svg' : '/logo.svg'} alt="Lyft" className={className} width={139} height={100} />;
+}
+
+/** Faixa preta do topo. O cupom é um botão: tocou, fica aplicado na mensagem do WhatsApp. */
+function FaixaTopo() {
+  const cupom = config.cupom_topo?.trim().toUpperCase() ?? '';
+  const [aplicado, setAplicado] = useState(() => !!cupom && cupomAtivo() === cupom);
+  useEffect(() => {
+    const on = () => setAplicado(!!cupom && cupomAtivo() === cupom);
+    window.addEventListener('lyft:cupom', on);
+    return () => window.removeEventListener('lyft:cupom', on);
+  }, [cupom]);
+  if (!config.aviso_topo && !cupom) return null;
+  const partes = config.aviso_topo.split('·').map((p) => p.trim()).filter(Boolean);
+
+  const aplicar = () => {
+    salvarCupom(cupom);
+    track('cupom_informado', { cupom, local: 'faixa_topo' });
+  };
+
+  return (
+    <div className="bg-ink text-paper text-center text-[10.5px] sm:text-xs tracking-[.14em] uppercase py-2 px-3 flex items-center justify-center gap-x-2.5 gap-y-1 flex-wrap min-h-9">
+      {partes[0] && <span>{partes[0]}</span>}
+      {cupom && (
+        <button type="button" onClick={aplicar} disabled={aplicado}
+          title={aplicado ? 'Cupom aplicado' : 'Toque para aplicar o cupom'}
+          className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 transition ${aplicado ? 'border-paper/30 text-paper/80' : 'border-dashed border-paper/60 hover:bg-paper hover:text-ink'}`}>
+          {aplicado ? <><Check className="w-3 h-3" /> {cupom} aplicado</> : <>Cupom <strong className="font-semibold">{cupom}</strong></>}
+        </button>
+      )}
+      {partes.slice(1).map((parte) => (
+        <span key={parte} className="hidden md:inline"><span className="text-paper/40 mr-2.5">·</span>{parte}</span>
+      ))}
+    </div>
+  );
 }
 
 export default function Header() {
@@ -35,13 +69,7 @@ export default function Header() {
 
   return (
     <>
-      {config.aviso_topo && (
-        <div className="bg-ink text-paper text-center text-[10.5px] sm:text-xs tracking-[.14em] uppercase py-2.5 px-4">
-          {config.aviso_topo.split('·').map((parte, i) => (
-            <span key={i} className={i > 0 ? 'hidden sm:inline' : ''}>{i > 0 && ' · '}{parte.trim()}</span>
-          ))}
-        </div>
-      )}
+      <FaixaTopo />
       <header className={`sticky top-0 z-40 bg-paper/90 backdrop-blur-md transition-shadow ${rolou ? 'shadow-[0_1px_0_var(--color-line)]' : ''}`}>
         <div className="container-x h-16 md:h-20 grid grid-cols-[1fr_auto_1fr] items-center">
           <div className="flex items-center">

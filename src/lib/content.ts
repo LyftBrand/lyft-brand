@@ -41,6 +41,8 @@ export interface Config {
   instagram: string;
   email: string;
   aviso_topo: string;
+  /** Cupom que aparece clicável na faixa do topo. */
+  cupom_topo?: string;
   parcelamento: string;
   colecao: string;
   slogan: string;

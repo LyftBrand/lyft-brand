@@ -39,6 +39,8 @@ export function lerCupomDaUrl() {
 export function salvarCupom(c: string) {
   const v = c.trim().toUpperCase().replace(/\s+/g, '').slice(0, 30);
   try { if (v) sessionStorage.setItem(CUPOM_KEY, v); else sessionStorage.removeItem(CUPOM_KEY); } catch { /* sem storage */ }
+  // Avisa a faixa do topo e o campo de cupom, que podem estar abertos ao mesmo tempo.
+  window.dispatchEvent(new Event('lyft:cupom'));
   return v;
 }
 

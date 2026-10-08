@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Check, Tag } from 'lucide-react';
 import { cupomAtivo, salvarCupom, track } from '../lib/utils';
 
@@ -12,6 +12,13 @@ export default function Cupom({ compacto = false }: { compacto?: boolean }) {
   const [aberto, setAberto] = useState(!!valor);
   const [abriuAgora, setAbriuAgora] = useState(false);
   const aplicado = cupomAtivo();
+
+  // Cupom aplicado pela faixa do topo aparece aqui também.
+  useEffect(() => {
+    const on = () => { const v = cupomAtivo(); setValor(v); if (v) setAberto(true); };
+    window.addEventListener('lyft:cupom', on);
+    return () => window.removeEventListener('lyft:cupom', on);
+  }, []);
 
   if (!aberto) {
     return (
