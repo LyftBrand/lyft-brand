@@ -30,7 +30,7 @@ export default function Home() {
       {/* Topo */}
       <section className="md:grid md:grid-cols-2 md:min-h-[calc(100svh-120px)] bg-nude">
         <div className="relative aspect-[4/5] md:aspect-auto md:order-2 overflow-hidden">
-          <SmartImage src={config.hero.imagem} alt="Juliana Coletti com o Conjunto Paty e a sacola Lyft" priority
+          <SmartImage src={config.hero.imagem} alt="Juliana Colet com o Conjunto Paty e a sacola Lyft" priority
             widths={[640, 960, 1280, 1600]} sizes="(min-width:768px) 50vw, 100vw" quality={80}
             className="absolute inset-0 h-full w-full object-cover object-[50%_25%]" />
         </div>
@@ -100,7 +100,7 @@ export default function Home() {
       {/* Fundadora */}
       <section className="container-x py-20 md:py-28 grid md:grid-cols-[5fr_6fr] gap-10 md:gap-20 items-center">
         <div className="relative aspect-[4/5] overflow-hidden bg-nude">
-          <SmartImage src={config.sobre.imagem} alt="Juliana Coletti, fundadora da Lyft" widths={[480, 800, 1100]} sizes="(min-width:768px) 45vw, 100vw"
+          <SmartImage src={config.sobre.imagem} alt="Juliana Colet, fundadora da Lyft" widths={[480, 800, 1100]} sizes="(min-width:768px) 45vw, 100vw"
             className="absolute inset-0 h-full w-full object-cover" />
         </div>
         <div>

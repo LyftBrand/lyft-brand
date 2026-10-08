@@ -8,7 +8,7 @@ import { ChamadaWhatsapp, Depoimentos, FaixaBeneficios } from '../components/Sec
 export default function Marca() {
   return (
     <>
-      <Seo title="A marca" description={`A Lyft é a marca de moda fitness de Juliana Coletti. ${config.slogan}`} />
+      <Seo title="A marca" description={`A Lyft é a marca de moda fitness de Juliana Colet. ${config.slogan}`} />
 
       <section className="bg-nude">
         <div className="container-x py-14 md:py-24 grid md:grid-cols-2 gap-10 md:gap-20 items-center">
@@ -28,7 +28,7 @@ export default function Marca() {
 
       <section className="container-x py-20 md:py-28 grid md:grid-cols-[5fr_6fr] gap-10 md:gap-20 items-start">
         <div className="relative aspect-[4/5] overflow-hidden bg-nude md:sticky md:top-28">
-          <SmartImage src={config.sobre.imagem} alt="Juliana Coletti, fundadora da Lyft" widths={[480, 800, 1100]} sizes="(min-width:768px) 45vw, 100vw"
+          <SmartImage src={config.sobre.imagem} alt="Juliana Colet, fundadora da Lyft" widths={[480, 800, 1100]} sizes="(min-width:768px) 45vw, 100vw"
             className="absolute inset-0 h-full w-full object-cover" />
         </div>
         <div className="md:pt-10">
