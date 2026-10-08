@@ -5,6 +5,7 @@ import { config } from '../lib/content';
 import { contatoSalvo, enviarLead, lembrarContato, type Contato, type Pedido } from '../lib/lead';
 import { brl, linkWhatsapp, track } from '../lib/utils';
 import { WhatsappIcon } from './Icons';
+import Cupom from './Cupom';
 
 const Ctx = createContext<(p: Pedido) => void>(() => {});
 export const usePedido = () => useContext(Ctx);
@@ -137,6 +138,7 @@ function LeadModal({ pedido, onClose }: { pedido: Pedido; onClose: () => void })
             <span className="text-[13px] font-semibold">E-mail {!config.email_obrigatorio && <span className="font-normal text-muted">(opcional)</span>}</span>
             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" inputMode="email" autoComplete="email" className={campo(erros.email)} placeholder="seu@email.com" />
           </label>
+          <Cupom compacto />
           {/* Campo-isca: invisível para pessoas, robôs costumam preencher */}
           <input value={isca} onChange={(e) => setIsca(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden className="absolute -left-[9999px] h-0 w-0 opacity-0" name="site" />
 

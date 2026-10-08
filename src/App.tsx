@@ -11,6 +11,7 @@ import NaoEncontrada from './pages/NaoEncontrada';
 import Privacidade from './pages/Privacidade';
 import CookieConsent from './components/CookieConsent';
 import { LeadProvider } from './components/Lead';
+import VoltarAoTopo from './components/VoltarAoTopo';
 import { track } from './lib/utils';
 
 /** Volta ao topo ao trocar de página (mas não ao trocar de cor/filtro). */
@@ -40,6 +41,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <VoltarAoTopo />
       <FloatingWhatsapp />
       <CookieConsent />
     </LeadProvider>

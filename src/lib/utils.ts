@@ -35,6 +35,13 @@ export function lerCupomDaUrl() {
   } catch { /* navegador sem storage */ }
 }
 
+/** Cupom digitado pela cliente. Vale para todas as mensagens desta visita. */
+export function salvarCupom(c: string) {
+  const v = c.trim().toUpperCase().replace(/\s+/g, '').slice(0, 30);
+  try { if (v) sessionStorage.setItem(CUPOM_KEY, v); else sessionStorage.removeItem(CUPOM_KEY); } catch { /* sem storage */ }
+  return v;
+}
+
 export function cupomAtivo(): string {
   try { return sessionStorage.getItem(CUPOM_KEY) ?? ''; } catch { return ''; }
 }

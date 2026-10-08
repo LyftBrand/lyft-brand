@@ -4,6 +4,7 @@ import { Check, ChevronLeft, ChevronRight, Link2, Ruler, X } from 'lucide-react'
 import { config, corDisponivel, corInicial, fotoEhDeOutraCor, fotosDaCor, precoFinal, produtos, type Cor } from '../lib/content';
 import { brl, img, linkWhatsapp, parcela, track } from '../lib/utils';
 import { usePedido } from '../components/Lead';
+import Cupom from '../components/Cupom';
 import SmartImage from '../components/SmartImage';
 import ProductCard, { Swatch } from '../components/ProductCard';
 import Seo from '../components/Seo';
@@ -250,6 +251,8 @@ export default function Produto() {
                 <p className="mt-3 text-[13px] text-muted">Disponível nesta cor: {cor.disponiveis.join(', ')}</p>
               )}
             </div>
+
+            {disponivel && <div className="mt-7"><Cupom /></div>}
 
             {/* Pedido */}
             <div className="mt-8 hidden md:flex flex-col gap-3">
