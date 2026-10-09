@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { config } from '../lib/content';
 import { INDEXAVEL, SITE_URL } from '../lib/utils';
@@ -28,7 +27,8 @@ export default function Seo({ title, description, image, jsonLd, noindex, type =
   const dados = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
   return (
-    <Helmet prioritizeSeoTags>
+    // React 19 move título, metas, links e JSON-LD para o <head> sozinho.
+    <>
       <title>{t}</title>
       <meta name="description" content={d} />
       <meta name="robots" content={robots} />
@@ -51,7 +51,7 @@ export default function Seo({ title, description, image, jsonLd, noindex, type =
       {config.meta_domain_verification && <meta name="facebook-domain-verification" content={config.meta_domain_verification} />}
 
       {dados.map((j, i) => <script key={i} type="application/ld+json">{JSON.stringify(j)}</script>)}
-    </Helmet>
+    </>
   );
 }
 

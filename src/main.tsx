@@ -1,7 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import { config } from './lib/content';
 import { lerCupomDaUrl } from './lib/utils';
@@ -42,11 +41,9 @@ if (/^GTM-[A-Z0-9]+$/i.test(GTM)) {
 const raiz = document.getElementById('root')!;
 const app = (
   <StrictMode>
-    <HelmetProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </HelmetProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );
 // As páginas já vêm prontas do build (pré-renderizadas): o React só "acorda" o HTML.

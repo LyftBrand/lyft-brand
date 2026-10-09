@@ -5,7 +5,11 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 const dist = path.resolve('dist');
-const modelo = fs.readFileSync(path.join(dist, 'index.html'), 'utf8');
+// O CSS (≈8 KB comprimido) vai embutido no HTML: a página pinta sem esperar outro arquivo.
+const modelo = fs.readFileSync(path.join(dist, 'index.html'), 'utf8').replace(
+  /<link rel="stylesheet" crossorigin href="(\/assets\/[^"]+\.css)">/,
+  (_, href) => `<style>${fs.readFileSync(path.join(dist, href), 'utf8')}</style>`,
+);
 const { render, rotas } = await import(pathToFileURL(path.resolve('dist-ssr/entry-server.js')).href);
 
 // data-pre: o navegador remove estas tags ao iniciar e o React coloca as dele (evita duplicadas).

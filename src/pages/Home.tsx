@@ -34,7 +34,7 @@ export default function Home() {
       <section className="md:grid md:grid-cols-2 md:min-h-[calc(100svh-120px)] bg-nude">
         <div className="relative aspect-[4/5] md:aspect-auto md:order-2 overflow-hidden">
           <SmartImage src={config.hero.imagem} alt="Juliana Colet com o Conjunto Paty e a sacola Lyft" priority
-            widths={[640, 960, 1280, 1600]} sizes="(min-width:768px) 50vw, 100vw" quality={80}
+            widths={[480, 720, 960, 1280, 1600]} sizes="(min-width:768px) 50vw, 100vw" quality={78}
             className="absolute inset-0 h-full w-full object-cover object-[50%_25%]" />
         </div>
         <div className="flex flex-col justify-center px-4 py-12 md:px-12 lg:px-20 md:py-16">

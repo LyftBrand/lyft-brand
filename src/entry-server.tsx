@@ -2,7 +2,6 @@
 import { StrictMode } from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router';
-import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import { produtos } from './lib/content';
 
@@ -15,11 +14,9 @@ const TAGS_HEAD = /<title>[\s\S]*?<\/title>|<meta [^>]*\/?>|<link [^>]*\/?>|<scr
 export function render(url: string) {
   let html = renderToString(
     <StrictMode>
-      <HelmetProvider>
-        <StaticRouter location={url}>
-          <App />
-        </StaticRouter>
-      </HelmetProvider>
+      <StaticRouter location={url}>
+        <App />
+      </StaticRouter>
     </StrictMode>,
   );
   const head: string[] = [];
