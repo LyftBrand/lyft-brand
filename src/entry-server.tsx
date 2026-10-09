@@ -7,9 +7,10 @@ import { produtos } from './lib/content';
 
 export const rotas = ['/', '/catalogo', '/a-marca', '/politica-de-privacidade', ...produtos.map((p) => `/produto/${p.slug}`)];
 
-// Com React 19, título, metas, links e JSON-LD saem no próprio HTML renderizado.
-// Aqui eles são tirados do corpo e devolvidos à parte, para irem no <head>.
-const TAGS_HEAD = /<title>[\s\S]*?<\/title>|<meta [^>]*\/?>|<link [^>]*\/?>|<script type="application\/ld\+json">[\s\S]*?<\/script>/g;
+// Com React 19, título, metas e links saem no próprio HTML renderizado; aqui eles vão para o <head>,
+// que é onde o React os procura ao "acordar" a página. O JSON-LD (<script>) o React mantém no corpo,
+// então ele fica onde está (o Google lê em qualquer lugar da página).
+const TAGS_HEAD = /<title>[\s\S]*?<\/title>|<meta [^>]*\/?>|<link [^>]*\/?>/g;
 
 export function render(url: string) {
   let html = renderToString(

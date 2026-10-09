@@ -10,6 +10,10 @@ const modelo = fs.readFileSync(path.join(dist, 'index.html'), 'utf8').replace(
   /<link rel="stylesheet" crossorigin href="(\/assets\/[^"]+\.css)">/,
   (_, href) => `<style>${fs.readFileSync(path.join(dist, href), 'utf8')}</style>`,
 );
+// Pré-carrega a fonte do texto (Manrope, ~25 KB): chega junto com a página e o texto não "pula" ao trocar de fonte.
+const fonteTexto = fs.readdirSync(path.join(dist, 'assets')).find((f) => /^manrope-latin-wght-normal-.*\.woff2$/.test(f));
+const preloadFonte = fonteTexto ? `<link rel="preload" href="/assets/${fonteTexto}" as="font" type="font/woff2" crossorigin>` : '';
+
 const { render, rotas } = await import(pathToFileURL(path.resolve('dist-ssr/entry-server.js')).href);
 
 // data-pre: o navegador remove estas tags ao iniciar e o React coloca as dele (evita duplicadas).
@@ -17,7 +21,7 @@ const marcar = (head) => head.replace(/<(title|meta|link|script)(?=[\s>])/g, '<$
 
 function gerar(url, arquivos) {
   const { html, head } = render(url);
-  const pagina = modelo.replace('<!--head-->', marcar(head)).replace('<!--app-->', html);
+  const pagina = modelo.replace('<!--head-->', preloadFonte + '\n' + marcar(head)).replace('<!--app-->', html);
   for (const arquivo of arquivos) {
     const destino = path.join(dist, arquivo);
     fs.mkdirSync(path.dirname(destino), { recursive: true });

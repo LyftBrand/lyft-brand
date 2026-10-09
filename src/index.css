@@ -13,10 +13,29 @@
   --color-line: #DDD2C9;
   --color-sold: #B7ADA6;
 
-  --font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
-  --font-sans: "Manrope Variable", "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces Variable", "Fraunces Reserva", Georgia, serif;
+  --font-sans: "Manrope Variable", "Manrope Reserva", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --ease-soft: cubic-bezier(.22, .61, .36, 1);
+}
+
+/* Fontes "reserva" com as mesmas proporções das da marca: enquanto a fonte real carrega,
+   o texto já ocupa o mesmo espaço e nada pula na tela (CLS do PageSpeed). */
+@font-face {
+  font-family: "Manrope Reserva";
+  src: local("Arial");
+  size-adjust: 103.19%;
+  ascent-override: 103.31%;
+  descent-override: 29.07%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Fraunces Reserva";
+  src: local("Georgia");
+  size-adjust: 105.2%;
+  ascent-override: 92.96%;
+  descent-override: 24.24%;
+  line-gap-override: 0%;
 }
 
 @layer base {
