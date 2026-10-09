@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const SITE = (process.env.URL || process.env.SITE_URL || 'https://transcendent-gelato-69fd60.netlify.app').replace(/\/$/, '');
+const SITE = (process.env.URL || process.env.SITE_URL || 'https://lyftbrand.netlify.app').replace(/\/$/, '');
 const dir = path.resolve(import.meta.dirname, '../content/produtos');
 const produtos = fs.readdirSync(dir).filter((f) => f.endsWith('.json'))
   .map((f) => ({ slug: f.replace(/\.json$/, ''), ...JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')) }))
