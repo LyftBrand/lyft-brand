@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-paper/10">
-        <div className={`container-x pt-6 ${produto ? 'pb-[230px]' : 'pb-40'} md:pb-24 md:pr-56 flex flex-col sm:flex-row gap-2 justify-between text-xs text-paper/45`}>
+        <div className={`container-x pt-6 ${produto ? 'pb-[230px]' : 'pb-40'} md:pb-16 flex flex-col gap-1.5 text-xs text-paper/45`}>
           <span>© {new Date().getFullYear()} Lyft · {config.colecao}</span>
           <span>Feito com <span aria-label="amor">🤎</span> por Lemos83 | Digital Marketing Solutions</span>
         </div>
