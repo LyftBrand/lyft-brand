@@ -2,7 +2,7 @@
 # Cada "Publicar" salva no GitHub e a Netlify atualiza o site em cerca de 1 minuto.
 backend:
   name: git-gateway
-  branch: site-novo  # TESTE: trocar para main quando o site novo for para o ar
+  branch: main
   commit_messages:
     create: "Painel: novo produto {{slug}}"
     update: "Painel: atualiza {{slug}}"
