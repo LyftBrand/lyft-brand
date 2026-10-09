@@ -20,7 +20,9 @@ function Rolagem() {
   useEffect(() => {
     if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
     else window.scrollTo(0, 0);
-    track('page_view', { page_path: pathname });
+    // Evento de página para o GA4 (no GTM: gatilho de evento personalizado "page_view").
+    // Roda a cada troca de página, inclusive na primeira; o título já é o da página nova.
+    track('page_view', { page_path: pathname, page_location: window.location.href, page_title: document.title });
   }, [pathname, hash]);
   return null;
 }
