@@ -56,7 +56,13 @@ export default function Footer() {
       <div className="border-t border-paper/10">
         <div className={`container-x pt-6 ${produto ? 'pb-[230px]' : 'pb-40'} md:pb-16 flex flex-col gap-1.5 text-xs text-paper/45`}>
           <span>© {new Date().getFullYear()} Lyft · {config.colecao}</span>
-          <span>Feito com <span aria-label="amor">🤎</span> por Lemos83 | Digital Marketing Solutions</span>
+          <span>
+            Feito com <span aria-label="amor">🤎</span> por{' '}
+            <a href="https://lemos83.com.br/?utm_source=site_lyft_brand&utm_medium=referral&utm_campaign=credito_rodape"
+              target="_blank" rel="noopener" className="link-u text-paper/70 hover:text-paper transition-colors">
+              Lemos83 | Digital Marketing Solutions
+            </a>
+          </span>
         </div>
       </div>
     </footer>
