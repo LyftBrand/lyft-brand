@@ -1,40 +1,37 @@
 {
-  "whatsapp": "5519991370204",
   "mensagem_padrao": "Olá! Vim pelo site da Lyft e quero ajuda para escolher meu look.",
+  "instagram_fotos": [
+    "/uploads/marca/ig-1.jpg",
+    "/uploads/marca/ig-2.jpg",
+    "/uploads/marca/ig-3.jpg",
+    "/uploads/marca/ig-4.jpg",
+    "/uploads/marca/ig-5.jpg",
+    "/uploads/marca/ig-6.jpg"
+  ],
   "formulario_ativo": true,
-  "email_obrigatorio": true,
-  "planilha_url": "",
-  "gtm_id": "",
-  "google_site_verification": "",
-  "meta_domain_verification": "",
-  "instagram": "lyft.brand",
-  "email": "lyftbrandwear@gmail.com",
-  "aviso_topo": "10% OFF na primeira compra · Enviamos para todo o Brasil",
-  "cupom_topo": "PRIMEIRACOMPRA",
-  "parcelamento": "Até 6x no cartão de crédito",
-  "colecao": "Coleção Elevate 2026",
-  "slogan": "Movimente seu corpo, eleve sua confiança.",
-  "hero": {
-    "titulo": "Movimente seu corpo, eleve sua confiança.",
-    "texto": "Nossas peças unem design sofisticado, caimento impecável e tecidos tecnológicos que proporcionam conforto e durabilidade.",
-    "imagem": "/uploads/marca/hero.jpg",
-    "imagem_2": "/uploads/marca/hero-2.jpg"
-  },
   "beneficios": [
     "Compressão na medida",
     "Zero transparência",
     "Tecido poliamida e elastano",
     "Até 6x no cartão"
   ],
+  "aviso_topo": "10% OFF na primeira compra · Enviamos para todo o Brasil",
+  "colecao": "Coleção Elevate 2026",
+  "google_site_verification": "",
+  "whatsapp": "5519991370204",
+  "instagram": "lyft.brand",
+  "embalagem": {
+    "titulo": "Seu pedido chega com carinho, cuidado e propósito.",
+    "imagem": "/uploads/marca/embalagem.jpg"
+  },
+  "planilha_url": "",
+  "email_obrigatorio": true,
+  "parcelamento": "Até 6x no cartão de crédito",
   "sobre": {
     "titulo": "Eu pensei em cada peça como se fosse pra mim, porque é.",
     "texto": "Depois de muito tempo planejando, pesquisando fornecedores, escolhendo cada detalhe de qualidade, conforto e beleza, nasceu a minha marca fitness.\n\nA Lyft não é só roupa de treino. É para mulheres lindas e confiantes em qualquer momento.\n\nAs peças são exclusivas e limitadas.",
     "assinatura": "Juliana Colet, fundadora da Lyft",
     "imagem": "/uploads/marca/fundadora.jpg"
-  },
-  "embalagem": {
-    "titulo": "Seu pedido chega com carinho, cuidado e propósito.",
-    "imagem": "/uploads/marca/embalagem.jpg"
   },
   "medidas": [
     {
@@ -54,12 +51,15 @@
       "numeracao": "Veste do 36 ao 40"
     }
   ],
-  "instagram_fotos": [
-    "/uploads/marca/ig-1.jpg",
-    "/uploads/marca/ig-2.jpg",
-    "/uploads/marca/ig-3.jpg",
-    "/uploads/marca/ig-4.jpg",
-    "/uploads/marca/ig-5.jpg",
-    "/uploads/marca/ig-6.jpg"
-  ]
+  "gtm_id": "GTM-PSDQSDPG",
+  "hero": {
+    "titulo": "Movimente seu corpo, eleve sua confiança.",
+    "texto": "Nossas peças unem design sofisticado, caimento impecável e tecidos tecnológicos que proporcionam conforto e durabilidade.",
+    "imagem": "/uploads/marca/hero.jpg",
+    "imagem_2": "/uploads/marca/hero-2.jpg"
+  },
+  "meta_domain_verification": "",
+  "email": "lyftbrandwear@gmail.com",
+  "cupom_topo": "PRIMEIRACOMPRA",
+  "slogan": "Movimente seu corpo, eleve sua confiança."
 }
