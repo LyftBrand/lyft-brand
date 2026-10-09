@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000",
-    "build": "vite build && node scripts/gerar-estaticos.mjs",
+    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/gerar-estaticos.mjs",
     "preview": "vite preview --port=4173",
     "lint": "tsc --noEmit",
     "fotos": "node scripts/preparar-fotos.mjs"
   },
   "dependencies": {
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.3.0",
     "lucide-react": "^1.53.0",
     "motion": "^14.0.0",
     "react": "^19.3.0",

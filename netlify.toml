@@ -6,11 +6,17 @@
   NODE_VERSION = "22"
   VITE_NETLIFY_IMAGES = "1"
 
-# Páginas do site (link de produto colado no WhatsApp abre direto)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Todas as páginas são geradas prontas no build (dist/<página>/index.html).
+# Endereço que não existe cai no 404.html automaticamente.
+
+# Segurança e boas práticas (contam no PageSpeed em "Práticas recomendadas")
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
 [[headers]]
   for = "/assets/*"
@@ -20,9 +26,9 @@
 [[headers]]
   for = "/uploads/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
 
 [[headers]]
-  for = "/index.html"
+  for = "/*.svg"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+    Cache-Control = "public, max-age=604800"

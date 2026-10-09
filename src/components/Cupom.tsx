@@ -8,14 +8,16 @@ import { cupomAtivo, salvarCupom, track } from '../lib/utils';
  * Quem chega por link com ?cupom=XPTO já vê o cupom aplicado.
  */
 export default function Cupom({ compacto = false }: { compacto?: boolean }) {
-  const [valor, setValor] = useState(cupomAtivo);
-  const [aberto, setAberto] = useState(!!valor);
+  // Estado inicial igual ao HTML gerado no build; o cupom salvo no navegador entra depois de montar.
+  const [valor, setValor] = useState('');
+  const [aberto, setAberto] = useState(false);
   const [abriuAgora, setAbriuAgora] = useState(false);
   const aplicado = cupomAtivo();
 
   // Cupom aplicado pela faixa do topo aparece aqui também.
   useEffect(() => {
     const on = () => { const v = cupomAtivo(); setValor(v); if (v) setAberto(true); };
+    on();
     window.addEventListener('lyft:cupom', on);
     return () => window.removeEventListener('lyft:cupom', on);
   }, []);

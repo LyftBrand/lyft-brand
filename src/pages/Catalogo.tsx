@@ -3,7 +3,8 @@ import { useSearchParams } from 'react-router-dom';
 import { categorias, precoFinal, produtoDisponivel, produtos } from '../lib/content';
 import { track } from '../lib/utils';
 import ProductCard from '../components/ProductCard';
-import Seo from '../components/Seo';
+import Seo, { jsonLdMarca } from '../components/Seo';
+import { SITE_URL } from '../lib/utils';
 import Medidas from '../components/Medidas';
 import { ChamadaWhatsapp } from '../components/Sections';
 
@@ -34,7 +35,8 @@ export default function Catalogo() {
 
   return (
     <>
-      <Seo title={categoria ? `${categoria} fitness` : 'Catálogo'} description={`Catálogo Lyft: ${produtos.length} modelos de moda fitness feminina. Veja cores, tamanhos disponíveis e peça pelo WhatsApp.`} />
+      <Seo title={categoria ? `${categoria} fitness` : 'Catálogo'} description={`Catálogo Lyft: ${produtos.length} modelos de moda fitness feminina. Veja cores, tamanhos disponíveis e peça pelo WhatsApp.`}
+        jsonLd={[jsonLdMarca(), { '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: produtos.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: `${SITE_URL}/produto/${p.slug}`, name: p.nome })) }]} />
 
       <section className="bg-nude">
         <div className="container-x pt-12 pb-10 md:pt-20 md:pb-14">

@@ -38,6 +38,12 @@ export interface Config {
   email_obrigatorio: boolean;
   /** URL do App da Web do Google Apps Script que grava na planilha. */
   planilha_url: string;
+  /** ID do Google Tag Manager (GTM-XXXXXXX). */
+  gtm_id?: string;
+  /** Código da meta tag de verificação do Google Search Console. */
+  google_site_verification?: string;
+  /** Código da meta tag de verificação de domínio do Meta (Facebook/Instagram). */
+  meta_domain_verification?: string;
   instagram: string;
   email: string;
   aviso_topo: string;

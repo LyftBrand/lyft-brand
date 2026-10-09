@@ -26,14 +26,14 @@ export function SectionHead({ eyebrow, title, link, className = '' }: { eyebrow?
 export function FaixaBeneficios() {
   const itens = [...config.beneficios, 'Enviamos para todo o Brasil'];
   return (
-    <div className="bg-rose text-paper overflow-hidden" aria-label="Diferenciais">
+    <div className="bg-rose text-ink overflow-hidden" aria-label="Diferenciais">
       <div className="flex w-max animate-[faixa_38s_linear_infinite] motion-reduce:animate-none py-4">
         {[0, 1].map((k) => (
           <ul key={k} className="flex shrink-0 items-center" aria-hidden={k === 1}>
             {itens.map((b) => (
               <li key={b} className="flex items-center eyebrow !tracking-[.2em] whitespace-nowrap">
                 <span className="px-6 md:px-9">{b}</span>
-                <span aria-hidden className="text-paper/60">✦</span>
+                <span aria-hidden className="text-ink/50">✦</span>
               </li>
             ))}
           </ul>

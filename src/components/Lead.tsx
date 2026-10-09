@@ -145,7 +145,7 @@ function LeadModal({ pedido, onClose }: { pedido: Pedido; onClose: () => void })
           <label className="flex gap-3 items-start text-[13px] text-ink-soft leading-relaxed cursor-pointer">
             <input type="checkbox" checked={aceite} onChange={(e) => setAceite(e.target.checked)} className="mt-0.5 h-5 w-5 shrink-0 accent-ink" />
             <span className={tentou && erros.aceite ? 'text-rose-deep' : ''}>
-              Concordo em compartilhar meus dados para ser atendida pela Lyft, conforme a{' '}
+              Concordo em compartilhar meus dados para ser atendida e receber novidades da Lyft, conforme a{' '}
               <Link to="/politica-de-privacidade" onClick={onClose} className="underline underline-offset-2">Política de Privacidade</Link>.
             </span>
           </label>

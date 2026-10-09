@@ -1,5 +1,17 @@
 import { config } from './content';
 
+/**
+ * Endereço oficial do site (vem da Netlify no build: muda sozinho quando o domínio próprio for o principal).
+ * Usado em canonical, Open Graph, dados estruturados e sitemap.
+ */
+export const SITE_URL = (import.meta.env.VITE_SITE_URL || 'https://lyftbrand.netlify.app').replace(/\/$/, '');
+
+/** Endereço de onde a página está aberta agora (no teste, o da branch). Para links enviados no WhatsApp. */
+export const origemAtual = () => (typeof window !== 'undefined' ? window.location.origin : SITE_URL);
+
+/** Produção na Netlify: só ela pode aparecer no Google. Testes e branches ficam com noindex. */
+export const INDEXAVEL = import.meta.env.VITE_CONTEXT === 'production';
+
 export const brl = (v: number) =>
   v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 

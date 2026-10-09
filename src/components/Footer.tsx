@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <span className="eyebrow text-paper/50">Catálogo</span>
+          <span className="eyebrow text-paper/60">Catálogo</span>
           <Link to="/catalogo" className="link-u w-fit">Ver todas as peças</Link>
           {categorias.map((c) => (
             <Link key={c} to={`/catalogo?categoria=${encodeURIComponent(c)}`} className="link-u w-fit">{c}</Link>
@@ -33,7 +33,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <span className="eyebrow text-paper/50">A Lyft</span>
+          <span className="eyebrow text-paper/60">A Lyft</span>
           <Link to="/a-marca" className="link-u w-fit">A marca</Link>
           <Link to="/catalogo#medidas" className="link-u w-fit">Tabela de medidas</Link>
           <span>{config.parcelamento}</span>
@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <span className="eyebrow text-paper/50">Atendimento</span>
+          <span className="eyebrow text-paper/60">Atendimento</span>
           <BotaoWhatsapp pedido={pedido} className="link-u w-fit inline-flex items-center gap-2">
             <WhatsappIcon className="w-4 h-4" /> {telefone(config.whatsapp)}
           </BotaoWhatsapp>
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-paper/10">
-        <div className={`container-x pt-6 ${produto ? 'pb-[230px]' : 'pb-40'} md:pb-16 flex flex-col gap-1.5 text-xs text-paper/45`}>
+        <div className={`container-x pt-6 ${produto ? 'pb-[230px]' : 'pb-40'} md:pb-16 flex flex-col gap-1.5 text-xs text-paper/60`}>
           <span>© {new Date().getFullYear()} Lyft · {config.colecao}</span>
           <span>
             Feito com <span aria-label="amor">🤎</span> por{' '}

@@ -6,15 +6,15 @@
   --color-nude: #EDE5DE;
   --color-sand: #E2D7CE;
   --color-rose: #B4988F;
-  --color-rose-deep: #8C7067;
+  --color-rose-deep: #7A5D55;
   --color-ink: #1A1614;
   --color-ink-soft: #4A403B;
-  --color-muted: #877B74;
+  --color-muted: #6E625C;
   --color-line: #DDD2C9;
   --color-sold: #B7ADA6;
 
-  --font-display: "Fraunces", Georgia, serif;
-  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
+  --font-sans: "Manrope Variable", "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --ease-soft: cubic-bezier(.22, .61, .36, 1);
 }

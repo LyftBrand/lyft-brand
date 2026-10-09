@@ -4,6 +4,7 @@
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { config, corInicial, precoFinal, produtos } from './content';
 import type { Pedido } from './lead';
+import { origemAtual } from './utils';
 
 export function useMensagemPagina(origem: string): Pedido {
   const { pathname } = useLocation();
@@ -13,7 +14,7 @@ export function useMensagemPagina(origem: string): Pedido {
     const p = produtos.find((x) => x.slug === pathname.split('/')[2]);
     if (p) {
       const cor = p.cores.find((c) => c.chave === params.get('cor')) ?? corInicial(p);
-      const url = `${location.origin}/produto/${p.slug}?cor=${cor.chave}`;
+      const url = `${origemAtual()}/produto/${p.slug}?cor=${cor.chave}`;
       return {
         origem: `${origem}_produto`,
         mensagem: `Olá, Ju! Estou vendo o *${p.nome}* na cor *${cor.nome}* no site e queria tirar uma dúvida.\n\n${url}`,

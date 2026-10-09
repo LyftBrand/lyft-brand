@@ -11,7 +11,8 @@ type Props = Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'srcSet'> & {
 
 /** Imagem com srcset do Image CDN, carregamento preguiçoso e fade-in suave. */
 export default function SmartImage({ src, widths = [400, 700, 1000, 1400], quality = 75, priority, className = '', alt = '', sizes = '100vw', ...rest }: Props) {
-  const [ok, setOk] = useState(false);
+  // A imagem principal (priority) aparece direto, sem fade: conta para o LCP do PageSpeed.
+  const [ok, setOk] = useState(!!priority);
   return (
     <img
       src={img(src, widths[widths.length - 1], quality)}

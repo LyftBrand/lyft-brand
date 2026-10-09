@@ -5,8 +5,8 @@ import { lerPreferencias, salvarPreferencias, type Preferencias } from '../lib/c
 
 const CATEGORIAS = [
   { id: 'necessarios', titulo: 'Necessários', texto: 'Fazem o site funcionar: navegação, segurança e as suas escolhas de privacidade. Não podem ser desligados.', fixo: true },
-  { id: 'analiticos', titulo: 'Analíticos', texto: 'Contam visitas e cliques de forma agregada, para entender quais peças despertam mais interesse e melhorar o site.', fixo: false },
-  { id: 'marketing', titulo: 'Marketing e anúncios', texto: 'Medem os resultados dos anúncios da Lyft no Instagram, Facebook, Google e TikTok e permitem mostrar peças do seu interesse nessas plataformas.', fixo: false },
+  { id: 'analiticos', titulo: 'Analíticos', texto: 'Contam visitas e cliques de forma agregada, para entender quais peças despertam mais interesse e melhorar o site. Ferramenta: Google Analytics.', fixo: false },
+  { id: 'marketing', titulo: 'Marketing e anúncios', texto: 'Medem os resultados dos anúncios da Lyft e permitem mostrar peças do seu interesse no Instagram, Facebook, Google e TikTok. Ferramentas: Meta Pixel, Google Ads e TikTok Pixel.', fixo: false },
 ] as const;
 
 function Chave({ ligado, fixo, onClick, rotulo }: { ligado: boolean; fixo?: boolean; onClick?: () => void; rotulo: string }) {

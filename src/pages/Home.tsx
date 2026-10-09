@@ -4,7 +4,8 @@ import { categorias, config, corInicial, fotosDaCor, produtos } from '../lib/con
 import { BotaoWhatsapp } from '../components/Lead';
 import ProductCard from '../components/ProductCard';
 import SmartImage from '../components/SmartImage';
-import Seo from '../components/Seo';
+import Seo, { jsonLdMarca } from '../components/Seo';
+import { SITE_URL } from '../lib/utils';
 import { WhatsappIcon } from '../components/Icons';
 import { ChamadaWhatsapp, Depoimentos, FaixaBeneficios, InstagramFaixa, SectionHead } from '../components/Sections';
 
@@ -25,7 +26,9 @@ export default function Home() {
 
   return (
     <>
-      <Seo />
+      <Seo
+        jsonLd={[jsonLdMarca(), { '@context': 'https://schema.org', '@type': 'WebSite', name: 'Lyft', url: SITE_URL + '/', inLanguage: 'pt-BR' }]}
+      />
 
       {/* Topo */}
       <section className="md:grid md:grid-cols-2 md:min-h-[calc(100svh-120px)] bg-nude">

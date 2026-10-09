@@ -2,12 +2,12 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { Check, ChevronLeft, ChevronRight, Link2, Ruler, X } from 'lucide-react';
 import { config, corDisponivel, corInicial, fotoEhDeOutraCor, fotosDaCor, precoFinal, produtos, type Cor } from '../lib/content';
-import { brl, img, linkWhatsapp, parcela, track } from '../lib/utils';
+import { brl, img, linkWhatsapp, origemAtual, parcela, SITE_URL, track } from '../lib/utils';
 import { usePedido } from '../components/Lead';
 import Cupom from '../components/Cupom';
 import SmartImage from '../components/SmartImage';
 import ProductCard, { Swatch } from '../components/ProductCard';
-import Seo from '../components/Seo';
+import Seo, { jsonLdMarca } from '../components/Seo';
 import Medidas from '../components/Medidas';
 import { WhatsappIcon } from '../components/Icons';
 import NaoEncontrada from './NaoEncontrada';
@@ -60,7 +60,7 @@ function Galeria({ fotos, nome, nota }: { fotos: string[]; nome: string; nota?: 
           <button key={f} onClick={() => setZoom(k)}
             className={`relative bg-nude overflow-hidden cursor-zoom-in ${k === 0 && fotos.length % 2 === 1 ? 'col-span-2 aspect-[4/5]' : 'aspect-[4/5]'}`}
             aria-label={`Ampliar foto ${k + 1}`}>
-            <SmartImage src={f} alt={`${nome}, foto ${k + 1}`} widths={[600, 900, 1300]} sizes={k === 0 && fotos.length % 2 === 1 ? '55vw' : '28vw'} priority={k < 2}
+            <SmartImage src={f} alt={`${nome}, foto ${k + 1}`} widths={[600, 900, 1300]} sizes={k === 0 && fotos.length % 2 === 1 ? '55vw' : '28vw'}
               className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]" />
           </button>
         ))}
@@ -129,7 +129,7 @@ export default function Produto() {
   const preco = precoFinal(p);
   const disponivel = corDisponivel(cor);
   const unico = p.grade.length === 1;
-  const url = `${location.origin}/produto/${p.slug}?cor=${cor.chave}`;
+  const url = `${origemAtual()}/produto/${p.slug}?cor=${cor.chave}`;
   const nota = p.nota_foto || (fotoEhDeOutraCor(cor) ? `Foto ilustrativa em outra cor. Cor escolhida: ${cor.nome.toLowerCase()}.` : '');
 
   const escolherCor = (c: Cor) => {
@@ -180,12 +180,20 @@ export default function Produto() {
       <Seo
         title={`${p.nome} ${cor.nome}`}
         description={`${p.nome}${p.resumo ? ` (${p.resumo.toLowerCase()})` : ''} na cor ${cor.nome.toLowerCase()}. ${brl(preco)}, ${config.parcelamento.toLowerCase()}. Peça pelo WhatsApp.`}
-        image={fotos[0] ? img(fotos[0], 1200, 80) : undefined}
-        jsonLd={{
+        type="product"
+        image={fotos[0]}
+        jsonLd={[jsonLdMarca(), {
+          '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Início', item: SITE_URL + '/' },
+            { '@type': 'ListItem', position: 2, name: p.categoria, item: `${SITE_URL}/catalogo?categoria=${encodeURIComponent(p.categoria)}` },
+            { '@type': 'ListItem', position: 3, name: p.nome, item: `${SITE_URL}/produto/${p.slug}` },
+          ],
+        }, {
           '@context': 'https://schema.org', '@type': 'Product', name: p.nome, brand: { '@type': 'Brand', name: 'Lyft' },
-          image: fotos.map((f) => location.origin + f), description: p.descricao || p.resumo, color: cor.nome,
-          offers: { '@type': 'Offer', priceCurrency: 'BRL', price: preco.toFixed(2), availability: disponivel ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock', url },
-        }}
+          image: fotos.map((f) => SITE_URL + f), description: p.descricao || p.resumo, color: cor.nome,
+          category: p.categoria,
+          offers: { '@type': 'Offer', priceCurrency: 'BRL', price: preco.toFixed(2), availability: disponivel ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock', url: `${SITE_URL}/produto/${p.slug}?cor=${cor.chave}`, seller: { '@id': SITE_URL + '/#loja' } },
+        }]}
       />
 
       <div className="container-x pt-4 md:pt-8 pb-28 md:pb-24">

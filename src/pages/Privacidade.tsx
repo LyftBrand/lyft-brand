@@ -56,6 +56,7 @@ export default function Privacidade() {
             <Item t="Atender você">responder no WhatsApp, separar sua peça e combinar pagamento e envio (base legal: consentimento e procedimentos preliminares a um contrato).</Item>
             <Item t="Avisar sobre novidades e reposições">quando você pedir, ou para clientes que já falaram com a gente (base legal: consentimento e legítimo interesse). Você pode pedir para parar a qualquer momento.</Item>
             <Item t="Entender e melhorar">saber quais peças e anúncios funcionam melhor (base legal: legítimo interesse e consentimento para cookies).</Item>
+            <Item t="Anúncios mais relevantes">usar seu e-mail e telefone, de forma criptografada (hash), para criar públicos no Meta e no Google: por exemplo, mostrar novidades a quem já falou com a Lyft ou deixar de mostrar anúncios a quem já é cliente. As plataformas só comparam os códigos criptografados, sem receber seus dados abertos (base legal: consentimento). Você pode pedir para sair desses públicos a qualquer momento.</Item>
           </ul>
           <p>Não vendemos seus dados.</p>
         </Bloco>
@@ -68,22 +69,24 @@ export default function Privacidade() {
               {esquecido ? 'Pronto, dados apagados deste aparelho' : 'Apagar meus dados deste aparelho'}
             </button>
           </div>
+          <p>Também ficam só no seu aparelho: de onde veio a sua visita e o clique em anúncio que te trouxe (por até 90 dias), o cupom que você aplicou (até fechar o navegador) e as suas escolhas de cookies.</p>
           <p>Mantemos os dados enquanto forem necessários para o atendimento e o relacionamento com você, ou até você pedir a exclusão.</p>
+          <p>Algumas ferramentas que usamos (Google, Meta, TikTok e Netlify) guardam dados em servidores fora do Brasil. Essa transferência segue as garantias exigidas pela LGPD (art. 33), por meio dos contratos e políticas de proteção de dados dessas empresas.</p>
         </Bloco>
 
         <Bloco n={5} titulo="Cookies">
           <p>Cookies são pequenos arquivos guardados no navegador. Usamos três tipos:</p>
           <ul className="flex flex-col gap-2">
             <Item t="Necessários">fazem o site funcionar e guardam suas escolhas. Sempre ativos.</Item>
-            <Item t="Analíticos">contam visitas e cliques de forma agregada (Google Analytics, via Google Tag Manager).</Item>
-            <Item t="Marketing">medem e direcionam anúncios no Instagram e Facebook (Meta), Google e TikTok.</Item>
+            <Item t="Analíticos">contam visitas e cliques de forma agregada. Ferramenta: Google Analytics 4, instalado pelo Google Tag Manager. Cookies: _ga e _ga_* (até 2 anos).</Item>
+            <Item t="Marketing">medem e direcionam anúncios. Ferramentas e cookies: Google Ads (_gcl_au, até 90 dias), Meta Pixel do Instagram e Facebook (_fbp e _fbc, até 90 dias) e TikTok Pixel (_ttp, até 13 meses).</Item>
           </ul>
-          <p>Analíticos e de marketing só funcionam se você permitir. Você pode mudar sua escolha a qualquer momento:</p>
+          <p>Analíticos e de marketing só funcionam se você permitir. Usamos o Modo de Consentimento do Google: enquanto você não aceitar, essas ferramentas não gravam cookies no seu navegador. Você pode mudar sua escolha a qualquer momento:</p>
           <div><button className="btn btn-dark !min-h-11" onClick={abrirCentralCookies}>Preferências de cookies</button></div>
         </Bloco>
 
         <Bloco n={6} titulo="Com quem compartilhamos">
-          <p>Somente com as ferramentas necessárias para o site e o atendimento funcionarem: Google (planilha, Tag Manager e Analytics), Netlify (hospedagem), WhatsApp (conversa) e, se você permitir os cookies de marketing, Meta, Google Ads e TikTok.</p>
+          <p>Somente com as ferramentas necessárias para o site e o atendimento funcionarem: Google (planilha, Tag Manager e Analytics), Netlify (hospedagem), WhatsApp (conversa) e, se você permitir os cookies de marketing, Meta, Google Ads e TikTok. Os públicos de anúncios do item 3 usam apenas dados criptografados.</p>
         </Bloco>
 
         <Bloco n={7} titulo="Seus direitos">

@@ -20,9 +20,11 @@ export function Logo({ className = 'h-7', claro = false }: { className?: string;
 /** Faixa preta do topo. O cupom é um botão: tocou, fica aplicado na mensagem do WhatsApp. */
 function FaixaTopo() {
   const cupom = config.cupom_topo?.trim().toUpperCase() ?? '';
-  const [aplicado, setAplicado] = useState(() => !!cupom && cupomAtivo() === cupom);
+  // Começa falso (igual ao HTML gerado no build) e confere o navegador depois de montar.
+  const [aplicado, setAplicado] = useState(false);
   useEffect(() => {
     const on = () => setAplicado(!!cupom && cupomAtivo() === cupom);
+    on();
     window.addEventListener('lyft:cupom', on);
     return () => window.removeEventListener('lyft:cupom', on);
   }, [cupom]);
