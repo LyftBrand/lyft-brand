@@ -24,7 +24,7 @@
     "titulo": "Seu pedido chega com carinho, cuidado e propósito.",
     "imagem": "/uploads/marca/embalagem.jpg"
   },
-  "planilha_url": "",
+  "planilha_url": "https://script.google.com/macros/s/AKfycbzShSd9Tmrv8Z5YYL7QBXqEnyzQ4698LqrQ70TFqCDQsPKeRYMyezj7CV1zktFZktMLmg/exec",
   "email_obrigatorio": true,
   "parcelamento": "Até 6x no cartão de crédito",
   "sobre": {
