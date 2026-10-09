@@ -4,6 +4,7 @@ import { Check, Menu, X } from 'lucide-react';
 import { categorias, config } from '../lib/content';
 import { cupomAtivo, linkInstagram, salvarCupom, track } from '../lib/utils';
 import { BotaoWhatsapp } from './Lead';
+import { useMensagemPagina } from '../lib/mensagemPagina';
 import { InstagramIcon, WhatsappIcon } from './Icons';
 
 const nav = [
@@ -54,6 +55,8 @@ export default function Header() {
   const [aberto, setAberto] = useState(false);
   const [rolou, setRolou] = useState(false);
   const { pathname } = useLocation();
+  const pedidoTopo = useMensagemPagina('topo');
+  const pedidoMenu = useMensagemPagina('menu');
 
   useEffect(() => setAberto(false), [pathname]);
   useEffect(() => {
@@ -100,7 +103,7 @@ export default function Header() {
               onClick={() => track('click_instagram', { local: 'header' })}>
               <InstagramIcon />
             </a>
-            <BotaoWhatsapp pedido={{ origem: 'topo', mensagem: config.mensagem_padrao }}
+            <BotaoWhatsapp pedido={pedidoTopo}
               className="btn btn-dark !min-h-10 !px-4 md:!px-5 !text-[11px]">
               <WhatsappIcon className="w-4 h-4" />
               <span className="hidden sm:inline">Fale com a Ju</span>
@@ -132,7 +135,7 @@ export default function Header() {
             </div>
           </nav>
           <div className="p-6 border-t border-line flex flex-col gap-3">
-            <BotaoWhatsapp pedido={{ origem: 'menu', mensagem: config.mensagem_padrao }} className="btn btn-dark w-full">
+            <BotaoWhatsapp pedido={pedidoMenu} className="btn btn-dark w-full">
               <WhatsappIcon className="w-4 h-4" /> Fale com a Ju
             </BotaoWhatsapp>
             <a href={linkInstagram()} target="_blank" rel="noopener" className="btn btn-line w-full">

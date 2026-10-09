@@ -33,10 +33,9 @@ export default function VoltarAoTopo() {
     window.scrollTo({ top: 0, behavior: suave ? 'smooth' : 'auto' });
   };
 
-  // Celular: acima do WhatsApp flutuante ou, no produto, acima da barra de pedido.
-  // Computador: acima do WhatsApp; no produto (sem WhatsApp flutuante), no canto.
+  // Sempre logo acima do WhatsApp flutuante (que, no celular, sobe na página de produto).
   const posicao = produto
-    ? 'bottom-[calc(88px+env(safe-area-inset-bottom))] md:bottom-6'
+    ? 'bottom-[calc(156px+env(safe-area-inset-bottom))] md:bottom-[100px]'
     : 'bottom-[calc(84px+env(safe-area-inset-bottom))] md:bottom-[100px]';
 
   return (
@@ -47,7 +46,7 @@ export default function VoltarAoTopo() {
       title="Voltar ao topo"
       tabIndex={visivel ? 0 : -1}
       aria-hidden={!visivel}
-      className={`fixed z-30 right-[22px] md:right-6 ${posicao} w-11 h-11 grid place-items-center rounded-full bg-ink/85 hover:bg-ink text-paper backdrop-blur-sm shadow-[0_8px_24px_-8px_rgba(26,22,20,.5)] transition-all duration-300 ${
+      className={`fixed z-30 right-[22px] md:right-6 ${posicao} w-11 h-11 grid place-items-center rounded-full bg-ink/85 hover:bg-ink text-paper ring-1 ring-paper/20 backdrop-blur-sm shadow-[0_8px_24px_-8px_rgba(26,22,20,.5)] transition-all duration-300 ${
         visivel ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'
       }`}
     >
