@@ -34,7 +34,7 @@ export default function Home() {
       <section className="md:grid md:grid-cols-2 md:min-h-[calc(100svh-120px)] bg-nude">
         <div className="relative aspect-[4/5] md:aspect-auto md:order-2 overflow-hidden">
           <SmartImage src={config.hero.imagem} alt="Juliana Colet com o Conjunto Paty e a sacola Lyft" priority
-            widths={[480, 720, 960, 1280, 1600]} sizes="(min-width:768px) 50vw, 100vw" quality={78}
+            widths={[480, 640, 800, 1000, 1300, 1600]} sizes="(min-width:768px) 50vw, 100vw" quality={75}
             className="absolute inset-0 h-full w-full object-cover object-[50%_25%]" />
         </div>
         <div className="flex flex-col justify-center px-4 py-12 md:px-12 lg:px-20 md:py-16">
@@ -88,7 +88,7 @@ export default function Home() {
       {/* Editorial */}
       <section className="grid md:grid-cols-2 bg-ink text-paper">
         <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[640px] overflow-hidden">
-          <SmartImage src={config.hero.imagem_2} alt="Conjunto Isis verde botânico" widths={[640, 960, 1280]} sizes="(min-width:768px) 50vw, 100vw"
+          <SmartImage src={config.hero.imagem_2} alt="Conjunto Isis verde botânico" widths={[480, 640, 800, 1000, 1300]} sizes="(min-width:768px) 50vw, 100vw"
             className="absolute inset-0 h-full w-full object-cover" />
         </div>
         <div className="flex flex-col justify-center px-4 py-14 md:px-16 lg:px-24">
