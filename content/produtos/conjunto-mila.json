@@ -23,7 +23,8 @@
       "fotos": [
         "/uploads/produtos/conjunto-mila/mirtilo-e-aurora-1.jpg",
         "/uploads/produtos/conjunto-mila/mirtilo-e-aurora-2.jpg"
-      ]
+      ],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

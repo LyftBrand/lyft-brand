@@ -25,7 +25,8 @@
       "fotos": [
         "/uploads/produtos/conjunto-aura/verde-1.jpg",
         "/uploads/produtos/conjunto-aura/verde-2.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Preto",
@@ -37,7 +38,8 @@
       "fotos": [
         "/uploads/produtos/conjunto-aura/preto-1.jpg",
         "/uploads/produtos/conjunto-aura/preto-2.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Cinza",
@@ -47,7 +49,8 @@
         "/uploads/produtos/conjunto-aura/cinza-1.jpg",
         "/uploads/produtos/conjunto-aura/cinza-2.jpg",
         "/uploads/produtos/conjunto-aura/cinza-3.jpg"
-      ]
+      ],
+      "esgotada": true
     },
     {
       "nome": "Marsala",
@@ -55,7 +58,8 @@
       "disponiveis": [],
       "fotos": [
         "/uploads/produtos/conjunto-aura/marsala-1.jpg"
-      ]
+      ],
+      "esgotada": true
     }
   ],
   "fotos_extras": [],

@@ -24,7 +24,8 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-veneza/verde-mastruz-1.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Rosa chiclete",
@@ -34,7 +35,8 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-veneza/rosa-chiclete-1.jpg"
-      ]
+      ],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

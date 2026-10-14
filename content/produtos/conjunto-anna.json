@@ -17,7 +17,8 @@
       "fotos": [
         "/uploads/produtos/conjunto-anna/verde-menta-1.jpg",
         "/uploads/produtos/conjunto-anna/verde-menta-2.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Rosa claro",
@@ -27,7 +28,8 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-anna/rosa-claro-1.jpg"
-      ]
+      ],
+      "esgotada": false
     }
   ],
   "nota_foto": "",

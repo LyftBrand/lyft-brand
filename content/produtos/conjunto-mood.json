@@ -24,7 +24,8 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-mood/marrom-1.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Verde militar",
@@ -35,7 +36,8 @@
       "fotos": [
         "/uploads/produtos/conjunto-mood/verde-militar-1.jpg",
         "/uploads/produtos/conjunto-mood/verde-militar-2.jpg"
-      ]
+      ],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

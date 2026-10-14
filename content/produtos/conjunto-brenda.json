@@ -23,7 +23,8 @@
       "fotos": [
         "/uploads/produtos/conjunto-brenda/grape-1.jpg",
         "/uploads/produtos/conjunto-brenda/grape-2.jpg"
-      ]
+      ],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

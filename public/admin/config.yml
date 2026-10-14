@@ -23,7 +23,7 @@ collections:
     label: Produtos
     label_singular: Produto
     description: >
-      Para marcar uma cor como esgotada, abra o produto, vá na cor e tire os tamanhos de "Tamanhos disponíveis".
+      Cor esgotada: abra o produto, vá na cor e ligue "Esgotada". Esgotou só um tamanho: deixe a chave desligada e desmarque esse tamanho em "Tamanhos disponíveis".
       Para esconder um produto do site sem apagar, desligue "Mostrar no site".
     folder: content/produtos
     extension: json
@@ -61,13 +61,14 @@ collections:
         fields:
           - { name: nome, label: "Nome da cor", widget: string, hint: "Ex.: Verde mastruz" }
           - { name: hex, label: "Cor da bolinha", widget: color, default: "#B4988F" }
+          - { name: esgotada, label: "Esgotada (todos os tamanhos)", widget: boolean, default: false, required: false, hint: "Ligue quando a cor inteira acabar. Os tamanhos abaixo ficam guardados: ao desligar, eles voltam." }
           - name: disponiveis
             label: "Tamanhos disponíveis"
             widget: select
             multiple: true
             required: false
             options: ["P", "M", "G", "GG", "Único"]
-            hint: "Deixe vazio quando a cor esgotar. O site mostra o botão Avisar quando repor."
+            hint: "Marque só os tamanhos que tem em estoque. O que não estiver marcado aparece riscado no site."
           - name: fotos
             label: Fotos desta cor
             widget: list

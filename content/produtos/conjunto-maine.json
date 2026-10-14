@@ -24,7 +24,8 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-maine/azul-marinho-1.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Marsala",
@@ -34,7 +35,8 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-maine/marsala-1.jpg"
-      ]
+      ],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

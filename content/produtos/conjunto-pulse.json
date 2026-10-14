@@ -27,7 +27,8 @@
         "/uploads/produtos/conjunto-pulse/off-white-1.jpg",
         "/uploads/produtos/conjunto-pulse/off-white-2.jpg",
         "/uploads/produtos/conjunto-pulse/off-white-3.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Verde",
@@ -35,7 +36,8 @@
       "disponiveis": [],
       "fotos": [
         "/uploads/produtos/conjunto-pulse/verde-1.jpg"
-      ]
+      ],
+      "esgotada": true
     }
   ],
   "fotos_extras": [],

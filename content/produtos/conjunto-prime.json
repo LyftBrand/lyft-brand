@@ -25,7 +25,8 @@
       "fotos": [
         "/uploads/produtos/conjunto-prime/marsala-1.jpg",
         "/uploads/produtos/conjunto-prime/marsala-2.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Verde militar",
@@ -33,7 +34,8 @@
       "disponiveis": [
         "G"
       ],
-      "fotos": []
+      "fotos": [],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

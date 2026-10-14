@@ -26,7 +26,8 @@
       "fotos": [
         "/uploads/produtos/macaquinho-muse/chumbo-1.jpg",
         "/uploads/produtos/macaquinho-muse/chumbo-2.jpg"
-      ]
+      ],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

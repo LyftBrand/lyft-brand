@@ -26,7 +26,8 @@
         "/uploads/produtos/macacao-soul/marrom-1.jpg",
         "/uploads/produtos/macacao-soul/marrom-2.jpg",
         "/uploads/produtos/macacao-soul/marrom-3.jpg"
-      ]
+      ],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

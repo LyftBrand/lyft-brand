@@ -24,7 +24,8 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-camila/verde-mastruz-1.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Rosa chiclete",
@@ -32,7 +33,8 @@
       "disponiveis": [
         "M"
       ],
-      "fotos": []
+      "fotos": [],
+      "esgotada": false
     },
     {
       "nome": "Satim (lilás)",
@@ -40,7 +42,8 @@
       "disponiveis": [
         "G"
       ],
-      "fotos": []
+      "fotos": [],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

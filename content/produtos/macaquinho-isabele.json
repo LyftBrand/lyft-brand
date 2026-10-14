@@ -24,7 +24,8 @@
       ],
       "fotos": [
         "/uploads/produtos/macaquinho-isabele/marsala-1.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Azul marinho",
@@ -34,7 +35,8 @@
       ],
       "fotos": [
         "/uploads/produtos/macaquinho-isabele/azul-marinho-1.jpg"
-      ]
+      ],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

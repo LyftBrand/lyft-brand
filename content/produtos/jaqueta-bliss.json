@@ -27,7 +27,8 @@
         "/uploads/produtos/jaqueta-bliss/preta-1.jpg",
         "/uploads/produtos/jaqueta-bliss/preta-2.jpg",
         "/uploads/produtos/jaqueta-bliss/preta-3.jpg"
-      ]
+      ],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

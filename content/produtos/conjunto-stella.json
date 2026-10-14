@@ -24,7 +24,8 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-stella/azul-marinho-1.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Verde mastruz",
@@ -34,7 +35,8 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-stella/verde-mastruz-1.jpg"
-      ]
+      ],
+      "esgotada": false
     },
     {
       "nome": "Preto",
@@ -42,7 +44,8 @@
       "disponiveis": [
         "M"
       ],
-      "fotos": []
+      "fotos": [],
+      "esgotada": false
     }
   ],
   "fotos_extras": [],

@@ -6,6 +6,9 @@ export interface Cor {
   nome: string;
   chave: string;
   hex: string;
+  /** Chave "Esgotada" do painel: a cor inteira esgota sem perder a lista de tamanhos. */
+  esgotada: boolean;
+  /** Tamanhos que dá para pedir agora (vazio quando a cor está esgotada). */
   disponiveis: string[];
   fotos: string[];
 }
@@ -91,7 +94,9 @@ export const produtos: Produto[] = Object.entries(arquivos)
     cores: (p.cores ?? []).map((c) => ({
       ...c,
       chave: slugify(c.nome),
-      disponiveis: c.disponiveis ?? [],
+      esgotada: !!c.esgotada,
+      // Com a chave ligada, nenhum tamanho fica disponível; ao desligar, os tamanhos marcados voltam.
+      disponiveis: c.esgotada ? [] : c.disponiveis ?? [],
       fotos: c.fotos ?? [],
     })),
   }))
