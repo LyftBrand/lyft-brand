@@ -17,12 +17,21 @@ interface Props {
 
 const absoluta = (u: string) => (u.startsWith('http') ? u : SITE_URL + u);
 
+/**
+ * Imagem de compartilhamento (WhatsApp/Instagram/Facebook): fotos enviadas pelo painel passam pelo
+ * CDN da Netlify em 1200px JPG leve. O WhatsApp recusa imagens muito pesadas e aí não mostra a prévia.
+ */
+const imagemCompartilhar = (u: string) =>
+  u.startsWith('/uploads/') && import.meta.env.VITE_NETLIFY_IMAGES === '1'
+    ? `${SITE_URL}/.netlify/images?url=${encodeURIComponent(u)}&w=1200&q=80&fm=jpg`
+    : absoluta(u);
+
 export default function Seo({ title, description, image, jsonLd, noindex, type = 'website' }: Props) {
   const { pathname } = useLocation();
   const t = title ? `${title} | Lyft` : `${BASE} | ${config.colecao}`;
   const d = (description ?? `Catálogo da Lyft, marca de moda fitness de Juliana Colet. Conjuntos, macaquinhos e jaquetas com compressão na medida e zero transparência. ${config.parcelamento}. Peça pelo WhatsApp.`).slice(0, 160);
   const url = SITE_URL + (pathname === '/' ? '/' : pathname.replace(/\/$/, ''));
-  const img = absoluta(image ?? '/og-image.jpg');
+  const img = imagemCompartilhar(image ?? '/og-image.jpg');
   const robots = noindex || !INDEXAVEL ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
   const dados = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 

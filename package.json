@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000",
-    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/gerar-estaticos.mjs",
+    "build": "vite build && node scripts/otimizar-uploads.mjs && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/gerar-estaticos.mjs",
     "preview": "vite preview --port=4173",
     "lint": "tsc --noEmit",
     "fotos": "node scripts/preparar-fotos.mjs"
