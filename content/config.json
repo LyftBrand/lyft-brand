@@ -71,5 +71,15 @@
     ],
     "pagamento_titulo": "Pagamento e envio",
     "pagamento_texto": "Até 6x no cartão de crédito. Enviamos para todo o Brasil.\n\nO pedido é fechado direto com a Ju pelo WhatsApp."
+  },
+  "marca": {
+    "titulo": "A Lyft não é",
+    "destaque": "só roupa de treino.",
+    "texto": "É para mulheres lindas e confiantes em qualquer momento.",
+    "imagem": "/uploads/marca/lancamento.jpg",
+    "fotos": [
+      "/uploads/marca/tecidos.jpg",
+      "/uploads/marca/cores.jpg"
+    ]
   }
 }

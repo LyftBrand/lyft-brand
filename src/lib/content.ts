@@ -63,6 +63,8 @@ export interface Config {
   beneficios: string[];
   sobre: { titulo: string; texto: string; assinatura: string; imagem: string };
   embalagem: { titulo: string; imagem: string };
+  /** Topo e fotos da página A marca. */
+  marca?: { titulo?: string; destaque?: string; texto?: string; imagem?: string; fotos?: string[] };
   medidas: { tamanho: string; numeracao: string }[];
   instagram_fotos: string[];
   /** Textos padrão dos blocos da página de produto. */

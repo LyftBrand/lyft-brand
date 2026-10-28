@@ -147,6 +147,21 @@ collections:
               - { name: texto, label: "Texto", widget: text }
               - { name: assinatura, label: "Assinatura", widget: string }
               - { name: imagem, label: "Foto", widget: image, choose_url: false }
+          - name: marca
+            label: "Página A marca"
+            widget: object
+            hint: "O bloco Nas palavras da Ju dessa página usa os textos de A fundadora."
+            fields:
+              - { name: titulo, label: "Título", widget: string, hint: "Ex.: A Lyft não é" }
+              - { name: destaque, label: "Continuação do título em itálico", widget: string, required: false, hint: "Ex.: só roupa de treino." }
+              - { name: texto, label: "Texto embaixo do título", widget: text, required: false }
+              - { name: imagem, label: "Foto do topo", widget: image, choose_url: false }
+              - name: fotos
+                label: "Fotos pequenas (2)"
+                widget: list
+                required: false
+                field: { name: foto, label: Foto, widget: image, choose_url: false }
+                hint: "Aparecem lado a lado embaixo do texto da Ju. Use 2 fotos."
           - name: embalagem
             label: "Bloco da embalagem"
             widget: object
