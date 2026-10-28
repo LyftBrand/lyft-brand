@@ -29,5 +29,6 @@
   "fotos_extras": [
     "/uploads/produtos/conjunto-valentina/_geral-1.jpg"
   ],
-  "nota_foto": "Foto ilustrativa em outra cor. Disponível na cor pink."
+  "nota_foto": "Foto ilustrativa em outra cor. Disponível na cor pink.",
+  "info_padrao": true
 }

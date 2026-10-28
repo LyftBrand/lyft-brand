@@ -66,5 +66,6 @@
     }
   ],
   "fotos_extras": [],
-  "nota_foto": ""
+  "nota_foto": "",
+  "info_padrao": true
 }
