@@ -172,6 +172,10 @@ export default function Produto() {
     } catch { /* usuária cancelou */ }
   };
 
+  const info = config.info_produto ?? {};
+  const tecidoItens = (p.info_padrao ? info.tecido_itens : p.tecido_itens) ?? [];
+  const pagamentoTexto = (p.info_padrao ? info.pagamento_texto : p.pagamento_texto) ?? '';
+
   const relacionados = produtos.filter((x) => x.slug !== p.slug && x.categoria === p.categoria).slice(0, 4);
   const botaoTexto = disponivel ? 'Pedir pelo WhatsApp' : 'Avisar quando repor';
 
@@ -284,17 +288,21 @@ export default function Produto() {
                   )}
                 </Detalhe>
               )}
-              <Detalhe titulo="Tecido e caimento">
-                <ul className="flex flex-col gap-1.5">
-                  {config.beneficios.filter((b) => !/x no cart/i.test(b)).map((b) => (
-                    <li key={b} className="flex gap-2"><Check className="w-4 h-4 mt-1 shrink-0 text-rose-deep" />{b}</li>
-                  ))}
-                </ul>
-              </Detalhe>
-              <Detalhe titulo="Pagamento e envio">
-                <p>{config.parcelamento}. Enviamos para todo o Brasil.</p>
-                <p className="mt-2">O pedido é fechado direto com a Ju pelo WhatsApp.</p>
-              </Detalhe>
+              {/* Textos padrão (Configurações do site) ou os do próprio produto. Vazio = bloco não aparece. */}
+              {tecidoItens.length > 0 && (
+                <Detalhe titulo={info.tecido_titulo || 'Tecido e caimento'}>
+                  <ul className="flex flex-col gap-1.5">
+                    {tecidoItens.map((b) => (
+                      <li key={b} className="flex gap-2"><Check className="w-4 h-4 mt-1 shrink-0 text-rose-deep" />{b}</li>
+                    ))}
+                  </ul>
+                </Detalhe>
+              )}
+              {pagamentoTexto.trim() && (
+                <Detalhe titulo={info.pagamento_titulo || 'Pagamento e envio'}>
+                  {pagamentoTexto.split(/\n\s*\n/).map((par, i) => <p key={i} className={i ? 'mt-2' : ''}>{par.trim()}</p>)}
+                </Detalhe>
+              )}
             </div>
           </div>
         </div>

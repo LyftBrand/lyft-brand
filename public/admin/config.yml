@@ -86,6 +86,15 @@ collections:
       - { name: destaque, label: "Aparece na página inicial", widget: boolean, default: false }
       - { name: novidade, label: "Selo de novidade", widget: boolean, default: false }
       - { name: ordem, label: "Ordem no catálogo", widget: number, value_type: int, default: 99, hint: "Números menores aparecem primeiro." }
+      - { name: info_padrao, label: "Usar informações padrão de Tecido e Pagamento", widget: boolean, default: true, required: false, hint: "Ligado: usa os textos de Textos e contatos → Configurações do site → Informações da página de produto. Desligado: usa os dois campos abaixo." }
+      - name: tecido_itens
+        label: "Tecido e caimento (só deste produto)"
+        widget: list
+        required: false
+        collapsed: true
+        field: { name: item, label: Item, widget: string }
+        hint: "Só vale com a chave acima desligada. Deixe vazio para esconder o bloco neste produto."
+      - { name: pagamento_texto, label: "Pagamento e envio (só deste produto)", widget: text, required: false, hint: "Só vale com a chave acima desligada. Deixe vazio para esconder o bloco neste produto. Linha em branco separa parágrafos." }
       - name: fotos_extras
         label: "Fotos gerais (opcional)"
         widget: list
@@ -144,6 +153,19 @@ collections:
             fields:
               - { name: titulo, label: "Título", widget: string }
               - { name: imagem, label: "Foto", widget: image, choose_url: false }
+          - name: info_produto
+            label: "Informações da página de produto (padrão)"
+            widget: object
+            hint: "Valem para todos os produtos com a chave Usar informações padrão ligada. Deixe um bloco vazio para escondê-lo."
+            fields:
+              - { name: tecido_titulo, label: "Título do bloco 1", widget: string, default: "Tecido e caimento" }
+              - name: tecido_itens
+                label: "Itens do bloco 1"
+                widget: list
+                required: false
+                field: { name: item, label: Item, widget: string }
+              - { name: pagamento_titulo, label: "Título do bloco 2", widget: string, default: "Pagamento e envio" }
+              - { name: pagamento_texto, label: "Texto do bloco 2", widget: text, required: false, hint: "Linha em branco separa parágrafos." }
           - name: medidas
             label: "Tabela de medidas"
             widget: list

@@ -31,6 +31,10 @@ export interface Produto {
   cores: Cor[];
   fotos_extras: string[];
   nota_foto: string;
+  /** Liga: usa os textos padrão de "Tecido e caimento" e "Pagamento e envio". Desliga: usa os do produto. */
+  info_padrao: boolean;
+  tecido_itens: string[];
+  pagamento_texto: string;
 }
 
 export interface Config {
@@ -61,6 +65,8 @@ export interface Config {
   embalagem: { titulo: string; imagem: string };
   medidas: { tamanho: string; numeracao: string }[];
   instagram_fotos: string[];
+  /** Textos padrão dos blocos da página de produto. */
+  info_produto?: { tecido_titulo?: string; tecido_itens?: string[]; pagamento_titulo?: string; pagamento_texto?: string };
 }
 
 export interface Depoimento {
@@ -91,6 +97,9 @@ export const produtos: Produto[] = Object.entries(arquivos)
     observacao: p.observacao ?? '',
     fotos_extras: p.fotos_extras ?? [],
     nota_foto: p.nota_foto ?? '',
+    info_padrao: p.info_padrao !== false,
+    tecido_itens: p.tecido_itens ?? [],
+    pagamento_texto: p.pagamento_texto ?? '',
     cores: (p.cores ?? []).map((c) => ({
       ...c,
       chave: slugify(c.nome),

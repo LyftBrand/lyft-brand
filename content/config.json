@@ -61,5 +61,15 @@
   "meta_domain_verification": "",
   "email": "lyftbrandwear@gmail.com",
   "cupom_topo": "PRIMEIRACOMPRA",
-  "slogan": "Movimente seu corpo, eleve sua confiança."
+  "slogan": "Movimente seu corpo, eleve sua confiança.",
+  "info_produto": {
+    "tecido_titulo": "Tecido e caimento",
+    "tecido_itens": [
+      "Compressão na medida",
+      "Zero transparência",
+      "Tecido poliamida e elastano"
+    ],
+    "pagamento_titulo": "Pagamento e envio",
+    "pagamento_texto": "Até 6x no cartão de crédito. Enviamos para todo o Brasil.\n\nO pedido é fechado direto com a Ju pelo WhatsApp."
+  }
 }
