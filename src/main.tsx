@@ -11,6 +11,12 @@ import '@fontsource-variable/fraunces/opsz-italic.css';
 import '@fontsource-variable/manrope/index.css';
 import './index.css';
 
+// Os e-mails do Netlify Identity (convite, nova senha) abrem a página inicial com um código no endereço.
+// Quem sabe ler esse código é o painel, então manda para /admin levando o código junto.
+if (/^#(invite|recovery|confirmation|email_change)_token=/.test(location.hash)) {
+  location.replace('/admin/' + location.hash);
+}
+
 lerCupomDaUrl();
 registrarOrigem();
 // Antes do GTM: cookies analíticos e de anúncio começam negados até a visitante escolher.
