@@ -13,14 +13,13 @@
       "nome": "Verde menta",
       "hex": "#8FDCC0",
       "disponiveis": [
-        "P",
-        "M"
+        "Único"
       ],
       "fotos": [
         "/uploads/produtos/conjunto-anna/verde-menta-1.jpg",
         "/uploads/produtos/conjunto-anna/verde-menta-2.jpg"
       ],
-      "esgotada": true
+      "esgotada": false
     },
     {
       "nome": "Rosa claro",
