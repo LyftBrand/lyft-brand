@@ -1,7 +1,7 @@
 {
   "destaque": true,
   "descricao": "",
-  "ordem": 10,
+  "ordem": 8,
   "preco": 259.9,
   "preco_promocional": 200,
   "ativo": true,
@@ -13,13 +13,14 @@
       "nome": "Verde menta",
       "hex": "#8FDCC0",
       "disponiveis": [
-        "Único"
+        "P",
+        "M"
       ],
       "fotos": [
         "/uploads/produtos/conjunto-anna/verde-menta-1.jpg",
         "/uploads/produtos/conjunto-anna/verde-menta-2.jpg"
       ],
-      "esgotada": false
+      "esgotada": true
     },
     {
       "nome": "Rosa claro",
