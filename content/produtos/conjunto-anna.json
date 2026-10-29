@@ -3,7 +3,7 @@
   "descricao": "",
   "ordem": 10,
   "preco": 259.9,
-  "ativo": true,
+  "ativo": false,
   "novidade": true,
   "fotos_extras": [],
   "categoria": "Conjuntos",
