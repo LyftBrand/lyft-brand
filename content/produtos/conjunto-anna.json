@@ -3,6 +3,7 @@
   "descricao": "",
   "ordem": 10,
   "preco": 259.9,
+  "preco_promocional": 200,
   "ativo": true,
   "novidade": true,
   "fotos_extras": [],
