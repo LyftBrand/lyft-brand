@@ -3,7 +3,7 @@
   "descricao": "",
   "ordem": 8,
   "preco": 259.9,
-  "preco_promocional": 200,
+  "preco_promocional": "",
   "ativo": true,
   "novidade": true,
   "fotos_extras": [],
@@ -16,8 +16,8 @@
         "Único"
       ],
       "fotos": [
-        "/uploads/produtos/conjunto-anna/verde-menta-1.jpg",
-        "/uploads/produtos/conjunto-anna/verde-menta-2.jpg"
+        "/uploads/painel/img_8569.webp",
+        "/uploads/painel/img_8571.webp"
       ],
       "esgotada": false
     },
