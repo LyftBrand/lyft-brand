@@ -1,6 +1,8 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  # Salvar no painel não publica (cada publicação gasta 15 créditos). Ver scripts/ignorar-build.mjs.
+  ignore = "node scripts/ignorar-build.mjs"
 
 [build.environment]
   NODE_VERSION = "22"

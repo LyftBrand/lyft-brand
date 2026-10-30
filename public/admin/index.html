@@ -7,8 +7,17 @@
   <title>Painel Lyft</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    #barra-publicar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9999; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 16px; padding: 10px 16px; background: #2b2523; color: #f6efea; font: 14px/1.4 system-ui, sans-serif; box-shadow: 0 -2px 10px rgba(0,0,0,.15); }
+    #barra-publicar.atencao { background: #7a5a12; }
+    #barra-publicar.perigo { background: #8a2c2c; }
+    #barra-publicar button { padding: 8px 16px; border: 0; border-radius: 999px; background: #e8c9bd; color: #2b2523; font-weight: 700; cursor: pointer; }
+    #barra-publicar button:disabled { opacity: .45; cursor: default; }
+    body { padding-bottom: 64px; }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@3.16.3/dist/decap-cms.js"></script>
+  <script src="/admin/barra.js"></script>
 </body>
 </html>
