@@ -74,7 +74,7 @@ collections:
             widget: list
             required: false
             field: { name: foto, label: Foto, widget: image, choose_url: false }
-            hint: "Arraste para mudar a ordem. A primeira foto é a capa."
+            hint: "Arraste para mudar a ordem. A primeira foto é a capa. Prefira JPG de até 3 MB. Foto do iPhone (HEIC) funciona no site, mas aqui no painel aparece só o ícone, sem prévia."
       - { name: descricao, label: "Descrição", widget: text, required: false }
       - name: detalhes
         label: "Detalhes"

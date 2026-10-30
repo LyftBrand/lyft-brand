@@ -4,6 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import sharp from 'sharp';
+import heicConvert from 'heic-convert';
 
 // Sem cache: a foto é lida para a memória e o arquivo fica livre para ser sobrescrito (Windows trava o arquivo aberto).
 sharp.cache(false);
@@ -19,6 +20,29 @@ function* arquivos(dir) {
     else if (/\.(jpe?g|png|webp)$/i.test(e.name)) yield p;
   }
 }
+
+// Fotos do iPhone (HEIC) não abrem no navegador: vira uma cópia JPG ao lado (foto.heic → foto.heic.jpg).
+// O site já aponta para o .jpg (ver semHeic em src/lib/content.ts).
+let convertidas = 0;
+function* heics(dir) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) yield* heics(p);
+    else if (/\.hei[cf]$/i.test(e.name)) yield p;
+  }
+}
+if (fs.existsSync(PASTA)) {
+  for (const arq of heics(PASTA)) {
+    try {
+      const jpg = await heicConvert({ buffer: fs.readFileSync(arq), format: 'JPEG', quality: 0.9 });
+      fs.writeFileSync(arq + '.jpg', Buffer.from(jpg));
+      convertidas++;
+    } catch (e) {
+      console.warn(`não deu para converter ${path.basename(arq)}: ${e.message}`);
+    }
+  }
+}
+console.log(`fotos HEIC convertidas para JPG: ${convertidas}`);
 
 let otimizadas = 0;
 let economia = 0;

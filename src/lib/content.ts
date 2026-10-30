@@ -77,7 +77,15 @@ export interface Depoimento {
   origem: string;
 }
 
-export const config = configJson as Config;
+/** Troca foto.heic (iPhone) por foto.heic.jpg, a cópia que o build gera (scripts/otimizar-uploads.mjs). */
+function semHeic<T>(v: T): T {
+  if (typeof v === 'string') return (/\.hei[cf]$/i.test(v) ? v + '.jpg' : v) as T;
+  if (Array.isArray(v)) return v.map(semHeic) as T;
+  if (v && typeof v === 'object') return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, semHeic(x)])) as T;
+  return v;
+}
+
+export const config = semHeic(configJson as Config);
 export const depoimentos = (depoimentosJson as { itens: Depoimento[] }).itens;
 
 export const slugify = (s: string) =>
@@ -89,6 +97,7 @@ type RawProduto = Omit<Produto, 'slug' | 'cores'> & { cores?: Omit<Cor, 'chave'>
 const arquivos = import.meta.glob<RawProduto>('../../content/produtos/*.json', { eager: true, import: 'default' });
 
 export const produtos: Produto[] = Object.entries(arquivos)
+  .map(([caminho, bruto]) => [caminho, semHeic(bruto)] as const)
   .map(([caminho, p]) => ({
     ...p,
     slug: caminho.split('/').pop()!.replace(/\.json$/, ''),
@@ -102,7 +111,8 @@ export const produtos: Produto[] = Object.entries(arquivos)
     info_padrao: p.info_padrao !== false,
     tecido_itens: p.tecido_itens ?? [],
     pagamento_texto: p.pagamento_texto ?? '',
-    cores: (p.cores ?? []).map((c) => ({
+    // Cor sem nome (item vazio esquecido no painel) é ignorada, em vez de derrubar a publicação.
+    cores: (p.cores ?? []).filter((c) => c?.nome?.trim()).map((c) => ({
       ...c,
       chave: slugify(c.nome),
       esgotada: !!c.esgotada,
