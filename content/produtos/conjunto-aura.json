@@ -1,20 +1,12 @@
 {
-  "nome": "Conjunto Aura",
-  "ativo": true,
-  "categoria": "Conjuntos",
-  "preco": 239.9,
-  "resumo": "Top + shorts",
-  "descricao": "O conjunto Aura foi feito pra valorizar o corpo com conforto, sustentação e zero transparência. Perfeito do treino ao pós.",
-  "detalhes": [],
-  "grade": [
-    "P",
-    "M",
-    "G"
-  ],
-  "observacao": "",
   "destaque": true,
-  "novidade": false,
+  "descricao": "O conjunto Aura foi feito pra valorizar o corpo com conforto, sustentação e zero transparência. Perfeito do treino ao pós.",
   "ordem": 1,
+  "preco": 239.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [],
+  "categoria": "Conjuntos",
   "cores": [
     {
       "nome": "Verde",
@@ -23,7 +15,7 @@
         "M"
       ],
       "fotos": [
-        "/uploads/produtos/conjunto-aura/verde-1.jpg",
+        "/uploads/painel/2026-05-18-lyft_foto_001.jpg",
         "/uploads/produtos/conjunto-aura/verde-2.jpg"
       ],
       "esgotada": false
@@ -36,8 +28,7 @@
         "G"
       ],
       "fotos": [
-        "/uploads/produtos/conjunto-aura/preto-1.jpg",
-        "/uploads/produtos/conjunto-aura/preto-2.jpg"
+        "/uploads/produtos/conjunto-aura/preto-1.jpg"
       ],
       "esgotada": false
     },
@@ -57,12 +48,20 @@
       "hex": "#7B2D42",
       "disponiveis": [],
       "fotos": [
-        "/uploads/produtos/conjunto-aura/marsala-1.jpg"
+        "/uploads/painel/2026-05-18-lyft_foto_183.jpg"
       ],
       "esgotada": true
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "Top + shorts",
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "detalhes": [],
+  "nome": "Conjunto Aura",
+  "observacao": "",
   "info_padrao": true
 }
