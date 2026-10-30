@@ -1,0 +1,54 @@
+{
+  "destaque": false,
+  "ordem": 99,
+  "preco": 259.9,
+  "ativo": true,
+  "novidade": true,
+  "categoria": "Conjuntos",
+  "cores": [
+    {
+      "hex": "#B4988F",
+      "esgotada": false
+    },
+    {
+      "hex": "#a7d0e1",
+      "esgotada": false,
+      "nome": "Azul claro",
+      "disponiveis": [
+        "G"
+      ],
+      "fotos": [
+        "/uploads/painel/img_1230.heic"
+      ]
+    },
+    {
+      "hex": "#eae89d",
+      "esgotada": false,
+      "nome": "Amarelo Manteiga",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": [
+        "/uploads/painel/img_1898.heic"
+      ]
+    },
+    {
+      "hex": "#000000",
+      "esgotada": false,
+      "nome": "Preto",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": [
+        "/uploads/painel/1786144669_0200aa3ae52a96957e87.webp"
+      ]
+    }
+  ],
+  "resumo": "Conjunto em poliamida com shorts duplo",
+  "grade": [
+    "M",
+    "G"
+  ],
+  "nome": "Conjunto Stella T-shirt",
+  "info_padrao": true
+}
