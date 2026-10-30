@@ -1,36 +1,45 @@
 {
-  "nome": "Macaquinho Muse",
-  "ativo": true,
-  "categoria": "Macaquinhos",
-  "preco": 179.9,
-  "resumo": "",
-  "descricao": "",
-  "detalhes": [],
-  "grade": [
-    "P",
-    "M",
-    "G"
-  ],
-  "observacao": "Modelagem pequena.",
   "destaque": false,
-  "novidade": false,
+  "descricao": "",
   "ordem": 4,
+  "preco": 179.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [],
+  "categoria": "Macaquinhos",
   "cores": [
     {
       "nome": "Chumbo",
       "hex": "#4B4F66",
+      "disponiveis": null,
+      "fotos": [
+        "/uploads/produtos/macaquinho-muse/chumbo-1.jpg",
+        ""
+      ],
+      "esgotada": true
+    },
+    {
+      "hex": "#777776",
+      "esgotada": false,
+      "nome": "Cinza",
       "disponiveis": [
         "M",
         "G"
       ],
       "fotos": [
-        "/uploads/produtos/macaquinho-muse/chumbo-1.jpg",
-        "/uploads/produtos/macaquinho-muse/chumbo-2.jpg"
-      ],
-      "esgotada": false
+        "/uploads/painel/img_0878.heic"
+      ]
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "",
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "detalhes": [],
+  "nome": "Macaquinho Muse",
+  "observacao": "Modelagem pequena.",
   "info_padrao": true
 }
