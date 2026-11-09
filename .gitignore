@@ -4,3 +4,4 @@ dist
 .env.local
 fotos-originais/
 _celular.html
+.claude/

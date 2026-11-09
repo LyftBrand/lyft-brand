@@ -74,7 +74,7 @@ collections:
             widget: list
             required: false
             field: { name: foto, label: Foto, widget: image, choose_url: false }
-            hint: "Arraste para mudar a ordem. A primeira foto é a capa. Prefira fotos de até 3 MB. Foto do iPhone (HEIC) é convertida para JPG automaticamente ao enviar."
+            hint: "Arraste para mudar a ordem. A primeira foto é a capa. Pode enviar a foto do jeito que estiver: o painel converte foto do iPhone (HEIC) para JPG e reduz para 2000 px ao enviar."
       - { name: descricao, label: "Descrição", widget: text, required: false }
       - name: detalhes
         label: "Detalhes"
