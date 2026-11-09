@@ -110,3 +110,12 @@ Ver `apps-script/LEIA-ME.md` (uns 5 minutos). Depois colar a URL no painel em **
 - GTM → **Visualizar** (Tag Assistant): navegar, abrir produto, pedir pelo WhatsApp e ver os eventos chegando.
 - Search Console → Cobertura/Páginas depois de alguns dias.
 - Testar a prévia do link no WhatsApp (mandar o link de um produto para si mesmo).
+
+## 10. Créditos da Netlify e como publicar
+
+- Plano Free: 300 créditos por mês, cada publicação gasta 15 (cerca de 20 por mês). O ciclo renova todo dia 9.
+- No painel `/admin`, o botão **Publicar** de cada produto só **salva** (não gasta crédito).
+- O site muda quando alguém clica em **Colocar o site no ar**, na barra do rodapé do painel. A barra mostra quantas publicações o ciclo já usou e quantas alterações salvas estão esperando.
+- Mudanças no código do site publicam sozinhas (e também gastam 15 créditos).
+- Variáveis na Netlify (Project configuration → Environment variables), já criadas: `BUILD_HOOK_URL` (build hook "Painel", em Developer settings → Build hooks) e `NETLIFY_TOKEN` (token pessoal, em User settings → Applications).
+- Se os créditos acabarem, o site continua no ar, mas nada novo é publicado até o dia 9. Nada se perde: na primeira publicação depois disso, tudo o que foi salvo entra junto.
