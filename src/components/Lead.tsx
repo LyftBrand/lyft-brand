@@ -2,7 +2,9 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState, ty
 import { Link } from 'react-router-dom';
 import { Lock, X } from 'lucide-react';
 import { config } from '../lib/content';
+import { lerPreferencias } from '../lib/consent';
 import { contatoSalvo, enviarLead, lembrarContato, type Contato, type Pedido } from '../lib/lead';
+import { dadosPedido, novoEventId, telefoneE164 } from '../lib/rastreio';
 import { brl, linkWhatsapp, track } from '../lib/utils';
 import { WhatsappIcon } from './Icons';
 import Cupom from './Cupom';
@@ -24,6 +26,20 @@ const mascara = (v: string) => {
   if (d.length <= 10) return `(${d.slice(0, 2)}) ${d.slice(2, 6)}-${d.slice(6)}`;
   return `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
 };
+/**
+ * Conversão: a cliente vai para o WhatsApp (pelo formulário ou direto, se já preencheu antes).
+ * E-mail e telefone só entram com cookies de marketing aceitos (para o Google Ads e o Meta, que criptografam).
+ */
+function registrarLead(p: Pedido, forma: 'formulario' | 'direto' | 'sem_formulario', contato?: Contato | null) {
+  const marketing = lerPreferencias()?.marketing;
+  track('generate_lead', {
+    ...dadosPedido(p),
+    forma_lead: forma,
+    event_id: novoEventId(),
+    ...(marketing && contato ? { user_data: { email_address: contato.email.trim().toLowerCase() || undefined, phone_number: telefoneE164(contato.whatsapp) } } : {}),
+  });
+}
+
 /** "Olá, Ju!" vira "Olá, Ju! Aqui é Maria." para a Ju saber com quem fala. */
 const comNome = (msg: string, nome: string) => msg.replace(/^Olá(, Ju)?!/, `Olá$1! Aqui é ${nome.split(' ')[0]}.`);
 const emailValido = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e.trim());
@@ -32,11 +48,12 @@ export function LeadProvider({ children }: { children: ReactNode }) {
   const [pedido, setPedido] = useState<Pedido | null>(null);
 
   const pedir = useCallback((p: Pedido) => {
-    track('whatsapp_click', { local: p.origem, item_name: p.produto });
+    track('whatsapp_click', dadosPedido(p));
     const salvo = contatoSalvo();
     // Formulário desligado no painel, ou cliente que já preencheu antes: vai direto.
     if (!config.formulario_ativo || salvo) {
       const mensagem = salvo ? comNome(p.mensagem, salvo.nome) : p.mensagem;
+      registrarLead(p, salvo ? 'direto' : 'sem_formulario', salvo);
       if (salvo) enviarLead(salvo, { ...p, mensagem });
       abrirWhatsapp(mensagem);
       return;
@@ -73,7 +90,7 @@ function LeadModal({ pedido, onClose }: { pedido: Pedido; onClose: () => void })
   const primeiro = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    track('lead_form_open', { lead_origem: pedido.origem });
+    track('lead_form_open', dadosPedido(pedido));
     const t = setTimeout(() => primeiro.current?.focus(), 120);
     const esc = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', esc);
@@ -97,6 +114,7 @@ function LeadModal({ pedido, onClose }: { pedido: Pedido; onClose: () => void })
     const contato: Contato = { nome: nome.trim().slice(0, 80), email: email.trim().slice(0, 120), whatsapp: whats };
     lembrarContato(contato);
     const mensagem = comNome(pedido.mensagem, contato.nome);
+    registrarLead(pedido, 'formulario', contato);
     enviarLead(contato, { ...pedido, mensagem });
     abrirWhatsapp(mensagem);
     onClose();
@@ -138,7 +156,7 @@ function LeadModal({ pedido, onClose }: { pedido: Pedido; onClose: () => void })
             <span className="text-[13px] font-semibold">E-mail {!config.email_obrigatorio && <span className="font-normal text-muted">(opcional)</span>}</span>
             <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" inputMode="email" autoComplete="email" className={campo(erros.email)} placeholder="seu@email.com" />
           </label>
-          <Cupom compacto />
+          <Cupom compacto local="formulario" />
           {/* Campo-isca: invisível para pessoas, robôs costumam preencher */}
           <input value={isca} onChange={(e) => setIsca(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden className="absolute -left-[9999px] h-0 w-0 opacity-0" name="site" />
 

@@ -33,7 +33,7 @@ function FaixaTopo() {
 
   const aplicar = () => {
     salvarCupom(cupom);
-    track('cupom_informado', { cupom, local: 'faixa_topo' });
+    track('cupom_informado', { cupom, cupom_local: 'faixa_topo' });
   };
 
   return (
@@ -102,7 +102,7 @@ export default function Header() {
           <div className="flex items-center justify-end gap-2">
             <a href={linkInstagram()} target="_blank" rel="noopener" aria-label="Instagram da Lyft"
               className="hidden md:inline-flex p-2 text-ink-soft hover:text-ink"
-              onClick={() => track('click_instagram', { local: 'header' })}>
+              onClick={() => track('click_instagram', { botao: 'topo' })}>
               <InstagramIcon />
             </a>
             <BotaoWhatsapp pedido={pedidoTopo}

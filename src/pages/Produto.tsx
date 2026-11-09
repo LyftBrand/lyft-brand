@@ -3,6 +3,7 @@ import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { Check, ChevronLeft, ChevronRight, Link2, Ruler, X } from 'lucide-react';
 import { config, corDisponivel, corInicial, fotoEhDeOutraCor, fotosDaCor, precoFinal, produtos, type Cor } from '../lib/content';
 import { brl, img, linkWhatsapp, origemAtual, parcela, SITE_URL, track } from '../lib/utils';
+import { itemGa, trackEcommerce, useListaVista } from '../lib/rastreio';
 import { usePedido } from '../components/Lead';
 import Cupom from '../components/Cupom';
 import SmartImage from '../components/SmartImage';
@@ -120,8 +121,9 @@ export default function Produto() {
   }, [cor?.chave, slug]);
 
   useEffect(() => {
-    if (p) track('view_item', { item_id: p.slug, item_name: p.nome, price: precoFinal(p) });
+    if (p) trackEcommerce('view_item', [itemGa(p, cor)]);
   }, [p?.slug]);
+  useListaVista('relacionados', p ? produtos.filter((x) => x.slug !== p.slug && x.categoria === p.categoria).slice(0, 4) : []);
 
   if (!p || !cor) return <NaoEncontrada />;
 
@@ -136,7 +138,7 @@ export default function Produto() {
     const n = new URLSearchParams(params);
     n.set('cor', c.chave);
     setParams(n, { replace: true });
-    track('select_item_variant', { item_id: p.slug, cor: c.nome });
+    track('select_item_variant', { item_id: p.slug, produto: p.nome, produto_categoria: p.categoria, cor: c.nome, esgotada: !corDisponivel(c) });
   };
 
   const mensagem = disponivel
@@ -150,25 +152,25 @@ export default function Produto() {
       document.getElementById('tamanhos')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
-    if (!disponivel) track('whatsapp_reposicao', { item_id: p.slug, cor: cor.nome });
     pedirLead({
       origem: disponivel ? 'produto' : 'reposicao',
       mensagem, produto: p.nome, cor: cor.nome,
       tamanho: disponivel ? (tamanho || cor.disponiveis[0]) : '',
-      preco, url_produto: url,
+      preco, url_produto: url, item_id: p.slug, categoria: p.categoria,
     });
   };
 
   const copiar = async () => {
     try {
-      if (navigator.share && matchMedia('(pointer:coarse)').matches) {
+      const nativo = !!navigator.share && matchMedia('(pointer:coarse)').matches;
+      if (nativo) {
         await navigator.share({ title: p.nome, url });
       } else {
         await navigator.clipboard.writeText(url);
         setCopiado(true);
         setTimeout(() => setCopiado(false), 2200);
       }
-      track('share', { item_id: p.slug });
+      track('share', { method: nativo ? 'compartilhar' : 'copiar_link', content_type: 'produto', item_id: p.slug, produto: p.nome });
     } catch { /* usuária cancelou */ }
   };
 
@@ -242,7 +244,7 @@ export default function Produto() {
                   const tem = cor.disponiveis.includes(t);
                   const sel = tamanho === t;
                   return (
-                    <button key={t} disabled={!tem} onClick={() => { setTamanho(t); setAviso(false); }}
+                    <button key={t} disabled={!tem} onClick={() => { setTamanho(t); setAviso(false); track('escolher_tamanho', { item_id: p.slug, produto: p.nome, produto_categoria: p.categoria, cor: cor.nome, tamanho: t }); }}
                       aria-pressed={sel}
                       className={`relative h-12 ${t.length > 2 ? 'px-5' : 'w-14'} rounded-full border text-[15px] font-medium transition
                         ${sel ? 'bg-ink text-paper border-ink' : tem ? 'border-line hover:border-ink' : 'border-line text-sold cursor-not-allowed'}`}>
@@ -311,7 +313,7 @@ export default function Produto() {
           <section className="mt-20 md:mt-28">
             <h2 className="display text-[30px] md:text-[42px] mb-8">Você também vai gostar</h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-10 md:gap-x-5">
-              {relacionados.map((r) => <ProductCard key={r.slug} p={r} />)}
+              {relacionados.map((r, i) => <ProductCard key={r.slug} p={r} lista="relacionados" posicao={i + 1} />)}
             </div>
           </section>
         )}

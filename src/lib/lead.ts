@@ -1,7 +1,7 @@
 // Origem da visita (UTMs) e envio do contato para a planilha Google.
 import { config } from './content';
 import { lerPreferencias } from './consent';
-import { cupomAtivo, track } from './utils';
+import { cupomAtivo } from './utils';
 
 const CAMPOS_ORIGEM = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'gbraid', 'wbraid', 'ttclid'] as const;
 /** Identificadores de clique em anúncio. Ficam guardados por 90 dias (validade no Google Ads e no Meta). */
@@ -69,6 +69,8 @@ export interface Pedido {
   tamanho?: string;
   preco?: number;
   url_produto?: string;
+  item_id?: string;        // slug do produto (para o GA4 e o Meta)
+  categoria?: string;
 }
 
 /**
@@ -124,15 +126,6 @@ export function enviarLead(contato: Contato, pedido: Pedido) {
     cookies_marketing: cookies?.marketing ? 'Sim' : 'Não',
     site: '', // campo-isca: robôs preenchem, pessoas não veem
   };
-
-  track('lead_whatsapp', {
-    lead_origem: pedido.origem,
-    item_name: pedido.produto,
-    value: pedido.preco,
-    currency: 'BRL',
-    fb_event_name: 'Lead',
-    tt_event_name: 'SubmitForm',
-  });
 
   if (import.meta.env.DEV) (window as unknown as { __ultimoLead: unknown }).__ultimoLead = dados;
   const url = config.planilha_url?.trim();

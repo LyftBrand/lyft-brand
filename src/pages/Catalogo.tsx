@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { categorias, precoFinal, produtoDisponivel, produtos } from '../lib/content';
 import { track } from '../lib/utils';
+import { useListaVista } from '../lib/rastreio';
 import ProductCard from '../components/ProductCard';
 import Seo, { jsonLdMarca } from '../components/Seo';
 import { SITE_URL } from '../lib/utils';
@@ -29,6 +30,8 @@ export default function Catalogo() {
     else l = [...l].sort((a, b) => Number(produtoDisponivel(b)) - Number(produtoDisponivel(a)));
     return l;
   }, [categoria, soDisponiveis, ordem]);
+  const nomeLista = categoria ? `catalogo_${categoria.toLowerCase()}` : 'catalogo';
+  useListaVista(nomeLista, lista);
 
   const chip = (ativo: boolean) =>
     `shrink-0 h-10 px-5 rounded-full border text-[13px] font-medium transition ${ativo ? 'bg-ink text-paper border-ink' : 'border-line text-ink-soft hover:border-ink'}`;
@@ -49,9 +52,9 @@ export default function Catalogo() {
       <div className="sticky top-16 md:top-20 z-30 bg-paper/95 backdrop-blur border-b border-line">
         <div className="container-x py-3 flex items-center gap-3">
           <div className="flex gap-2 overflow-x-auto no-scrollbar flex-1 -mx-4 px-4 md:mx-0 md:px-0">
-            <button className={chip(!categoria)} onClick={() => set('categoria', '')}>Todas</button>
+            <button className={chip(!categoria)} onClick={() => { set('categoria', ''); track('filter_produtos', { produto_categoria: 'Todas' }); }}>Todas</button>
             {categorias.map((c) => (
-              <button key={c} className={chip(categoria === c)} onClick={() => { set('categoria', c); track('filter_produtos', { categoria: c }); }}>{c}</button>
+              <button key={c} className={chip(categoria === c)} onClick={() => { set('categoria', c); track('filter_produtos', { produto_categoria: c }); }}>{c}</button>
             ))}
           </div>
         </div>
@@ -76,7 +79,7 @@ export default function Catalogo() {
       <section className="container-x py-10 md:py-14">
         {lista.length ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-3 gap-y-10 md:gap-x-5 md:gap-y-14">
-            {lista.map((p, i) => <ProductCard key={p.slug} p={p} priority={i < 4} />)}
+            {lista.map((p, i) => <ProductCard key={p.slug} p={p} priority={i < 4} lista={nomeLista} posicao={i + 1} />)}
           </div>
         ) : (
           <div className="py-20 text-center">

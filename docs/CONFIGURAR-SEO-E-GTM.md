@@ -51,33 +51,8 @@ Depois de verificar:
 2. Copiar o ID `GTM-XXXXXXX` e colar no painel do site em **ID do Google Tag Manager** → Publicar.
 3. Não precisa colar código nenhum no site: ele já carrega o GTM (na primeira interação ou 3,5 s após abrir, para não pesar no PageSpeed).
 
-### Variáveis da camada de dados a criar no GTM
-`page_path`, `page_location`, `page_title`, `item_id`, `item_name`, `cor`, `tamanho`, `value`, `currency`, `lead_origem`, `local`, `cupom`, `categoria`, `fb_event_name`, `tt_event_name`.
-
-### Eventos que o site já envia (dataLayer)
-
-| Evento | Quando acontece | Uso sugerido |
-|---|---|---|
-| `page_view` | toda troca de página (inclusive a primeira) | GA4 page_view |
-| `view_item` | abriu um produto | GA4 view_item · Meta ViewContent |
-| `select_item_variant` | trocou a cor | GA4 |
-| `whatsapp_click` | tocou em qualquer botão de WhatsApp | GA4 · Meta Contact |
-| `lead_form_open` | abriu o formulário antes do WhatsApp | GA4 (funil) |
-| `lead_whatsapp` | enviou o formulário / pediu pelo WhatsApp | **Conversão principal**: GA4 generate_lead · Meta Lead · Google Ads conversão · TikTok SubmitForm |
-| `whatsapp_reposicao` | pediu aviso de reposição | GA4 |
-| `cupom_informado` | aplicou cupom (campo ou faixa do topo) | GA4 |
-| `filter_produtos` | filtrou o catálogo | GA4 |
-| `share` | copiou/compartilhou o link da peça | GA4 |
-| `click_instagram` | clicou no Instagram | GA4 |
-| `voltar_ao_topo` | usou a seta de voltar ao topo | GA4 |
-| `cookie_consent_update` | escolheu as preferências de cookies | — |
-
-### GA4
-1. analytics.google.com → criar propriedade **Lyft** → fluxo Web → copiar o **ID de métricas** (`G-XXXXXXX`).
-2. No GTM: tag **Google Tag** com o ID `G-…`, gatilho *Initialization – All Pages*, parâmetro de configuração `send_page_view = false` (o site manda o page_view certo a cada troca de página).
-3. Tag **GA4 Event** `page_view` com gatilho de evento personalizado `page_view` e parâmetros `page_location`, `page_title`.
-4. Tags GA4 Event para os demais eventos da tabela (ou uma tag única com gatilho regex).
-5. Em GA4 → Administrador → Eventos → marcar `generate_lead` (ou `lead_whatsapp`) como **evento principal (conversão)**.
+### Eventos, variáveis e GA4
+O plano completo (eventos, parâmetros, tags do GTM e configuração do GA4 passo a passo) está em **`docs/PLANO-DE-TAGUEAMENTO.md`**. Ele substitui a lista que ficava aqui.
 
 ### Consentimento
 O site já envia o *Consent Mode v2* (padrão negado, atualiza quando a pessoa aceita). No GTM, em cada tag de anúncio (Meta, TikTok, Google Ads), em **Configurações de consentimento** exigir `ad_storage`. Nas tags do Google isso já é automático.

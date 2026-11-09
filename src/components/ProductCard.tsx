@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { corDisponivel, corInicial, fotosDaCor, precoFinal, produtoDisponivel, type Cor, type Produto } from '../lib/content';
 import { brl, parcela } from '../lib/utils';
+import { itemGa, trackEcommerce } from '../lib/rastreio';
 import SmartImage from './SmartImage';
 
 export function Swatch({ cor, ativo, onClick, tamanho = 'w-5 h-5' }: { cor: Cor; ativo?: boolean; onClick?: () => void; tamanho?: string }) {
@@ -21,15 +22,22 @@ export function Swatch({ cor, ativo, onClick, tamanho = 'w-5 h-5' }: { cor: Cor;
   );
 }
 
-export default function ProductCard({ p, priority = false, sizes = '(min-width:1024px) 25vw, 50vw' }: { p: Produto; priority?: boolean; sizes?: string }) {
+export default function ProductCard({ p, priority = false, sizes = '(min-width:1024px) 25vw, 50vw', lista, posicao }: { p: Produto; priority?: boolean; sizes?: string; lista?: string; posicao?: number }) {
   const [cor, setCor] = useState<Cor>(() => corInicial(p));
   const fotos = fotosDaCor(p, cor);
   const disponivel = produtoDisponivel(p);
   const preco = precoFinal(p);
   const href = `/produto/${p.slug}${cor ? `?cor=${cor.chave}` : ''}`;
 
+  // Clique em qualquer link do card (foto ou nome): de qual lista e posição a cliente veio.
+  const clicou = (e: React.MouseEvent) => {
+    if (lista && (e.target as HTMLElement).closest('a')) {
+      trackEcommerce('select_item', [itemGa(p, cor, { index: posicao, item_list_name: lista })], { item_list_name: lista });
+    }
+  };
+
   return (
-    <article className="group">
+    <article className="group" onClickCapture={clicou}>
       <Link to={href} className="block relative aspect-[4/5] overflow-hidden rounded-[2px] bg-nude">
         {fotos[0] && (
           <SmartImage key={fotos[0]} src={fotos[0]} alt={`${p.nome} ${cor?.nome ?? ''}`} widths={[360, 540, 760]} sizes={sizes} priority={priority}

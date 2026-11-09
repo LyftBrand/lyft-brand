@@ -7,7 +7,7 @@ import { cupomAtivo, salvarCupom, track } from '../lib/utils';
  * e o cupom vai junto na mensagem do WhatsApp e na planilha.
  * Quem chega por link com ?cupom=XPTO já vê o cupom aplicado.
  */
-export default function Cupom({ compacto = false }: { compacto?: boolean }) {
+export default function Cupom({ compacto = false, local = 'produto' }: { compacto?: boolean; local?: string }) {
   // Estado inicial igual ao HTML gerado no build; o cupom salvo no navegador entra depois de montar.
   const [valor, setValor] = useState('');
   const [aberto, setAberto] = useState(false);
@@ -21,6 +21,14 @@ export default function Cupom({ compacto = false }: { compacto?: boolean }) {
     window.addEventListener('lyft:cupom', on);
     return () => window.removeEventListener('lyft:cupom', on);
   }, []);
+
+  // Conta o cupom só quando ele muda (sair do campo e clicar em Aplicar não contam duas vezes).
+  const salvar = () => {
+    const antes = cupomAtivo();
+    const v = salvarCupom(valor);
+    setValor(v);
+    if (v && v !== antes) track('cupom_informado', { cupom: v, cupom_local: local });
+  };
 
   if (!aberto) {
     return (
@@ -39,7 +47,7 @@ export default function Cupom({ compacto = false }: { compacto?: boolean }) {
           id={compacto ? 'cupom-form' : 'cupom'}
           value={valor}
           onChange={(e) => setValor(e.target.value.toUpperCase())}
-          onBlur={() => { const v = salvarCupom(valor); setValor(v); if (v) track('cupom_informado', { cupom: v }); }}
+          onBlur={salvar}
           onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); (e.target as HTMLInputElement).blur(); } }}
           placeholder="Digite o código"
           autoCapitalize="characters"
@@ -47,7 +55,7 @@ export default function Cupom({ compacto = false }: { compacto?: boolean }) {
           autoFocus={abriuAgora}
           className="h-12 flex-1 min-w-0 px-4 bg-paper border border-line text-[16px] tracking-wider uppercase outline-none focus:border-ink"
         />
-        <button type="button" onClick={() => { const v = salvarCupom(valor); setValor(v); if (v) track('cupom_informado', { cupom: v }); }}
+        <button type="button" onClick={salvar}
           className="btn btn-line !min-h-12 !px-5 shrink-0">Aplicar</button>
       </div>
       {aplicado && (

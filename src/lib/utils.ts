@@ -43,7 +43,11 @@ const CUPOM_KEY = 'lyft_cupom';
 export function lerCupomDaUrl() {
   try {
     const c = new URLSearchParams(location.search).get('cupom');
-    if (c) sessionStorage.setItem(CUPOM_KEY, c.trim().toUpperCase().slice(0, 30));
+    if (c) {
+      const v = c.trim().toUpperCase().slice(0, 30);
+      sessionStorage.setItem(CUPOM_KEY, v);
+      track('cupom_informado', { cupom: v, cupom_local: 'link' });
+    }
   } catch { /* navegador sem storage */ }
 }
 

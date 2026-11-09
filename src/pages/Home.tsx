@@ -7,6 +7,7 @@ import SmartImage from '../components/SmartImage';
 import Seo, { jsonLdMarca } from '../components/Seo';
 import { SITE_URL } from '../lib/utils';
 import { WhatsappIcon } from '../components/Icons';
+import { useListaVista } from '../lib/rastreio';
 import { ChamadaWhatsapp, Depoimentos, FaixaBeneficios, InstagramFaixa, SectionHead } from '../components/Sections';
 
 /** Quebra o slogan na vírgula: a segunda parte vai em itálico, como no catálogo. */
@@ -19,6 +20,7 @@ function Titulo({ texto }: { texto: string }) {
 export default function Home() {
   const destaques = produtos.filter((p) => p.destaque).slice(0, 8);
   const vitrine = destaques.length >= 4 ? destaques : produtos.slice(0, 8);
+  useListaVista('inicio_mais_amados', vitrine);
   const capas = categorias.map((c) => {
     const p = produtos.find((x) => x.categoria === c && x.destaque) ?? produtos.find((x) => x.categoria === c)!;
     return { nome: c, foto: fotosDaCor(p, corInicial(p))[0], qtd: produtos.filter((x) => x.categoria === c).length };
@@ -78,7 +80,7 @@ export default function Home() {
       <section className="container-x pb-20 md:pb-28">
         <SectionHead eyebrow="Mais amados" title={<>Os <em className="italic">queridinhos</em> da coleção</>} link={{ to: '/catalogo', label: 'Ver tudo' }} />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-10 md:gap-x-5 md:gap-y-14">
-          {vitrine.map((p, i) => <ProductCard key={p.slug} p={p} priority={i < 2} />)}
+          {vitrine.map((p, i) => <ProductCard key={p.slug} p={p} priority={i < 2} lista="inicio_mais_amados" posicao={i + 1} />)}
         </div>
         <div className="mt-12 text-center">
           <Link to="/catalogo" className="btn btn-line">Ver as {produtos.length} peças <ArrowRight className="w-4 h-4" strokeWidth={1.5} /></Link>

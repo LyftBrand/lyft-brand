@@ -72,7 +72,7 @@ export function InstagramFaixa() {
       <div className="container-x text-center">
         <p className="eyebrow text-rose-deep mb-3">Siga a Lyft</p>
         <a href={linkInstagram()} target="_blank" rel="noopener" className="display text-[34px] md:text-[52px] link-u"
-          onClick={() => track('click_instagram', { local: 'home' })}>
+          onClick={() => track('click_instagram', { botao: 'inicio' })}>
           @{config.instagram}
         </a>
       </div>

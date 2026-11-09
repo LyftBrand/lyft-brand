@@ -13,6 +13,7 @@ import CookieConsent from './components/CookieConsent';
 import { LeadProvider } from './components/Lead';
 import VoltarAoTopo from './components/VoltarAoTopo';
 import { track } from './lib/utils';
+import { tipoPagina } from './lib/rastreio';
 
 /** Volta ao topo ao trocar de página (mas não ao trocar de cor/filtro). */
 function Rolagem() {
@@ -22,7 +23,7 @@ function Rolagem() {
     else window.scrollTo(0, 0);
     // Evento de página para o GA4 (no GTM: gatilho de evento personalizado "page_view").
     // Roda a cada troca de página, inclusive na primeira; o título já é o da página nova.
-    track('page_view', { page_path: pathname, page_location: window.location.href, page_title: document.title });
+    track('page_view', { page_path: pathname, page_location: window.location.href, page_title: document.title, pagina_tipo: tipoPagina(pathname) });
   }, [pathname, hash]);
   return null;
 }
