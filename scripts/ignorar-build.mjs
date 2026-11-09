@@ -20,5 +20,5 @@ try {
 }
 
 const soConteudo = arquivos.every((f) => f.startsWith('content/') || f.startsWith('public/uploads/'));
-if (soConteudo) pular('só alterações do painel; entram no ar pelo botão Colocar o site no ar');
+if (soConteudo) pular('só alterações do painel; entram no ar pelo botão Publicar no site');
 publicar('mudança no código do site');

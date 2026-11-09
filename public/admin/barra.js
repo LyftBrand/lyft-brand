@@ -3,7 +3,7 @@
 (function () {
   const barra = document.createElement('div');
   barra.id = 'barra-publicar';
-  barra.innerHTML = '<span class="info">Carregando publicações…</span><button type="button" disabled>Colocar o site no ar</button>';
+  barra.innerHTML = '<span class="info">Carregando publicações…</span><button type="button" disabled>Publicar no site</button>';
   const info = barra.querySelector('.info');
   const botao = barra.querySelector('button');
   let dados = null;
@@ -34,7 +34,7 @@
     let status;
     if (d.publicando) status = '<b>Publicando…</b> leva cerca de 1 minuto.';
     else if (d.esperando > 0) status = `<b>${d.esperando} ${d.esperando === 1 ? 'alteração salva esperando' : 'alterações salvas esperando'}</b>`;
-    else status = 'Tudo no ar.';
+    else status = 'Tudo no ar. Use <b>Salvar</b> em cada produto e, quando terminar tudo, clique em <b>Publicar no site</b>.';
     let aviso = '';
     if (restam <= 0) aviso = ' · Acabaram as publicações do mês. O que for salvo entra no ar na renovação.';
     else if (restam === 1) aviso = ' · Resta só 1 publicação até a renovação.';
@@ -70,12 +70,41 @@
   function ligar() {
     const id = window.netlifyIdentity;
     if (!id) return;
-    id.on('init', (u) => u && iniciar());
-    id.on('login', iniciar);
+    id.on('login', () => { if (!document.body.contains(barra)) iniciar(); });
     id.on('logout', () => { clearInterval(timer); barra.remove(); });
+    // O login pode terminar de carregar depois desta página: confere a cada 2s até achar a usuária.
+    const espera = setInterval(() => {
+      if (id.currentUser() && !document.body.contains(barra)) iniciar();
+      if (document.body.contains(barra)) clearInterval(espera);
+    }, 2000);
     if (id.currentUser()) iniciar();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ligar);
   else ligar();
+
+  // O "Publicar" do Decap só salva (o site muda pelo botão da barra), então os textos viram "Salvar".
+  const NOMES = {
+    'Publicar': 'Salvar',
+    'Publicar agora': 'Salvar agora',
+    'Publicar e criar novo(a)': 'Salvar e criar novo(a)',
+    'Publicar e duplicar': 'Salvar e duplicar',
+    'Publicar alterações': 'Salvar alterações',
+    'Publicar nova entrada': 'Salvar nova entrada',
+    'Publicado': 'Salvo',
+    'Publicando...': 'Salvando...',
+  };
+  function renomear(raiz) {
+    const andar = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT);
+    for (let n = andar.nextNode(); n; n = andar.nextNode()) {
+      const novo = NOMES[n.nodeValue.trim()];
+      if (novo && !barra.contains(n)) n.nodeValue = n.nodeValue.replace(n.nodeValue.trim(), novo);
+    }
+  }
+  new MutationObserver((mudancas) => {
+    for (const m of mudancas) {
+      if (m.type === 'characterData') renomear(m.target.parentNode || m.target);
+      else m.addedNodes.forEach((n) => (n.nodeType === 1 ? renomear(n) : n.nodeType === 3 && renomear(n.parentNode)));
+    }
+  }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
 })();
