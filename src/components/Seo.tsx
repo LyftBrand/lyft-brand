@@ -17,6 +17,11 @@ interface Props {
 
 const absoluta = (u: string) => (u.startsWith('http') ? u : SITE_URL + u);
 
+/** Aceita só o código ou a tag inteira colada no painel (<meta name="..." content="CÓDIGO" />). */
+const codigoVerificacao = (v?: string) => (v ? (v.match(/content=["']([^"']+)["']/)?.[1] ?? v).trim() : '');
+const verificacaoGoogle = codigoVerificacao(config.google_site_verification);
+const verificacaoMeta = codigoVerificacao(config.meta_domain_verification);
+
 /**
  * Imagem de compartilhamento (WhatsApp/Instagram/Facebook): fotos enviadas pelo painel passam pelo
  * CDN da Netlify em 1200px JPG leve. O WhatsApp recusa imagens muito pesadas e aí não mostra a prévia.
@@ -56,8 +61,8 @@ export default function Seo({ title, description, image, jsonLd, noindex, type =
       <meta name="twitter:description" content={d} />
       <meta name="twitter:image" content={img} />
 
-      {config.google_site_verification && <meta name="google-site-verification" content={config.google_site_verification} />}
-      {config.meta_domain_verification && <meta name="facebook-domain-verification" content={config.meta_domain_verification} />}
+      {verificacaoGoogle && <meta name="google-site-verification" content={verificacaoGoogle} />}
+      {verificacaoMeta && <meta name="facebook-domain-verification" content={verificacaoMeta} />}
 
       {dados.map((j, i) => <script key={i} type="application/ld+json">{JSON.stringify(j)}</script>)}
     </>
