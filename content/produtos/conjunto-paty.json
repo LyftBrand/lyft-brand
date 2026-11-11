@@ -3,7 +3,7 @@
   "descricao": "",
   "ordem": 19,
   "preco": 189.9,
-  "ativo": false,
+  "ativo": true,
   "novidade": false,
   "fotos_extras": [],
   "categoria": "Conjuntos",
@@ -16,7 +16,7 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-paty/marrom-1.jpg",
-        "/uploads/produtos/conjunto-paty/marrom-2.jpg",
+        "/uploads/painel/img_0728.jpg.jpg",
         "/uploads/produtos/conjunto-paty/marrom-3.jpg",
         "/uploads/produtos/conjunto-paty/marrom-4.jpg"
       ],
