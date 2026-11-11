@@ -1,20 +1,12 @@
 {
-  "nome": "Conjunto Camila",
-  "ativo": true,
-  "categoria": "Conjuntos",
-  "preco": 259.9,
-  "resumo": "",
-  "descricao": "",
-  "detalhes": [],
-  "grade": [
-    "P",
-    "M",
-    "G"
-  ],
-  "observacao": "",
   "destaque": false,
-  "novidade": false,
+  "descricao": "",
   "ordem": 3,
+  "preco": 259.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [],
+  "categoria": "Conjuntos",
   "cores": [
     {
       "nome": "Verde mastruz",
@@ -23,17 +15,20 @@
         "P"
       ],
       "fotos": [
-        "/uploads/produtos/conjunto-camila/verde-mastruz-1.jpg"
+        "/uploads/produtos/conjunto-camila/verde-mastruz-1.jpg",
+        "/uploads/painel/img_8514.jpg"
       ],
       "esgotada": false
     },
     {
       "nome": "Rosa chiclete",
-      "hex": "#E8679A",
+      "hex": "#ff69b4",
       "disponiveis": [
         "M"
       ],
-      "fotos": [],
+      "fotos": [
+        "/uploads/painel/img_7280.jpg"
+      ],
       "esgotada": false
     },
     {
@@ -46,7 +41,15 @@
       "esgotada": false
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "",
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "detalhes": [],
+  "nome": "Conjunto Camila",
+  "observacao": "",
   "info_padrao": true
 }
