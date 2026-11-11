@@ -1,18 +1,12 @@
 {
-  "nome": "Conjunto Brenda",
-  "ativo": true,
-  "categoria": "Conjuntos",
-  "preco": 189.9,
-  "resumo": "",
-  "descricao": "",
-  "detalhes": [],
-  "grade": [
-    "Único"
-  ],
-  "observacao": "Tamanho único — veste do 36 ao 40.",
   "destaque": false,
-  "novidade": false,
+  "descricao": "",
   "ordem": 5,
+  "preco": 189.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [],
+  "categoria": "Conjuntos",
   "cores": [
     {
       "nome": "Grape",
@@ -21,13 +15,21 @@
         "Único"
       ],
       "fotos": [
-        "/uploads/produtos/conjunto-brenda/grape-1.jpg",
-        "/uploads/produtos/conjunto-brenda/grape-2.jpg"
+        "/uploads/painel/img_0715.jpg.jpg",
+        "/uploads/produtos/conjunto-brenda/grape-2.jpg",
+        "/uploads/painel/img_0717.jpg.jpg",
+        "/uploads/painel/img_1961.jpg"
       ],
       "esgotada": false
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "",
+  "grade": [
+    "Único"
+  ],
+  "detalhes": [],
+  "nome": "Conjunto Brenda",
+  "observacao": "Tamanho único — veste do 36 ao 40.",
   "info_padrao": true
 }
