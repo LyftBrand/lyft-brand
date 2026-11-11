@@ -1,12 +1,15 @@
 {
   "destaque": false,
+  "tecido_itens": [],
   "descricao": "",
   "ordem": 22,
   "preco": 189.9,
   "preco_promocional": 169.9,
   "ativo": true,
   "novidade": false,
-  "fotos_extras": [],
+  "fotos_extras": [
+    "/uploads/painel/1748472557_d91dccdb59a81918b19c.jpeg-1-.webp"
+  ],
   "categoria": "Conjuntos",
   "cores": [
     {
