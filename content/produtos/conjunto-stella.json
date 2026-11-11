@@ -5,7 +5,11 @@
   "preco": 249.9,
   "ativo": true,
   "novidade": false,
-  "fotos_extras": [],
+  "fotos_extras": [
+    "/uploads/painel/img_6391.jpg",
+    "/uploads/painel/img_6392.jpg",
+    "/uploads/painel/img_6393.jpg"
+  ],
   "categoria": "Conjuntos",
   "cores": [
     {
