@@ -18,7 +18,8 @@
       "fotos": [
         "/uploads/painel/img_8569.webp",
         "/uploads/painel/img_8571.webp",
-        "/uploads/painel/img_9732.jpg"
+        "/uploads/painel/img_9732.jpg",
+        "/uploads/painel/img_8570.webp"
       ],
       "esgotada": false
     },
@@ -30,8 +31,13 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-anna/rosa-claro-1.jpg",
-        "/uploads/painel/img_9104.jpg"
+        "/uploads/painel/img_9104.jpg",
+        "/uploads/painel/img_8573.webp"
       ],
+      "esgotada": false
+    },
+    {
+      "hex": "#B4988F",
       "esgotada": false
     }
   ],
