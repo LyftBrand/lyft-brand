@@ -4,7 +4,7 @@
   "ordem": 23,
   "preco": 189.9,
   "ativo": true,
-  "novidade": false,
+  "novidade": true,
   "fotos_extras": [],
   "categoria": "Conjuntos",
   "cores": [
