@@ -1,20 +1,12 @@
 {
-  "nome": "Conjunto Stella",
-  "ativo": true,
-  "categoria": "Conjuntos",
-  "preco": 249.9,
-  "resumo": "",
-  "descricao": "Tecido suplex power e zero transparência.",
-  "detalhes": [],
-  "grade": [
-    "P",
-    "M",
-    "G"
-  ],
-  "observacao": "",
   "destaque": false,
-  "novidade": false,
+  "descricao": "Tecido suplex power e zero transparência.",
   "ordem": 20,
+  "preco": 249.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [],
+  "categoria": "Conjuntos",
   "cores": [
     {
       "nome": "Azul marinho",
@@ -23,9 +15,9 @@
         "P"
       ],
       "fotos": [
-        "/uploads/produtos/conjunto-stella/azul-marinho-1.jpg"
+        "/uploads/painel/img_5886.jpg"
       ],
-      "esgotada": false
+      "esgotada": true
     },
     {
       "nome": "Verde mastruz",
@@ -34,9 +26,9 @@
         "M"
       ],
       "fotos": [
-        "/uploads/produtos/conjunto-stella/verde-mastruz-1.jpg"
+        "/uploads/painel/img_0592.jpg"
       ],
-      "esgotada": false
+      "esgotada": true
     },
     {
       "nome": "Preto",
@@ -48,7 +40,15 @@
       "esgotada": false
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "",
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "detalhes": [],
+  "nome": "Conjunto Stella",
+  "observacao": "",
   "info_padrao": true
 }
