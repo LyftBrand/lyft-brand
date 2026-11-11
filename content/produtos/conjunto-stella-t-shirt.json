@@ -7,10 +7,6 @@
   "categoria": "Conjuntos",
   "cores": [
     {
-      "hex": "#B4988F",
-      "esgotada": false
-    },
-    {
       "hex": "#a7d0e1",
       "esgotada": false,
       "nome": "Azul claro",
@@ -29,7 +25,8 @@
         "M"
       ],
       "fotos": [
-        "/uploads/painel/img_1898.jpg"
+        "/uploads/painel/img_1898.jpg",
+        "/uploads/painel/img_2698.jpg"
       ]
     },
     {
