@@ -1,0 +1,35 @@
+{
+  "destaque": true,
+  "tecido_itens": [],
+  "descricao": "Conjunto Kate\n-Tecido poliamida com elastano\n-Shorts com bolsos\n-top com abertura para bojo",
+  "ordem": 99,
+  "preco": 219.9,
+  "ativo": true,
+  "novidade": true,
+  "fotos_extras": [
+    "/uploads/painel/1793584470_ca2caa42178f76718938.jpg",
+    "/uploads/painel/1793584362_c2310e3f66285d0ede6e.jpg"
+  ],
+  "categoria": "Conjuntos",
+  "cores": [
+    {
+      "hex": "#bb97bf",
+      "esgotada": false,
+      "disponiveis": [
+        "M",
+        "G"
+      ],
+      "nome": "Lilás",
+      "fotos": [
+        "/uploads/painel/img_2709.jpg",
+        "/uploads/painel/img_2710.jpg"
+      ]
+    }
+  ],
+  "grade": [
+    "M",
+    "G"
+  ],
+  "nome": "Conjunto Kate",
+  "info_padrao": true
+}
