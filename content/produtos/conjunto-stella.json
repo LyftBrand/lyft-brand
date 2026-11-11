@@ -4,7 +4,7 @@
   "ordem": 20,
   "preco": 249.9,
   "ativo": true,
-  "novidade": false,
+  "novidade": true,
   "fotos_extras": [
     "/uploads/painel/img_6391.jpg",
     "/uploads/painel/img_6392.jpg",
