@@ -5,7 +5,9 @@
   "preco": 229.9,
   "ativo": true,
   "novidade": false,
-  "fotos_extras": [],
+  "fotos_extras": [
+    "/uploads/painel/img_0726.jpg.jpg"
+  ],
   "categoria": "Macaquinhos",
   "cores": [
     {
@@ -18,7 +20,8 @@
         "/uploads/produtos/macaquinho-sun/verde-militar-1.jpg",
         "/uploads/painel/img_8576.webp",
         "/uploads/produtos/macaquinho-sun/verde-militar-3.jpg",
-        "/uploads/painel/img_8575.webp"
+        "/uploads/painel/img_8575.webp",
+        "/uploads/painel/img_0725.jpg.jpg"
       ],
       "esgotada": false
     }
