@@ -1,20 +1,15 @@
 {
-  "nome": "Macaquinho Isabele",
-  "ativo": true,
-  "categoria": "Macaquinhos",
-  "preco": 189.9,
-  "resumo": "Um ombro só e bolsos",
-  "descricao": "Tecido suplex power e bolsos nas laterais.",
-  "detalhes": [],
-  "grade": [
-    "P",
-    "M",
-    "G"
-  ],
-  "observacao": "",
   "destaque": false,
-  "novidade": false,
+  "descricao": "Tecido suplex power e bolsos nas laterais.",
   "ordem": 18,
+  "preco": 189.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [
+    "/uploads/painel/img_6386.png",
+    "/uploads/painel/img_6388.png"
+  ],
+  "categoria": "Macaquinhos",
   "cores": [
     {
       "nome": "Marsala",
@@ -39,7 +34,15 @@
       "esgotada": false
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "Um ombro só e bolsos",
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "detalhes": [],
+  "nome": "Macaquinho Isabele",
+  "observacao": "",
   "info_padrao": true
 }
