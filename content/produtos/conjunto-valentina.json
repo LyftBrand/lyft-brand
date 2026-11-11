@@ -1,20 +1,14 @@
 {
-  "nome": "Conjunto Valentina",
-  "ativo": true,
-  "categoria": "Conjuntos",
-  "preco": 189.9,
-  "resumo": "",
-  "descricao": "",
-  "detalhes": [],
-  "grade": [
-    "P",
-    "M",
-    "G"
-  ],
-  "observacao": "",
   "destaque": false,
-  "novidade": false,
+  "descricao": "",
   "ordem": 17,
+  "preco": 189.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [
+    "/uploads/painel/img_1341.jpg"
+  ],
+  "categoria": "Conjuntos",
   "cores": [
     {
       "nome": "Pink",
@@ -22,13 +16,33 @@
       "disponiveis": [
         "M"
       ],
-      "fotos": [],
+      "fotos": [
+        "/uploads/painel/whatsapp-image-2026-09-09-at-13.32.23.jpeg",
+        "/uploads/painel/whatsapp-image-2026-09-09-at-13.32.23-1-.jpeg"
+      ],
       "esgotada": false
+    },
+    {
+      "hex": "#618244",
+      "esgotada": false,
+      "nome": "Verde claro ",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": [
+        "/uploads/painel/img_1341.jpg"
+      ]
     }
   ],
-  "fotos_extras": [
-    "/uploads/produtos/conjunto-valentina/_geral-1.jpg"
-  ],
   "nota_foto": "Foto ilustrativa em outra cor. Disponível na cor pink.",
+  "resumo": "",
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "detalhes": [],
+  "nome": "Conjunto Valentina",
+  "observacao": "",
   "info_padrao": true
 }
