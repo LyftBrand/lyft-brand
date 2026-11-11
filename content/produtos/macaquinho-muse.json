@@ -4,8 +4,10 @@
   "ordem": 4,
   "preco": 179.9,
   "ativo": true,
-  "novidade": false,
-  "fotos_extras": [],
+  "novidade": true,
+  "fotos_extras": [
+    "/uploads/painel/img_5637.jpg"
+  ],
   "categoria": "Macaquinhos",
   "cores": [
     {
@@ -29,6 +31,26 @@
       ],
       "fotos": [
         "/uploads/painel/img_0878.jpg"
+      ]
+    },
+    {
+      "hex": "#83140a",
+      "esgotada": false,
+      "nome": "Marsala com detalhe",
+      "disponiveis": [
+        "M"
+      ],
+      "fotos": [
+        "/uploads/painel/img_5624.jpg",
+        "/uploads/painel/img_5630.jpg"
+      ]
+    },
+    {
+      "hex": "#787f84",
+      "esgotada": false,
+      "nome": "Cinza com detalhe",
+      "fotos": [
+        "/uploads/painel/img_7873.jpg"
       ]
     }
   ],
