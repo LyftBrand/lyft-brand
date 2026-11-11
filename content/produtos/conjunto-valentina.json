@@ -5,9 +5,7 @@
   "preco": 189.9,
   "ativo": true,
   "novidade": false,
-  "fotos_extras": [
-    "/uploads/painel/img_1341.jpg"
-  ],
+  "fotos_extras": [],
   "categoria": "Conjuntos",
   "cores": [
     {
