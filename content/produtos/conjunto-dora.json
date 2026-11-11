@@ -1,20 +1,12 @@
 {
-  "nome": "Conjunto Dora",
-  "ativo": true,
-  "categoria": "Conjuntos",
-  "preco": 179.9,
-  "resumo": "",
-  "descricao": "",
-  "detalhes": [],
-  "grade": [
-    "P",
-    "M",
-    "G"
-  ],
-  "observacao": "",
   "destaque": false,
-  "novidade": false,
+  "descricao": "",
   "ordem": 14,
+  "preco": 179.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [],
+  "categoria": "Conjuntos",
   "cores": [
     {
       "nome": "Rosa",
@@ -23,12 +15,22 @@
         "P"
       ],
       "fotos": [
-        "/uploads/produtos/conjunto-dora/rosa-1.jpg"
+        "/uploads/painel/img_6235.jpg",
+        "/uploads/painel/img_6236.jpg",
+        "/uploads/painel/img_6109.jpg"
       ],
       "esgotada": false
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "",
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "detalhes": [],
+  "nome": "Conjunto Dora",
+  "observacao": "",
   "info_padrao": true
 }
