@@ -30,7 +30,8 @@
       "fotos": [
         "/uploads/produtos/conjunto-isis/verde-botanico-1.jpg",
         "/uploads/painel/img_0720.jpg.jpg",
-        "/uploads/produtos/conjunto-isis/verde-botanico-3.jpg"
+        "/uploads/produtos/conjunto-isis/verde-botanico-3.jpg",
+        "/uploads/painel/novo10.webp"
       ],
       "esgotada": false
     },
@@ -41,7 +42,9 @@
         "Único"
       ],
       "fotos": [
-        "/uploads/produtos/conjunto-isis/preto-1.jpg"
+        "/uploads/produtos/conjunto-isis/preto-1.jpg",
+        "/uploads/painel/novo6.webp",
+        "/uploads/painel/novo5.webp"
       ],
       "esgotada": false
     },
@@ -53,7 +56,10 @@
       ],
       "fotos": [
         "/uploads/painel/img_1829.jpg",
-        "/uploads/painel/img_0884.jpg.jpg"
+        "/uploads/painel/img_0884.jpg.jpg",
+        "/uploads/painel/img_0719.jpg.jpg",
+        "/uploads/painel/novo9.webp",
+        "/uploads/painel/novo8.webp"
       ],
       "esgotada": false
     }
