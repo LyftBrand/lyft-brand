@@ -5,9 +5,7 @@
   "preco": 179.9,
   "ativo": true,
   "novidade": true,
-  "fotos_extras": [
-    "/uploads/painel/img_5637.jpg"
-  ],
+  "fotos_extras": [],
   "categoria": "Macaquinhos",
   "cores": [
     {
@@ -42,7 +40,8 @@
       ],
       "fotos": [
         "/uploads/painel/img_5624.jpg",
-        "/uploads/painel/img_5630.jpg"
+        "/uploads/painel/img_5630.jpg",
+        "/uploads/painel/img_5637.jpg"
       ]
     },
     {
@@ -50,7 +49,8 @@
       "esgotada": false,
       "nome": "Cinza com detalhe",
       "fotos": [
-        "/uploads/painel/img_7873.jpg"
+        "/uploads/painel/img_7873.jpg",
+        "/uploads/painel/img_5637.jpg"
       ]
     }
   ],
