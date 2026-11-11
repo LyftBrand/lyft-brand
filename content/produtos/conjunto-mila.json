@@ -1,18 +1,12 @@
 {
-  "nome": "Conjunto Mila",
-  "ativo": true,
-  "categoria": "Conjuntos",
-  "preco": 259.9,
-  "resumo": "Bicolor, compressão",
-  "descricao": "",
-  "detalhes": [],
-  "grade": [
-    "Único"
-  ],
-  "observacao": "Tamanho único — veste do 36 ao 40.",
   "destaque": false,
-  "novidade": false,
+  "descricao": "",
   "ordem": 13,
+  "preco": 259.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [],
+  "categoria": "Conjuntos",
   "cores": [
     {
       "nome": "Mirtilo e aurora",
@@ -22,12 +16,19 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-mila/mirtilo-e-aurora-1.jpg",
-        "/uploads/produtos/conjunto-mila/mirtilo-e-aurora-2.jpg"
+        "/uploads/painel/img_8580.webp",
+        "/uploads/painel/img_8579.webp"
       ],
       "esgotada": false
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "Bicolor, compressão",
+  "grade": [
+    "Único"
+  ],
+  "detalhes": [],
+  "nome": "Conjunto Mila",
+  "observacao": "Tamanho único — veste do 36 ao 40.",
   "info_padrao": true
 }
