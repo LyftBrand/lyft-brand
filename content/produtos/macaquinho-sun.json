@@ -1,18 +1,12 @@
 {
-  "nome": "Macaquinho Sun",
-  "ativo": true,
-  "categoria": "Macaquinhos",
-  "preco": 229.9,
-  "resumo": "",
-  "descricao": "",
-  "detalhes": [],
-  "grade": [
-    "Único"
-  ],
-  "observacao": "Tamanho único — veste do 36 ao 40.",
   "destaque": false,
-  "novidade": false,
+  "descricao": "",
   "ordem": 11,
+  "preco": 229.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [],
+  "categoria": "Macaquinhos",
   "cores": [
     {
       "nome": "Verde militar",
@@ -22,13 +16,20 @@
       ],
       "fotos": [
         "/uploads/produtos/macaquinho-sun/verde-militar-1.jpg",
-        "/uploads/produtos/macaquinho-sun/verde-militar-2.jpg",
-        "/uploads/produtos/macaquinho-sun/verde-militar-3.jpg"
+        "/uploads/painel/img_8576.webp",
+        "/uploads/produtos/macaquinho-sun/verde-militar-3.jpg",
+        "/uploads/painel/img_8575.webp"
       ],
       "esgotada": false
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "",
+  "grade": [
+    "Único"
+  ],
+  "detalhes": [],
+  "nome": "Macaquinho Sun",
+  "observacao": "Tamanho único — veste do 36 ao 40.",
   "info_padrao": true
 }
