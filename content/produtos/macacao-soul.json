@@ -1,20 +1,15 @@
 {
-  "nome": "Macacão Soul",
-  "ativo": true,
-  "categoria": "Macacões",
-  "preco": 189.9,
-  "resumo": "",
-  "descricao": "",
-  "detalhes": [],
-  "grade": [
-    "P",
-    "M",
-    "G"
-  ],
-  "observacao": "",
   "destaque": false,
-  "novidade": false,
+  "descricao": "",
   "ordem": 15,
+  "preco": 189.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [
+    "/uploads/painel/img_6389.jpg",
+    "/uploads/painel/img_6390.jpg"
+  ],
+  "categoria": "Macacões",
   "cores": [
     {
       "nome": "Marrom",
@@ -30,7 +25,15 @@
       "esgotada": false
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "",
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "detalhes": [],
+  "nome": "Macacão Soul",
+  "observacao": "",
   "info_padrao": true
 }
