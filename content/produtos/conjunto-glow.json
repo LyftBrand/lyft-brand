@@ -1,22 +1,12 @@
 {
-  "nome": "Conjunto Glow",
-  "ativo": true,
-  "categoria": "Conjuntos",
-  "preco": 259.9,
-  "resumo": "Top + legging canelado",
-  "descricao": "",
-  "detalhes": [
-    "Tecido canelado"
-  ],
-  "grade": [
-    "P",
-    "M",
-    "G"
-  ],
-  "observacao": "",
   "destaque": true,
-  "novidade": false,
+  "descricao": "",
   "ordem": 7,
+  "preco": 259.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [],
+  "categoria": "Conjuntos",
   "cores": [
     {
       "nome": "Off white",
@@ -26,7 +16,9 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-glow/off-white-1.jpg",
-        "/uploads/produtos/conjunto-glow/off-white-2.jpg"
+        "/uploads/produtos/conjunto-glow/off-white-2.jpg",
+        "/uploads/painel/img_6941.jpg",
+        "/uploads/painel/img_6939.jpg"
       ],
       "esgotada": false
     },
@@ -37,12 +29,24 @@
         "M"
       ],
       "fotos": [
-        "/uploads/produtos/conjunto-glow/preto-1.jpg"
+        "/uploads/produtos/conjunto-glow/preto-1.jpg",
+        "/uploads/painel/2026-05-18-lyft_foto_172.jpg",
+        "/uploads/painel/2026-05-18-lyft_foto_156.jpg"
       ],
       "esgotada": false
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "Top + legging canelado",
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "detalhes": [
+    "Tecido canelado"
+  ],
+  "nome": "Conjunto Glow",
+  "observacao": "",
   "info_padrao": true
 }
