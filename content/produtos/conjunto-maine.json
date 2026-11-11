@@ -1,20 +1,13 @@
 {
-  "nome": "Conjunto Maine",
-  "ativo": true,
-  "categoria": "Conjuntos",
-  "preco": 189.9,
-  "resumo": "",
-  "descricao": "",
-  "detalhes": [],
-  "grade": [
-    "P",
-    "M",
-    "G"
-  ],
-  "observacao": "",
   "destaque": false,
-  "novidade": false,
+  "descricao": "",
   "ordem": 22,
+  "preco": 189.9,
+  "preco_promocional": 169.9,
+  "ativo": true,
+  "novidade": false,
+  "fotos_extras": [],
+  "categoria": "Conjuntos",
   "cores": [
     {
       "nome": "Azul marinho",
@@ -39,7 +32,15 @@
       "esgotada": false
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "",
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "detalhes": [],
+  "nome": "Conjunto Maine",
+  "observacao": "",
   "info_padrao": true
 }
