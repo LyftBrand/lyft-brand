@@ -1,20 +1,12 @@
 {
-  "nome": "Conjunto Prime",
-  "ativo": true,
-  "categoria": "Conjuntos",
-  "preco": 189.9,
-  "resumo": "",
-  "descricao": "Da academia ao cafezinho com as amigas.",
-  "detalhes": [],
-  "grade": [
-    "P",
-    "M",
-    "G"
-  ],
-  "observacao": "",
   "destaque": false,
-  "novidade": true,
+  "descricao": "Da academia ao cafezinho com as amigas.",
   "ordem": 16,
+  "preco": 189.9,
+  "ativo": true,
+  "novidade": true,
+  "fotos_extras": [],
+  "categoria": "Conjuntos",
   "cores": [
     {
       "nome": "Marsala",
@@ -24,7 +16,8 @@
       ],
       "fotos": [
         "/uploads/produtos/conjunto-prime/marsala-1.jpg",
-        "/uploads/produtos/conjunto-prime/marsala-2.jpg"
+        "/uploads/painel/img_6239.jpg",
+        null
       ],
       "esgotada": false
     },
@@ -34,11 +27,22 @@
       "disponiveis": [
         "G"
       ],
-      "fotos": [],
+      "fotos": [
+        "/uploads/painel/img_6731.jpg",
+        "/uploads/painel/img_6732.jpg"
+      ],
       "esgotada": false
     }
   ],
-  "fotos_extras": [],
   "nota_foto": "",
+  "resumo": "",
+  "grade": [
+    "P",
+    "M",
+    "G"
+  ],
+  "detalhes": [],
+  "nome": "Conjunto Prime",
+  "observacao": "",
   "info_padrao": true
 }
