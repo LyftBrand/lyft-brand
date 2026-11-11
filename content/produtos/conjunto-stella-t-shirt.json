@@ -35,7 +35,7 @@
     },
     {
       "hex": "#000000",
-      "esgotada": false,
+      "esgotada": true,
       "nome": "Preto",
       "disponiveis": [
         "M"
