@@ -19,7 +19,7 @@
         "/uploads/painel/novo14.webp",
         "/uploads/produtos/conjunto-isis/rosa-vintage-3.jpg"
       ],
-      "esgotada": false
+      "esgotada": true
     },
     {
       "nome": "Verde botânico",
@@ -61,7 +61,7 @@
         "/uploads/painel/novo9.webp",
         "/uploads/painel/novo8.webp"
       ],
-      "esgotada": false
+      "esgotada": true
     }
   ],
   "nota_foto": "",
