@@ -2,8 +2,8 @@
   "mensagem_padrao": "Olá! Vim pelo site da Lyft e quero ajuda para escolher meu look.",
   "instagram_fotos": [
     "/uploads/marca/ig-1.jpg",
-    "/uploads/marca/ig-2.jpg",
-    "/uploads/marca/ig-3.jpg",
+    "/uploads/painel/img_3284.jpg",
+    "/uploads/painel/img_3286.jpg",
     "/uploads/marca/ig-4.jpg",
     "/uploads/marca/ig-5.jpg",
     "/uploads/marca/ig-6.jpg"
@@ -13,7 +13,7 @@
     "Compressão na medida",
     "Zero transparência",
     "Tecido poliamida e elastano",
-    "Até 6x no cartão"
+    "Até 3x no cartão"
   ],
   "info_produto": {
     "tecido_titulo": "Tecido e caimento",
@@ -23,7 +23,7 @@
       "Tecido poliamida e elastano"
     ],
     "pagamento_titulo": "Pagamento e envio",
-    "pagamento_texto": "Até 6x no cartão de crédito. Enviamos para todo o Brasil.\n\nO pedido é fechado direto com a Ju pelo WhatsApp."
+    "pagamento_texto": "Até 3x no cartão de crédito. Enviamos para todo o Brasil.\n\nO pedido é fechado direto com a Ju pelo WhatsApp."
   },
   "aviso_topo": "10% OFF na primeira compra · Enviamos para todo o Brasil",
   "colecao": "Coleção Elevate 2026",
