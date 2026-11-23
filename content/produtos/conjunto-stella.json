@@ -13,15 +13,17 @@
   "categoria": "Conjuntos",
   "cores": [
     {
-      "nome": "Azul marinho",
-      "hex": "#1E2A4A",
+      "nome": "Laranja",
+      "hex": "#dc743d",
       "disponiveis": [
-        "P"
+        "M",
+        "G"
       ],
       "fotos": [
-        "/uploads/painel/img_5889.jpg"
+        "/uploads/painel/1780058502_f9d63f588aec6e1aa14f.jpg",
+        "/uploads/painel/1780058593_19a0018b5f8aca77703e.jpg"
       ],
-      "esgotada": true
+      "esgotada": false
     },
     {
       "nome": "Verde mastruz",
