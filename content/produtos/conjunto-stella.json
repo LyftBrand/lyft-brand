@@ -43,6 +43,15 @@
       ],
       "fotos": [],
       "esgotada": true
+    },
+    {
+      "hex": "#a77b9c",
+      "esgotada": false,
+      "nome": "Lilás",
+      "disponiveis": [
+        "M",
+        "P"
+      ]
     }
   ],
   "nota_foto": "",
