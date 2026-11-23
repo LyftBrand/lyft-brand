@@ -8,7 +8,9 @@
   "fotos_extras": [
     "/uploads/painel/img_6391.jpg",
     "/uploads/painel/img_6392.jpg",
-    "/uploads/painel/img_6393.jpg"
+    "/uploads/painel/img_6393.jpg",
+    "/uploads/painel/1780058502_f9d63f588aec6e1aa14f.jpg",
+    "/uploads/painel/1780058593_19a0018b5f8aca77703e.jpg"
   ],
   "categoria": "Conjuntos",
   "cores": [
@@ -19,10 +21,7 @@
         "M",
         "G"
       ],
-      "fotos": [
-        "/uploads/painel/1780058502_f9d63f588aec6e1aa14f.jpg",
-        "/uploads/painel/1780058593_19a0018b5f8aca77703e.jpg"
-      ],
+      "fotos": [],
       "esgotada": false
     },
     {
